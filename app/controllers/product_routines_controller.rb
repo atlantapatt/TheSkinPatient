@@ -1,0 +1,2 @@
+class ProductRoutinesController < ApplicationController
+end
