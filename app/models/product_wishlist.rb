@@ -1,4 +1,4 @@
 class ProductWishlist < ApplicationRecord
     belongs_to :product
-    belongs_to :wislist
+    belongs_to :wishlist
 end
