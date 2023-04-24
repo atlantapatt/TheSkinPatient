@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :routines
   resources :users
 
-  root 'users#index'
+  # root 'users#index'
   
   get 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destory'
