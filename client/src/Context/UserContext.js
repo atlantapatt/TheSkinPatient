@@ -1,7 +1,7 @@
 import { useState } from "react";
 const UserContext = React.createContext()
 
-function UserProvider({children})
+function UserProvider({children}) {
 const [user, setUser] = useState(null)
 const value = {user, setUser}
     return ( 
@@ -10,5 +10,4 @@ const value = {user, setUser}
         </UserContext.Provider>
      );
 }
-
 export default UserProvider;{children}
