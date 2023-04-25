@@ -10,4 +10,4 @@ const value = {user, setUser}
         </UserContext.Provider>
      );
 }
-export default UserProvider;{children}
+export {UserContext, UserProvider}
