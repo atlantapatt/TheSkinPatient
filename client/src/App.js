@@ -7,12 +7,8 @@ import Home from './Home';
 function App() {
   return (
     <Routes>
-      <Route path='/account'>
-        <Account/>
-      </Route>
-      <Route path='/'>
-        <Home/>
-      </Route>
+      <Route exact path='/' element={<Home/>} />
+      <Route exact path='/account' element={<Account/>} />
     </Routes>
   );
 }
