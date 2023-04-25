@@ -1,18 +1,22 @@
 import React from 'react';
 import './App.css';
-import {Routes, Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 import Account from './Account';
 import Home from './Home';
 
 function App() {
   return (
     <div>
-      HELLO APP
+      <Switch>
+        <Route exact path='/'>
+          <Home/>
+        </Route>
+      </Switch>
     </div>
-    // <Routes>
+    // <Switch>
     //   <Route exact path='/' element={<Home/>} />
     //   <Route exact path='/account' element={<Account/>} />
-    // </Routes>
+    // </Switch>
   );
 }
 
