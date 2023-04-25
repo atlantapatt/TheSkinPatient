@@ -11,6 +11,9 @@ function App() {
         <Route exact path='/'>
           <Home/>
         </Route>
+        <Route exact path='/account'>
+          <Account />
+        </Route>
       </Switch>
     </div>
     // <Switch>
