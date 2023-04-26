@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function ProductPage({url,currentProduct, setCurrentProduct}) {
+function ProductPage({url, currentProduct, setCurrentProduct}) {
     const history = useHistory()
     console.log(currentProduct)
 
@@ -29,11 +29,11 @@ function ProductPage({url,currentProduct, setCurrentProduct}) {
 
     return ( 
         <div className="product-div">
-            {/* <button onClick={onClick}>BACK</button>
+            <button onClick={onClick}>BACK</button>
             <div className="product-image">
                 <img src={currentProduct.image}></img>
             </div>
-            <div className="product-text">
+            {/* <div className="product-text">
                 <h3>{currentProduct.className}</h3>
                 <h4>{currentProduct.brand}</h4>
                 <h5>{currentProduct.category}</h5>
@@ -43,7 +43,6 @@ function ProductPage({url,currentProduct, setCurrentProduct}) {
                 <button onClick={addToProducts}>Add To My Products</button>
                 <button onClick={addToWishlist}>Add to Wishlist</button>
             </div> */}
-            PRODUCT PAGE
         </div>
      );
 }
