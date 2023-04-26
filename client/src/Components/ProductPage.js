@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function ProductPage({currentProduct, setCurrentProduct}) {
+function ProductPage({url,currentProduct, setCurrentProduct}) {
     const history = useHistory()
     console.log(currentProduct)
 
