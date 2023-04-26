@@ -20,7 +20,7 @@ function ProductPage({currentProduct}) {
 
     return ( 
         <div className="product-div">
-            <button onClick={onClick}>BACK</button>
+            {/* <button onClick={onClick}>BACK</button>
             <div className="product-image">
                 <img src={currentProduct.image}></img>
             </div>
@@ -33,7 +33,8 @@ function ProductPage({currentProduct}) {
             <div className="product-buttons">
                 <button onClick={addToProducts}>Add To My Products</button>
                 <button onClick={addToWishlist}>Add to Wishlist</button>
-            </div>
+            </div> */}
+            PRODUCT PAGE
         </div>
      );
 }
