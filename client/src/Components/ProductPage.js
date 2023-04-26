@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function ProductPage({currentProduct}) {
+function ProductPage({currentProduct, setCurrentProduct}) {
     const history = useHistory()
     console.log(currentProduct)
+
+    useEffect(() => {
+        fetch(`/products/${url}`).then((response) => {
+            if (response.ok) {
+                response.json().then((product) => setCurrentProduct(product))
+            }
+        })
+        console.log(currentProduct)
+    },[])
 
     function onClick() {
         console.log('go back')

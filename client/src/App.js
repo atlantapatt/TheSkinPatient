@@ -50,7 +50,7 @@ useEffect(() => {
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage currentProduct={currentProduct}/>
+          <ProductPage setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
       </Switch>
     </div>

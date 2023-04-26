@@ -7,11 +7,13 @@ function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
 
     const history = useHistory()
     function productPageRoute() {
+        //include reviews
         fetch(`/products/${url}`).then((response) => {
             if (response.ok) {
                 response.json().then((product) => setCurrentProduct(product))
             }
         })
+        console.log(currentProduct)
         history.push(`/${url}`)
         
         // console.log(currentProduct)
