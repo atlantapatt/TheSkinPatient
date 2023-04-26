@@ -14,7 +14,7 @@ function App() {
   const [products, setProducts] = useState([])
   const [productName, setProductName] = useState('')
   const [url, setUrl] = useState('')
-  const [currentProduct, setCurrentProduct] = useState()
+  const [currentProduct, setCurrentProduct] = useState([])
   const {user, setUser} = useContext(UserContext)
 
 // useEffect(() => {
