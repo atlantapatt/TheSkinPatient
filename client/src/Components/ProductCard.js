@@ -5,9 +5,10 @@ function ProductCard({item}) {
             <div className="image">
                 <img src={item.image}></img>
             </div>
-            <div>
+            <br></br>
+            <div className="item-text">
                 <h4>{item.name}</h4>
-                <p>{item.brand}</p>
+                <h5>{item.brand}</h5>
                 <p>{item.category}</p>
             </div>
             
