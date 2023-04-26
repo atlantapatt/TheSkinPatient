@@ -7,9 +7,14 @@ import Home from './Components/Home';
 import Navbar from './Navbar';
 import Login from './Components/Login';
 import Products from './Components/Products';
+import ProductCard from './Components/ProductCard';
+import ProductPage from './Components/ProductPage';
 
 function App() {
   const [products, setProducts] = useState([])
+  const [productName, setProductName] = useState('')
+  const [url, setUrl] = useState('')
+  const [currentProduct, setCurrentProduct] = useState()
   const {user, setUser} = useContext(UserContext)
 
 // useEffect(() => {
@@ -21,6 +26,15 @@ function App() {
 //     }
 //   })
 // })
+console.log(url)
+
+useEffect(() => {
+  fetch('/products').then((response) => {
+      if (response.ok) {
+          response.json().then((products) => setProducts(products))
+      }
+  })
+},[])
 
   return (
     <div>
@@ -33,7 +47,10 @@ function App() {
           <Account />
         </Route>
         <Route exact path='/products'>
-          <Products products={products} setProducts={setProducts}/>
+          <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
+        </Route>
+        <Route exact path={`/${url}`}>
+          <ProductPage currentProduct={currentProduct}/>
         </Route>
       </Switch>
     </div>
