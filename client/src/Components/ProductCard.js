@@ -7,13 +7,7 @@ function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
 
     const history = useHistory()
     function productPageRoute() {
-        //include reviews
-        fetch(`/products/${url}`).then((response) => {
-            if (response.ok) {
-                response.json().then((product) => setCurrentProduct(product))
-            }
-        })
-        console.log(currentProduct)
+        setUrl(item.id)
         history.push(`/${url}`)
         
         // console.log(currentProduct)
@@ -36,7 +30,7 @@ function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
 
 
     return ( 
-        <div className="item-card" onMouseEnter={onHover} onClick={productPageRoute}>
+        <div className="item-card" onClick={productPageRoute}>
             <div className="image">
                 <img src={item.image}></img>
             </div>

@@ -33,7 +33,7 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
             <div className="product-image">
                 <img src={currentProduct.image}></img>
             </div>
-            {/* <div className="product-text">
+            <div className="product-text">
                 <h3>{currentProduct.className}</h3>
                 <h4>{currentProduct.brand}</h4>
                 <h5>{currentProduct.category}</h5>
@@ -42,7 +42,7 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
             <div className="product-buttons">
                 <button onClick={addToProducts}>Add To My Products</button>
                 <button onClick={addToWishlist}>Add to Wishlist</button>
-            </div> */}
+            </div>
         </div>
      );
 }
