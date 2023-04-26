@@ -30,7 +30,7 @@ function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
 
 
     return ( 
-        <div className="item-card" onClick={productPageRoute}>
+        <div className="item-card" onMouseEnter={onHover} onClick={productPageRoute}>
             <div className="image">
                 <img src={item.image}></img>
             </div>
