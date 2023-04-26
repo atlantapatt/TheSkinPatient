@@ -36,119 +36,119 @@ Product.create([
         category: 'Exfoliant',
         description: 'A two-step AHA/BHA peel pad pre-dosed with seven acids and 12 antioxidants to clear the complexion, reduce the look of wrinkles, and visibly improve skin tone and texture.',
         brand: 'Dr Dennis Goss',
-        image: 'client/public/Photos/DrDennisGoss AlphaBeta Extra Strength Daily Peel.jpg'
+        image: './Photos/DrDennisGoss_AlphaBeta_Daily_Peel.jpg'
     },
     {
         name: 'Lala Retro Whipped Moisturizer',
         category: "Moisturizer",
         description: 'Tthis multifaceted rescue cream, infused with a triple-ceramide blend and five African oils, provides replenishing barrier support by reinforcing skin’s acid mantle and defending against the effects of everyday stressors.',
         brand: 'Drunk Elephant',
-        image: 'client/public/Photos/Drunk Elephant Lala Retro Moisturizer.png'
+        image: './Photos/DrunkElephant_Lala_Retro_Moisturizer.png'
     },
     {
         name: 'Protini Polypeptide Moisturizer',
         category: 'Moisturizer',
         description: 'This protein moisturizer combines signal peptides, growth factors, amino acids, and pygmy waterlily to improve the appearance of skin’s tone, texture, and firmness.',
         brand: 'Drunk Elephant',
-        image: 'client/public/Photos/DrunkElephant Protini Moisturizer.png'
+        image: './Photos/DrunkElephant_Protini_Moisturizer.png'
     },
     {
         name: 'Watermelon Glow Niacinamide Dew Drops',
         category: "Serum",
         description: 'A breakthrough, multi-use highlighting serum that hydrates and visibly reduces the look of hyperpigmentation for a dewy, reflective glow—without mica, glitter, or gray cast.',
         brand: 'Glow Recipe',
-        image: 'client/public/Photos/Glow Recipe Watermelon Glow Niacinamide Dew Drops.png'
+        image: './Photos/Glow_Recipe_Dew_Drops.png'
     },
     {
         name: 'Daily UV Defense Sunscreen',
         category: 'Sunscreen',
         description: 'A lightweight, daily Broad Spectrum SPF 36 sunscreen delivering invisible sun protection while hydrating and soothing skin - no white-cast, just glow!',
         brand: 'innisfree',
-        image: 'client/public/Photos/innisfree Daily UV Defense sunscreen.png'
+        image: './Photos/innisfree_sunscreen.png'
     },
     {
         name: 'BHA Liquid Exfoliant',
         category: 'Exfoliant',
         description: 'A daily leave-on exfoliant with two percent salicylic acid to sweep away dead skin cells, unclog pores, and visibly smooth wrinkles—practically overnight.',
         brand: "Paula's Choice",
-        image: 'client/public/Photos/Paula\'s Choice BHA liquid exfoliant.png'
+        image: './Photos/Paula\'s_Choice_BHA_liquid_exfoliant.png'
     },
     {
         name: 'Unseen Sunscreen',
         category: 'Sunscreen',
         description: 'A totally invisible, weightless, scentless, and makeup-gripping daily primer with SPF 40.',
         brand: 'SuperGoop',
-        image: 'client/public/Photos/supergood unseen sunscreen.png'
+        image: './Photos/supergood_unseen_sunscreen.png'
     },
     {
         name: 'AHA 30% BHA 2% Peeling Solution',
         category: 'Exfoliant',
         description: 'An exfoliating solution to help fight visible blemishes and improve the look of skin texture and radiance.',
         brand: "The Ordinary",
-        image: 'client/public/Photos/the ordinary AHA30% BHA2% peeling solution.png'
+        image: './Photos/the_ordinary_AHA30_BHA2.png'
     },
     {
         name: "Retinol in Squalane",
         category: 'Serum',
         description: 'A moderate-strength retinol serum that targets general signs of skin aging.',
         brand: 'The Ordinary',
-        image: 'client/public/Photos/the ordinary Retinol in squalane.png'
+        image: './Photos/the_ordinary_Retinol_squalane.png'
     },
     {
         name: 'Superfood Cleanser',
         category: 'Cleanser',
         description: 'An award-winning face wash with superfood extracts to remove makeup, support skin\'s pH balance, and clear buildup in pores that can lead to blemishes.',
         brand: 'Youth to the People',
-        image: 'client/public/Photos/YTP superfood cleanser.png'
+        image: './Photos/YTP_superfood_cleanser.png'
     },
     {
         name: "Squalene + Retinol Night Serum",
         category: 'Serum',
         description: 'An innovative formula with an encapsulated duo of time-release retinol and retinal, clinically shown to improve the appearance of fine lines and wrinkles, discoloration, and texture, with minimal irritation.',
         brand: 'Biossance',
-        image: 'client/public/Photos/Biossance Squalene+Retinol Night Serum.png'
+        image: './Photos/Biossance_Squalene+Retinol_Night_Serum.png'
     },
     {
         name: "Squalane + 10% Lactic Acid Resurfacing Serum",
         category: 'Serum',
         description: 'An award-winning serum clinically shown to deliver dramatically visibly smoother, softer, brighter skin—powered by safe, potent 10% lactic acid.',
         brand: 'Biossance',
-        image: 'client/public/Photos/Biossance Squalene + 10% Lactic Acid.png'
+        image: './Photos/Biossance_Squalene_Lactic_Acid.png'
     },
     {
         name: "Squalane Cleanser",
         category: 'Cleanser',
         description: 'A gentle, moisturizing facial cleanser.',
         brand: 'The Ordinary',
-        image: 'client/public/Photos/The ordinary squalane cleanser.png'
+        image: './Photos/The_ordinary_squalane_cleanser.png'
     },
     {
         name: "RESIST Perfectly Balanced Foaming Cleanser",
         category: 'Cleanser',
         description: 'A gentle, soap-free foaming cleanser formulated to thoroughly rinse away excess oil, makeup, and sunscreen without disturbing your skin’s protective barrier.',
         brand: 'Paula\'s Choice',
-        image: 'client/public/Photos/Paula\'s Choice Perfectly Balanced Foaming Cleanser.png'
+        image: './Photos/Paula\'s_Choice_Foaming_Cleanser.png'
     },
     {
         name: "Avocado Ceramide Moisture Barrier Cleanser",
         category: 'Cleanser',
         description: 'A hydrating, skin-barrier-strengthening cleanser packed with ceramides and pre- and postbiotics to balance the skin’s moisture barrier while effectively removing makeup',
         brand: 'Glow Recipe',
-        image: 'client/public/Photos/Glow Recipe Avocado Cleanser.png'
+        image: './Photos/Glow_Recipe_Avocado_Cleanser.png'
     },
     {
         name: "Hyaluronic Acid 2% + B5 Hydrating Serum",
         category: 'Serum',
         description: 'A hydrating formula with ultra-pure, vegan hyaluronic acid.',
         brand: 'The Ordinary',
-        image: 'client/public/Photos/the ordinary Hyaluronic Acid.png'
+        image: './Photos/the_ordinary_Hyaluronic_Acid.png'
     },
     {
         name: "Honey Halo Ultra-Hydrating Ceramide Moisturizer",
         category: 'Moisturizer',
         description: 'An ultra-hydrating ceramide moisturizer clinically proven to visibly plump, improve the look of fine lines and replenish dry, distressed skin.',
         brand: 'Farmacy',
-        image: 'client/public/Photos/farmacy honey halo moisturizer.png'
+        image: './Photos/farmacy_moisturizer.png'
     }
 ])
 
