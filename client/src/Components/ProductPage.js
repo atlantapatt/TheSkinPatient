@@ -22,7 +22,7 @@ function ProductPage({currentProduct}) {
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
             <div className="product-image">
-                <img src={currentProduct.image}/>
+                <img src={currentProduct.image}></img>
             </div>
             <div className="product-text">
                 <h3>{currentProduct.className}</h3>
