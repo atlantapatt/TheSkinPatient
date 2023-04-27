@@ -1,0 +1,32 @@
+.home-div{
+    display: inline-flex;
+    width: 100%;
+    
+}
+
+/* .center-div{
+    padding-left: 50%;
+} */
+
+.right-div{
+    padding-left: 5%;
+    padding-right: 70.2%;
+    background-color: red;
+}
+
+.left-div{
+    text-align: center;
+    
+    width: 300px;
+    /* overflow: visible; */
+    background-color: royalblue;
+}
+
+h5.left-div{
+    width: 300px;
+}
+
+.link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

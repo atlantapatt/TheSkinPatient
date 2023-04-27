@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import './Components/CSS/Navbar.css'
 
 function Navbar() {
 
@@ -29,18 +30,20 @@ function Navbar() {
     return ( 
         <div className="nav">
             <div className="nav-items">
-                <p>Welcome!</p>
+                <div className="welcome-div">
+                    <p>Welcome!</p>
+                </div>
                 <div className="img" onClick={homeRoute}>
-                    LOGO
+                    <p>LOGO</p>
                 </div>
                 <div className="dropdown-trigger">
-                    ICON
+                    <p>ICON</p>
                 </div>
-                <div className="dropdown-menu">
+                {/* <div className="dropdown-menu">
                     <p onClick={myAccountRoute}>Account</p>
                     <p onClick={productsRoute}>Products</p>
                     <p onClick={logout}>Logout</p>
-                </div>
+                </div> */}
             </div>
         </div>
      );

@@ -1,0 +1,19 @@
+.nav{
+    width: 100%;
+    display: inline-flex;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+.nav-items{
+    /* max-width: 100%; */
+    display: inline-flex;
+}
+
+.welcome-div{
+    padding-left: 5%;
+    padding-right: 350%;
+}
+
+.img{
+    padding-right: 395%;
+}
