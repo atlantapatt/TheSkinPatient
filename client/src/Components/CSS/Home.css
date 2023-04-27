@@ -1,6 +1,6 @@
 .home-div{
     display: inline-flex;
-    width: 150%;
+    width: 100%;
     
 }
 
@@ -10,7 +10,7 @@
 
 .right-div{
     padding-left: 5%;
-    padding-right: 70.2%;
+    padding-right: 75.4%;
     background-color: red;
 }
 

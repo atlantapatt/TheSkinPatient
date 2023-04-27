@@ -1,5 +1,6 @@
 .nav{
-    width: 120%;
+    width: 100%;
+    max-width: 100%;
     display: inline-flex;
     padding-top: 2%;
     padding-bottom: 5%;
@@ -10,10 +11,10 @@
 }
 
 .welcome-div{
-    padding-left: 5%;
-    padding-right: 350%;
+    padding-left: 10%;
+    padding-right: 480%;
 }
 
 .img{
-    padding-right: 395%;
+    padding-right: 415%;
 }
