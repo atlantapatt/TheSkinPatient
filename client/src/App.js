@@ -37,7 +37,7 @@ useEffect(() => {
 },[])
 
   return (
-    <div>
+    <div className='app'>
       <Navbar/>
       <Switch>
         <Route exact path='/'>
