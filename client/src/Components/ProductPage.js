@@ -7,7 +7,6 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     const [reviewLength, setReviewLength] = useState(0)
     const history = useHistory()
 
-    let mappedReviews
    
     // console.log(currentProduct.reviews)
     
@@ -43,18 +42,23 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
         console.log('add to wishlist')
     }
 
-    useEffect(() => {
-        mappedReviews = reviews.map((review) =>{
-            return <ReviewCard review={review} />
-        })
-    },[currentProduct])
+    // useEffect(() => {
+    //     mappedReviews = reviews.map((review) =>{
+    //         return <ReviewCard review={review} />
+    //     })
+    // },[currentProduct])
     
     // mappedReviews = reviews.map((review) =>{
     //                 return <ReviewCard review={review} />
     //             })
     //             console.log(mappedReviews)
 
-    console.log(reviews)
+    let mappedReviews = reviews.map((review) =>{
+                        return <ReviewCard review={review} />
+                    })
+
+
+    console.log(mappedReviews)
 
     // console.log(reviews.length == 0)
     console.log(currentProduct.reviews)
