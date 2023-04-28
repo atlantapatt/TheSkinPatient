@@ -3,29 +3,38 @@ import { useHistory } from "react-router-dom";
 import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 
-function ProductPage({url, currentProduct, setCurrentProduct}) {
-    const [reviews, setReviews] = useState([])
+function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+    
     const history = useHistory()
 
     let mappedReviews
-    console.log(currentProduct.reviews)
+    // console.log(currentProduct.reviews)
+    console.log(reviews)
+    
+    
 
     useEffect(() => {
         fetch(`/products/${url}`).then((response) => {
             if (response.ok) {
                 response.json().then((product) => setCurrentProduct(product))
-            } setReviews(currentProduct.reviews)
+            } 
         })
-        
     },[])
 
     useEffect(() => {
-       if (!reviews == undefined) {
-        mappedReviews = reviews.map((review) =>{
-            return <ReviewCard review={review} />
-         })
-       } 
-    },[])
+        setReviews(currentProduct.reviews)
+    },[currentProduct])
+
+    // useEffect(() => {
+    //    if (reviews == undefined) {
+    //     console.log('undefined')
+    //    } else {
+    //      mappedReviews = reviews.map((review) =>{
+    //         return <ReviewCard review={review} />
+    //      }) 
+    //    }console.log(reviews)
+    //    console.log(mappedReviews)
+    // })
 
     function onClick() {
         console.log('go back')
@@ -40,7 +49,20 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
         console.log('add to wishlist')
     }
 
-
+    // useEffect(() => {
+    //     if (reviews == undefined) {
+    //         console.log('undefined reviews')
+    //     } else {
+    //         mappedReviews = reviews.map((review) =>{
+    //             return <ReviewCard review={review} />
+    //         })
+    //     }
+    // },[currentProduct])
+    
+    mappedReviews = reviews.map((review) =>{
+                    return <ReviewCard review={review} />
+                })
+                console.log(mappedReviews)
 
 
     return ( 
@@ -63,10 +85,12 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
             </div>
             
             <div className="product-reviews">
-                {reviews == [] ? "Be the first to review!" : mappedReviews}
+                {reviews.length == 0 ? "be the first to review!" : mappedReviews}
             </div>
         </div>
      );
 }
 
 export default ProductPage;
+
+// reviews == [] ? "Be the first to review!" : mappedReviews

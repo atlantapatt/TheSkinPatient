@@ -19,6 +19,7 @@ function App() {
   const [url, setUrl] = useState('')
   const [currentProduct, setCurrentProduct] = useState([])
   const {user, setUser} = useContext(UserContext)
+  const [reviews, setReviews] = useState([])
 
 // useEffect(() => {
 //   fetch('/me').then((response) => {
@@ -53,7 +54,7 @@ useEffect(() => {
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts />
