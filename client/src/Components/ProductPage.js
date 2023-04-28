@@ -21,6 +21,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     },[])
 
     useEffect(() => {
+        
         setReviews(currentProduct.reviews)
     },[currentProduct])
 
@@ -63,6 +64,8 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     //             })
     //             console.log(mappedReviews)
 
+    console.log(reviews)
+    console.log(currentProduct.reviews)
 
     return ( 
         <div className="product-div">
