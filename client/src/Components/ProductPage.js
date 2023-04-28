@@ -65,6 +65,8 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     //             console.log(mappedReviews)
 
     console.log(reviews)
+
+    console.log(reviews == [])
     console.log(currentProduct.reviews)
 
     return ( 
@@ -87,7 +89,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
-                {reviews.length == 0 ? "empty" : "full"} 
+                {/* {reviews.length == 0 ? "empty" : "full"}  */}
             </div>
         </div>
      );
