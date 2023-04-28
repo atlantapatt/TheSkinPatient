@@ -8,6 +8,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     const history = useHistory()
 
     let mappedReviews
+    let reviewLength = reviews.length
     // console.log(currentProduct.reviews)
     
     
@@ -56,7 +57,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
                 return <ReviewCard review={review} />
             })
         }
-    },[currentProduct])
+    },[url])
     
     // mappedReviews = reviews.map((review) =>{
     //                 return <ReviewCard review={review} />
@@ -64,8 +65,9 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     //             console.log(mappedReviews)
 
     console.log(reviews)
+    console.log(reviewLength)
 
-    console.log(reviews == [])
+    // console.log(reviews.length == 0)
     console.log(currentProduct.reviews)
 
     return ( 
@@ -88,7 +90,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
-                {/* {reviews.length == 0 ? "empty" : "full"}  */}
+                {reviewLength == 0 ? "empty" : "full"} 
             </div>
         </div>
      );
