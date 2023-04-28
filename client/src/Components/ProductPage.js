@@ -4,16 +4,17 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 
 function ProductPage({url, currentProduct, setCurrentProduct}) {
+    const [reviews, setReviews] = useState([])
     const history = useHistory()
-    console.log(currentProduct)
+    console.log(currentProduct.reviews)
 
     useEffect(() => {
         fetch(`/products/${url}`).then((response) => {
             if (response.ok) {
                 response.json().then((product) => setCurrentProduct(product))
-            }
+            } setReviews(currentProduct.reviews)
         })
-        console.log(currentProduct)
+        
     },[])
 
     function onClick() {
@@ -28,6 +29,10 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
     function addToWishlist() {
         console.log('add to wishlist')
     }
+
+ let mappedReviews = reviews.map((review) =>{
+    return <ReviewCard review={review} />
+ })
 
     return ( 
         <div className="product-div">
@@ -49,7 +54,7 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
             </div>
             
             <div className="product-reviews">
-                <ReviewCard />
+                {reviews == [] ? "Be the first to review!" : mappedReviews}
             </div>
         </div>
      );

@@ -1,7 +1,13 @@
-function ReviewCard() {
-    return ( 
-        <div>
-            Reviews
+function ReviewCard({review}) {
+    console.log(review)
+    return (
+        <div className="review-div">
+            {/* user avatar?? */}
+            <div className="review-text">
+                <p>{review.user.username}</p>
+                <p>{review.info}</p>
+                <p>{review.rating}/5</p>
+            </div>
         </div>
      );
 }
