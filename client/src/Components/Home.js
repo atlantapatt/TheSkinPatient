@@ -1,8 +1,17 @@
 import { useHistory } from "react-router-dom";
 import "./CSS/Home.css"
-function Home() {
+import ReviewCard from "./ReviewCard";
+function Home({homeReviews, setHomeReviews}) {
  const history = useHistory()
 
+ let mappedHomeReviews = homeReviews.map((review) => {
+    return <div className="home-reviews">
+        <div className="home-image">
+            <img id="product-image" src={review.product.image}></img>
+        </div>
+        <ReviewCard review={review} />
+        </div>
+ })
 
  function routeMyProducts() {
     history.push('/myproducts')
@@ -21,7 +30,7 @@ function Home() {
     return ( 
         <div className="home-div">
             <div className="right-div">
-                REVIEWS
+                {mappedHomeReviews}
             </div>
             {/* <div className="center-div">
                 CENTER

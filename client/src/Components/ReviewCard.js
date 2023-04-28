@@ -1,5 +1,5 @@
 function ReviewCard({review}) {
-    console.log(review)
+
     return (
         <div className="review-div">
             {/* user avatar?? */}

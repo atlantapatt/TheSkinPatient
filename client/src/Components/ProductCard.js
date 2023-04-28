@@ -9,22 +9,13 @@ function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
     function productPageRoute() {
         setUrl(item.id)
         history.push(`/${url}`)
-        
-        // console.log(currentProduct)
-        // setProductName(currentProduct.name)
-        // console.log(productName)
-        // history.push(`/${productName}`)
     }
 
     function onHover() {
         setUrl(item.id)
-        console.log(url)
     }
 
-    // function onLeave() {
-    //     setUrl('')
-    //     setCurrentProduct([])
-    // }
+
 
 
 

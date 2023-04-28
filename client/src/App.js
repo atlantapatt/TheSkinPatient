@@ -18,8 +18,10 @@ function App() {
   const [productName, setProductName] = useState('')
   const [url, setUrl] = useState('')
   const [currentProduct, setCurrentProduct] = useState([])
-  const {user, setUser} = useContext(UserContext)
   const [reviews, setReviews] = useState([])
+  const [homeReviews, setHomeReviews] = useState([])
+  const {user, setUser} = useContext(UserContext)
+
 
 // useEffect(() => {
 //   fetch('/me').then((response) => {
@@ -40,12 +42,20 @@ useEffect(() => {
   })
 },[])
 
+useEffect(() => {
+  fetch('/reviews').then((response) => {
+      if (response.ok) {
+          response.json().then((reviews) => setHomeReviews(reviews))
+      }
+  })
+},[])
+
   return (
     <div className='app'>
       <Navbar/>
       <Switch>
         <Route exact path='/'>
-          <Home/>
+          <Home homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
         <Route exact path='/account'>
           <Account />
