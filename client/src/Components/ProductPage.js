@@ -84,12 +84,12 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
-                {reviews.length == 0 ? "be the first to review!" : 'reviews!'}
+                REVIEWS
             </div>
         </div>
      );
 }
 
 export default ProductPage;
-
+// {reviews == [] ? "be the first to review!" : 'reviews!'}
 // reviews == [] ? "Be the first to review!" : mappedReviews
