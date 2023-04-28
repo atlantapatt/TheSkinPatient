@@ -9,7 +9,6 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
 
     let mappedReviews
     // console.log(currentProduct.reviews)
-    console.log(reviews)
     
     
 
@@ -59,10 +58,10 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     //     }
     // },[currentProduct])
     
-    mappedReviews = reviews.map((review) =>{
-                    return <ReviewCard review={review} />
-                })
-                console.log(mappedReviews)
+    // mappedReviews = reviews.map((review) =>{
+    //                 return <ReviewCard review={review} />
+    //             })
+    //             console.log(mappedReviews)
 
 
     return ( 
@@ -85,7 +84,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
-                {reviews.length == 0 ? "be the first to review!" : mappedReviews}
+                {reviews.length == 0 ? "be the first to review!" : 'reviews!'}
             </div>
         </div>
      );
