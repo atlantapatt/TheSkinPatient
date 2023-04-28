@@ -21,7 +21,6 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     },[])
 
     useEffect(() => {
-        
         setReviews(currentProduct.reviews)
     },[currentProduct])
 
@@ -49,15 +48,15 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
         console.log('add to wishlist')
     }
 
-    // useEffect(() => {
-    //     if (reviews == undefined) {
-    //         console.log('undefined reviews')
-    //     } else {
-    //         mappedReviews = reviews.map((review) =>{
-    //             return <ReviewCard review={review} />
-    //         })
-    //     }
-    // },[currentProduct])
+    useEffect(() => {
+        if (reviews == undefined) {
+            console.log('undefined reviews')
+        } else {
+            mappedReviews = reviews.map((review) =>{
+                return <ReviewCard review={review} />
+            })
+        }
+    },[currentProduct])
     
     // mappedReviews = reviews.map((review) =>{
     //                 return <ReviewCard review={review} />
