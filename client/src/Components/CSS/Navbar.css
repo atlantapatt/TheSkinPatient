@@ -12,11 +12,11 @@
 
 .welcome-div{
     padding-left: 10%;
-    padding-right: 450%;
+    padding-right: 550%;
 }
 
 .img{
-    padding-right: 615%;
+    padding-right: 590%;
 }
 
 .dropdown-trigger{
@@ -25,12 +25,12 @@
 
 .dropdown-menu{
     position: absolute;
-    top: 80px;
-    left: 675px;
+    top: 95px;
+    left: 1510px;
     background-color: #cccccc;
     border-radius: 25px;
     padding: 10px 20px;
-    width: 200px;
+    width: 250px;
     z-index: 1;
 }
 
@@ -61,4 +61,16 @@
     visibility: hidden;
     transform: translateY(-20px);
     transition: var(--speed) ease;
+}
+
+.dropdown-item{
+    display: flex;
+    margin: 10px auto;
+}
+
+.dropdown-item i{
+    max-width: 20px;
+    margin-top: 18px;
+    margin-right: 10px;
+    transition: var(--speed);
 }

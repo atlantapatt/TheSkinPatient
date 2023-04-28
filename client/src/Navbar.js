@@ -16,18 +16,21 @@ function Navbar() {
         let path = '/'
         history.push(path)
         console.log('home')
+        setOpen(false)
     }
 
     function myAccountRoute() {
         let account = '/account'
         history.push(account)
         console.log('account')
+        setOpen(false)
     }
 
     function productsRoute() {
         let path = '/products'
         history.push(path)
         console.log('products')
+        setOpen(false)
     }
 
     function logout() {
