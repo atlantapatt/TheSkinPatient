@@ -19,7 +19,7 @@ function App() {
   const [url, setUrl] = useState('')
   const [currentProduct, setCurrentProduct] = useState([])
   const {user, setUser} = useContext(UserContext)
-  const [reviews, setReviews] = useState()
+  const [reviews, setReviews] = useState([])
 
 // useEffect(() => {
 //   fetch('/me').then((response) => {
