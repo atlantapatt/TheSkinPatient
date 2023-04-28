@@ -4,11 +4,11 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 
 function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduct}) {
-    
+    const [reviewLength, setReviewLength] = useState(0)
     const history = useHistory()
 
     let mappedReviews
-    let reviewLength = reviews.length
+   
     // console.log(currentProduct.reviews)
     
     
@@ -19,22 +19,16 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
                 response.json().then((product) => setCurrentProduct(product))
             } 
         })
-    },[])
+    },[url])
 
     useEffect(() => {
-        setReviews(currentProduct.reviews)
-    },[currentProduct])
+        fetch(`/products/${url}`).then((response) => {
+            if (response.ok) {
+                response.json().then((product) => setReviews(product.reviews))
+            } 
+        })
+    },[url])
 
-    // useEffect(() => {
-    //    if (reviews == undefined) {
-    //     console.log('undefined')
-    //    } else {
-    //      mappedReviews = reviews.map((review) =>{
-    //         return <ReviewCard review={review} />
-    //      }) 
-    //    }console.log(reviews)
-    //    console.log(mappedReviews)
-    // })
 
     function onClick() {
         console.log('go back')
@@ -65,9 +59,8 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     //             console.log(mappedReviews)
 
     console.log(reviews)
-    console.log(reviewLength)
 
-    // console.log(reviews.length == 0)
+    console.log(reviews.length == 0)
     console.log(currentProduct.reviews)
 
     return ( 
@@ -90,7 +83,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
-                {reviewLength == 0 ? "empty" : "full"} 
+                {reviews.length == 0 ? "empty" : "full"} 
             </div>
         </div>
      );
