@@ -60,7 +60,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
 
     console.log(reviews)
 
-    console.log(reviews.length == 0)
+    // console.log(reviews.length == 0)
     console.log(currentProduct.reviews)
 
     return ( 
