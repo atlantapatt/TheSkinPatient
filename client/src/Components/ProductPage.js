@@ -44,13 +44,9 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     }
 
     useEffect(() => {
-        if (reviews == undefined) {
-            console.log('undefined reviews')
-        } else {
-            mappedReviews = reviews.map((review) =>{
-                return <ReviewCard review={review} />
-            })
-        }
+        mappedReviews = reviews.map((review) =>{
+            return <ReviewCard review={review} />
+        })
     },[currentProduct])
     
     // mappedReviews = reviews.map((review) =>{
