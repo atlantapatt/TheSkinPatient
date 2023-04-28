@@ -153,5 +153,28 @@ Product.create([
 ])
 
 
+Review.create!([
+    {
+        user_id: 2,
+        product_id: 2,
+        rating: 5,
+        info: "I have been using this moisturizer for the past few months and it has done wonders for my skin. It is incredibly hydrating and nourishing, leaving my face feeling soft and supple all day long. I have noticed a significant improvement in the texture of my skin, as well as a decrease in dryness. It's one of the best skincare products I have ever used!"
+    },
+    {
+        user_id: 3,
+        product_id: 2,
+        rating: 4,
+        info: 'I\'ve been using this moisturizer for about a month now and it\'s definitely become one of my favorite skincare products. It\'s perfect for my skin type, as it doesn\'t clog pores or cause breakouts. It also provides long-term hydration and doesn\'t leave an oily residue. So far, I\'m really happy with the results and would highly recommend this product to anyone looking for a great moisturizer!'
+    },
+    {
+        user_id: 4,
+        product_id: 2,
+        rating: 5,
+        info: 'I have been using this moisturizer for a few weeks now and it\'s great! My skin has never felt so soft and hydrated. The product absorbs quickly, doesn\'t leave a greasy residue, and smells wonderful. It\'s affordable too - the perfect combination of luxury and practicality. All in all, it\'s an excellent skincare product that I would definitely recommend to others!'
+    }
+])
+
+
 p "Created #{User.count} users"
 p "Created #{Product.count} products"
+p "Created #{Review.count} reviews"

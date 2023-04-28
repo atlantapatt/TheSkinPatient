@@ -9,6 +9,9 @@ import Login from './Components/Login';
 import Products from './Components/Products';
 import ProductCard from './Components/ProductCard';
 import ProductPage from './Components/ProductPage';
+import MyProducts from './Components/AccountComponents/MyProducts';
+import MyRoutines from './Components/AccountComponents/MyRoutines';
+import MyWishlist from './Components/AccountComponents/MyWishlist';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -51,6 +54,15 @@ useEffect(() => {
         </Route>
         <Route exact path={`/${url}`}>
           <ProductPage url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+        </Route>
+        <Route exact path='/myproducts'>
+          <MyProducts />
+        </Route>
+        <Route exact path='/myroutines'>
+          <MyRoutines />
+        </Route>
+        <Route exact path='/mywishlist'>
+          <MyWishlist/>
         </Route>
       </Switch>
     </div>

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import './CSS/ProductPage.css'
+import ReviewCard from "./ReviewCard";
 
 function ProductPage({url, currentProduct, setCurrentProduct}) {
     const history = useHistory()
@@ -30,18 +32,24 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
     return ( 
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
-            <div className="product-image">
-                <img src={currentProduct.image}></img>
+            <div className="product-info">
+                <div className="product-image">
+                    <img src={currentProduct.image}></img>
+                </div>
+                <div className="product-text">
+                    <h3>{currentProduct.className}</h3>
+                    <h4>{currentProduct.brand}</h4>
+                    <h5>{currentProduct.category}</h5>
+                    <p>{currentProduct.description}</p>
+                </div>
+                <div className="product-buttons">
+                    <button onClick={addToProducts}>Add To My Products</button>
+                    <button onClick={addToWishlist}>Add to Wishlist</button>
+                </div>
             </div>
-            <div className="product-text">
-                <h3>{currentProduct.className}</h3>
-                <h4>{currentProduct.brand}</h4>
-                <h5>{currentProduct.category}</h5>
-                <p>{currentProduct.description}</p>
-            </div>
-            <div className="product-buttons">
-                <button onClick={addToProducts}>Add To My Products</button>
-                <button onClick={addToWishlist}>Add to Wishlist</button>
+            
+            <div className="product-reviews">
+                <ReviewCard />
             </div>
         </div>
      );

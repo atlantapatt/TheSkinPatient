@@ -50,6 +50,7 @@ function Navbar() {
                 </div>
                 <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
                     <ul>
+                    <DropdownMenu icon='fa-solid fa-house' click={homeRoute} text="Home" />
                         <DropdownMenu icon='fa-solid fa-user' click={myAccountRoute} text="Account" />
                         <DropdownMenu icon='fa-solid fa-bottle-droplet' click={productsRoute} text="Products" />
                         <DropdownMenu icon='fa-solid fa-right-from-bracket' click={logout} text="Logout" />

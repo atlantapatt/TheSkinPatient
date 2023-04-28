@@ -26,7 +26,7 @@
 .dropdown-menu{
     position: absolute;
     top: 95px;
-    left: 1510px;
+    left: 1610px;
     background-color: #cccccc;
     border-radius: 25px;
     padding: 10px 20px;
@@ -70,7 +70,11 @@
 
 .dropdown-item i{
     max-width: 20px;
-    margin-top: 18px;
+    margin-top: 24px;
     margin-right: 10px;
     transition: var(--speed);
 }
+
+/* .dropdown-item p {
+    top: -20px;
+} */

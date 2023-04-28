@@ -5,14 +5,17 @@ function Home() {
 
 
  function routeMyProducts() {
+    history.push('/myproducts')
     console.log('go to my products')
  }
 
  function routeMyRoutines() {
+    history.push('/myroutines')
     console.log('go to my routines')
  }
 
  function routeMyWishlist() {
+    history.push('/mywishlist')
     console.log('go to my wishlist')
  }
     return ( 

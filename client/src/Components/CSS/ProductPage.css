@@ -1,0 +1,17 @@
+.product-div{
+    padding-left: 15px;
+}
+.product-image img{
+    height: 400px;
+    padding-top: 20px;
+    padding-right: 55px;
+}
+
+.product-info{
+    display: inline-flex;
+}
+
+.product-text{
+    padding-top: 20px;
+    width: 60%;
+}

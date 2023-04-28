@@ -22,8 +22,9 @@
     background-color: royalblue;
 }
 
-h5.left-div{
-    width: 300px;
+.left-div h5{
+    width: fit-content;
+    margin-left: 35%;
 }
 
 .link:hover{
