@@ -87,7 +87,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
-                REVIEWS
+                {reviews.length == 0 ? "empty" : "full"} 
             </div>
         </div>
      );
