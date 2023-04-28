@@ -6,6 +6,8 @@ import ReviewCard from "./ReviewCard";
 function ProductPage({url, currentProduct, setCurrentProduct}) {
     const [reviews, setReviews] = useState([])
     const history = useHistory()
+
+    let mappedReviews
     console.log(currentProduct.reviews)
 
     useEffect(() => {
@@ -15,6 +17,14 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
             } setReviews(currentProduct.reviews)
         })
         
+    },[])
+
+    useEffect(() => {
+       if (!reviews == undefined) {
+        mappedReviews = reviews.map((review) =>{
+            return <ReviewCard review={review} />
+         })
+       } 
     },[])
 
     function onClick() {
@@ -30,9 +40,8 @@ function ProductPage({url, currentProduct, setCurrentProduct}) {
         console.log('add to wishlist')
     }
 
- let mappedReviews = reviews.map((review) =>{
-    return <ReviewCard review={review} />
- })
+
+
 
     return ( 
         <div className="product-div">
