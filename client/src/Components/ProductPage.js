@@ -51,7 +51,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
                 return <ReviewCard review={review} />
             })
         }
-    },[url])
+    },[])
     
     // mappedReviews = reviews.map((review) =>{
     //                 return <ReviewCard review={review} />
