@@ -83,7 +83,7 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
-                {reviews.length == 0 ? "empty" : "full"} 
+                {reviews.length == 0 ? "Be the first to review!" : mappedReviews} 
             </div>
         </div>
      );
