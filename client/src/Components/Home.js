@@ -27,9 +27,12 @@ function Home({homeReviews, setHomeReviews}) {
     history.push('/mywishlist')
     console.log('go to my wishlist')
  }
+
+ console.log(mappedHomeReviews)
     return ( 
         <div className="home-div">
             <div className="right-div">
+                <p> REVIEWS </p>
                 {mappedHomeReviews}
             </div>
             {/* <div className="center-div">
