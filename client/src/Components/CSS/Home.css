@@ -9,9 +9,13 @@
 } */
 
 .right-div{
-    padding-left: 10%;
+    padding-left: 5%;
     padding-right: 75.4%;
     background-color: red;
+}
+
+.right-div p {
+    color: blue;
 }
 
 .left-div{
