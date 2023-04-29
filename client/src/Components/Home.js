@@ -3,7 +3,7 @@ import './CSS/Home.css'
 import ReviewCard from "./ReviewCard";
 function Home({homeReviews, setHomeReviews}) {
  const history = useHistory()
-
+ let iconLoad = <i class="fa-light fa-spinner fa-spin-pulse"></i>
  let mappedHomeReviews = homeReviews.map((review) => {
     return <div className="home-reviews">
         <div className="home-image">
@@ -28,13 +28,15 @@ function Home({homeReviews, setHomeReviews}) {
     console.log('go to my wishlist')
  }
 
+
+
  console.log(mappedHomeReviews.length == 0)
  console.log(homeReviews)
     return ( 
         <div className="home-div">
             <div className="right-div">
                 <p> REVIEWS </p>
-                {mappedHomeReviews}
+                {mappedHomeReviews.length == 0 ? iconLoad : mappedHomeReviews}
             </div>
             {/* <div className="center-div">
                 CENTER
