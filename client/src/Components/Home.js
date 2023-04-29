@@ -28,7 +28,7 @@ function Home({homeReviews, setHomeReviews}) {
     console.log('go to my wishlist')
  }
 
- console.log(mappedHomeReviews == [])
+ console.log(mappedHomeReviews.length == 0)
  console.log(homeReviews)
     return ( 
         <div className="home-div">
