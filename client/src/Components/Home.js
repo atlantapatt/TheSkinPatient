@@ -30,7 +30,7 @@ function Home({homeReviews, setHomeReviews}) {
     return ( 
         <div className="home-div">
             <div className="right-div">
-                {mappedHomeReviews}
+                
             </div>
             {/* <div className="center-div">
                 CENTER
