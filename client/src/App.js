@@ -34,6 +34,8 @@ function App() {
 // })
 // console.log(url)
 
+console.log(homeReviews)
+
 useEffect(() => {
   fetch('/products').then((response) => {
       if (response.ok) {
