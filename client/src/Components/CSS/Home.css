@@ -21,7 +21,7 @@
 }
 
 .right-div{
-    width: 100%;
+    width: 110%;
     padding-left: 5%;
     background-color: red;
 }
@@ -33,7 +33,7 @@
 .left-div{
     text-align: center;
     position: flex;
-    width: 500px;
+    width: 600px;
     /* overflow: visible; */
     background-color: royalblue;
 }
