@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import "./CSS/Home.css"
+import './CSS/Home.css'
 import ReviewCard from "./ReviewCard";
 function Home({homeReviews, setHomeReviews}) {
  const history = useHistory()
