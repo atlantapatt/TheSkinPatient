@@ -29,6 +29,7 @@ function Home({homeReviews, setHomeReviews}) {
  }
 
  console.log(mappedHomeReviews)
+ console.log(homeReviews)
     return ( 
         <div className="home-div">
             <div className="right-div">
