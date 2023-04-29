@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
+import WriteReview from "./WriteReview";
 
 function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduct}) {
-    const [reviewLength, setReviewLength] = useState(0)
+    const [writeReview, setWriteReview] = useState(false)
+
     const history = useHistory()
 
    
@@ -40,6 +42,12 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
 
     function addToWishlist() {
         console.log('add to wishlist')
+    }
+
+
+
+    function addReview() {
+        console.log('added Review!')
     }
 
     // useEffect(() => {
@@ -83,6 +91,9 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
             </div>
             
             <div className="product-reviews">
+                <button onClick={(() => setWriteReview(!writeReview))}>Write Review</button>
+                <br></br>
+                {writeReview ? <WriteReview /> : null}
                 {reviews.length == 0 ? "Be the first to review!" : mappedReviews} 
             </div>
         </div>

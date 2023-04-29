@@ -21,7 +21,7 @@
 }
 
 .right-div{
-    /* margin-left: 100px; */
+    width: 100%;
     padding-left: 5%;
     background-color: red;
 }
