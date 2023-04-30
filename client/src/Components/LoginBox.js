@@ -8,7 +8,7 @@ function LoginBox({setUser}) {
 console.log(setUser)
     function onSubmit(e) {
         e.preventDefault()
-        fetch('/login', {
+        fetch('login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

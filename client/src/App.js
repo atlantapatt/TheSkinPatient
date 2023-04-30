@@ -61,7 +61,7 @@ useEffect(() => {
       }
   })
   }
-},[user])
+},[])
 
 //necessary
 // console.log(wishlistId.id)
