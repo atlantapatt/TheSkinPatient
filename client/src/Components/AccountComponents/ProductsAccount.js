@@ -1,5 +1,6 @@
 function ProductsAccount({item}) {
     console.log(item)
+    console.log(item.image)
     return ( 
         <div className="item-card">
             <div className="image">
