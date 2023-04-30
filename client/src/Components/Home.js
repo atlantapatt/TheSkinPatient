@@ -4,6 +4,7 @@ import ReviewCard from "./ReviewCard";
 function Home({homeReviews, setHomeReviews}) {
  const history = useHistory()
  let iconLoad = <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+ 
  let mappedHomeReviews = homeReviews.map((review) => {
     return <div className="home-reviews">
         <div className="home-image">
@@ -30,8 +31,8 @@ function Home({homeReviews, setHomeReviews}) {
 
 
 
- console.log(mappedHomeReviews.length == 0)
- console.log(homeReviews)
+//  console.log(mappedHomeReviews.length == 0)
+//  console.log(homeReviews)
     return ( 
         <div className="home-div">
             <div className="right-div">

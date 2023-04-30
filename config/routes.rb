@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   # root 'users#index'
   
-  get 'login', to: 'sessions#create'
-  get 'logout', to: 'sessions#destory'
+  post 'login', to: 'sessions#create'
+  post 'logout', to: 'sessions#destory'
   get 'me', to: 'users#show'
 
   # Routing logic: fallback requests for React Router.

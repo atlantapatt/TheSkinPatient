@@ -23,18 +23,18 @@ function App() {
   const {user, setUser} = useContext(UserContext)
 
 
-// useEffect(() => {
-//   fetch('/me').then((response) => {
-//     if (response.ok) {
-//       response.json().then((user) => setUser(user))
-//     } else {
-//       return <Login />
-//     }
-//   })
-// })
+useEffect(() => {
+  fetch('/me').then((response) => {
+    if (response.ok) {
+      response.json().then((user) => setUser(user))
+    } else {
+      return <Login setUser={setUser} />
+    }
+  })
+})
 // console.log(url)
 
-console.log(homeReviews)
+// console.log(homeReviews)
 
 useEffect(() => {
   fetch('/products').then((response) => {
@@ -51,6 +51,9 @@ useEffect(() => {
       }
   })
 },[])
+
+
+if (!user) return <Login setUser={setUser} />
 
   return (
     <div className='app'>
