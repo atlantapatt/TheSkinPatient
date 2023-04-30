@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
+import ProductsAccount from "./ProductsAccount";
 
 function MyWishlist({setUrl, wishlistId, myWishlist}) {
     
 
 let mappedWishlist = myWishlist.map((item) => {
-    return <ProductCard setUrl={setUrl} item={item} />
+    return <ProductsAccount item={item.product} />
 })
 
       

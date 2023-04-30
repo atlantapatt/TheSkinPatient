@@ -6,7 +6,6 @@ function SignupBox({setUser, user}) {
     const [errors, setErrors] = useState([])
 
     function signup() {
-        
         fetch('signup', {
             method: "POST",
             headers: {
@@ -24,10 +23,7 @@ function SignupBox({setUser, user}) {
                 r.json().then((err) => setErrors(err.exception.slice(-49,-1)))
             }
         })
-    }
-console.log(user)
-    // function createWishlist() {
-     if (!user == null) {
+        if (!user == null) {
         fetch('/wishlists', {
             method: "POST",
             headers: {
@@ -42,24 +38,11 @@ console.log(user)
             } 
         })
     }
+    }
+console.log(user)
+    // function createWishlist() {
+     
 
-    // useEffect(() => {
-    //     if (!user == null) {
-    //         fetch('/wishlists', {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify({
-    //                 user_id: user.id 
-    //             }),
-    //         }).then((r) => {
-    //             if (r.ok) {
-    //                 r.json().then((wishlist) => console.log(wishlist))
-    //             } 
-    //         })
-    //     }
-    // },[user])
 
     function onSubmit(e) {
         e.preventDefault()
