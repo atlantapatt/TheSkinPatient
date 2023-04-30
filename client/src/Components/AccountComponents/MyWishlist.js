@@ -5,8 +5,12 @@ import ProductsAccount from "./ProductsAccount";
 function MyWishlist({setUrl, wishlistId, myWishlist}) {
     
 
-let mappedWishlist = myWishlist.map((item) => {
-    return <ProductsAccount item={item.product} />
+// let mappedWishlist = myWishlist.map((item) => {
+//     return <ProductsAccount item={item} />
+// })
+
+const mappedWishlist = myWishlist.map((item) => {
+    return <ProductsAccount item={item} />
 })
 
       
