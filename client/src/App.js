@@ -31,8 +31,7 @@ useEffect(() => {
       return <Login setUser={setUser} />
     }
   })
-})
-// console.log(url)
+},[])
 
 // console.log(homeReviews)
 
@@ -57,7 +56,7 @@ if (!user) return <Login setUser={setUser} />
 
   return (
     <div className='app'>
-      <Navbar/>
+      <Navbar setUser={setUser}/>
       <Switch>
         <Route exact path='/'>
           <Home homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>

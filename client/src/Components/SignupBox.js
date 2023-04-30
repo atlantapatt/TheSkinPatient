@@ -1,12 +1,23 @@
 import { useState } from "react";
 
-function SignupBox() {
+function SignupBox({setUser}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
     function signup(e) {
         e.preventDefault()
-        console.log('signup')
+        fetch('/signup', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username,
+                password,
+            }),
+        }).then((r) => {
+            r.json().then((user) => setUser(user))
+        })
     }
     return ( 
         <div className="signup">

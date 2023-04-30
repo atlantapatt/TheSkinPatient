@@ -3,7 +3,7 @@ import './Components/CSS/Navbar.css'
 import { useState } from "react";
 import DropdownMenu from "./Components/DropdownMenu";
 
-function Navbar() {
+function Navbar({setUser}) {
     const [open, setOpen] = useState(false)
 
     const history = useHistory()
@@ -34,7 +34,13 @@ function Navbar() {
     }
 
     function logout() {
-        console.log('logout')
+        fetch('/logout', {
+            method: "DELETE"
+        }).then((r) => {
+            if (r.ok) {
+                setUser(null)
+            }
+        })
     }
     return ( 
         <div className="nav">

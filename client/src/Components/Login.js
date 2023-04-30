@@ -14,7 +14,7 @@ function Login({setUser}) {
             
             <div className="login-box">
                 <h3>Welcome!</h3>
-                {login ? <LoginBox setUser={setUser} /> : <SignupBox />}
+                {login ? <LoginBox setUser={setUser} /> : <SignupBox setUser={setUser}/>}
                 {login ? loginp : signup}
             </div>
         </div>
