@@ -4,13 +4,13 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
 
-function ProductPage({addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+function ProductPage({wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
 
     const history = useHistory()
 
    
-    // console.log(currentProduct.reviews)
+    console.log(`current wishlist: ${wishlistId}`)
     
     
 
@@ -40,17 +40,24 @@ function ProductPage({addToWishlist, reviews, setReviews, url, currentProduct, s
         console.log('add to products')
     }
 
-    function addToWishlist() {
-        // fetch('/wishlist', {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-                
-        //     })
-        // })
+    function addClick() {
+        fetch('/product_wishlists', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                wishlist_id: wishlistId.id,
+                product_id: currentProduct.id
+            }),
+        }).then((r) => {
+            if (r.ok) {
+                r.json().then((wishlist) => addToWishlist(wishlist))
+            } 
+        })
+        console.log("added")
     }
+
 
 
 
@@ -64,10 +71,10 @@ function ProductPage({addToWishlist, reviews, setReviews, url, currentProduct, s
                     })
 
 
-    console.log(mappedReviews)
+    // console.log(mappedReviews)
 
-    // console.log(reviews.length == 0)
-    console.log(currentProduct.reviews)
+    // // console.log(reviews.length == 0)
+    // console.log(currentProduct.reviews)
 
     return ( 
         <div className="product-div">
@@ -84,7 +91,7 @@ function ProductPage({addToWishlist, reviews, setReviews, url, currentProduct, s
                 </div>
                 <div className="product-buttons">
                     <button onClick={addToProducts}>Add To My Products</button>
-                    <button onClick={addToWishlist}>Add to Wishlist</button>
+                    <button onClick={addClick}>Add to Wishlist</button>
                 </div>
             </div>
             

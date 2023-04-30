@@ -20,7 +20,9 @@ function App() {
   const [currentProduct, setCurrentProduct] = useState([])
   const [reviews, setReviews] = useState([])
   const [homeReviews, setHomeReviews] = useState([])
-  const [wishlist, setWishlist] = useState([])
+  const [myWishlist, setMyWishlist] = useState([])
+  // const [wishlist, setWishlist] = useState([])
+  const [wishlistId, setWishlistId] = useState([])
   const {user, setUser} = useContext(UserContext)
 
 
@@ -34,7 +36,6 @@ useEffect(() => {
   })
 },[])
 
-console.log(wishlist)
 
 useEffect(() => {
   fetch('/products').then((response) => {
@@ -53,16 +54,32 @@ useEffect(() => {
 },[])
 
 useEffect(() => {
-  fetch('/wishlists').then((response) => {
+  if (user) {
+    fetch(`/wishlists/${user.id}`).then((response) => {
       if (response.ok) {
-          response.json().then((wishlist) => setWishlist(wishlist))
+          response.json().then((wishlist) => setWishlistId(wishlist))
+      }
+  })
+  }
+},[user])
+
+//necessary
+// console.log(wishlistId.id)
+
+useEffect(() => {
+  fetch('/product_wishlists').then((response) => {
+      if (response.ok) {
+          response.json().then((products) => setMyWishlist(products))
       }
   })
 },[])
 
 function addToWishlist(item) {
-  setWishlist([...wishlist, item])
+  setMyWishlist([...myWishlist, item])
 }
+console.log(myWishlist)
+  console.log(wishlistId.id)
+
 
 
 if (!user) return <Login user={user} setUser={setUser} />
@@ -81,7 +98,7 @@ if (!user) return <Login user={user} setUser={setUser} />
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts />
@@ -90,7 +107,7 @@ if (!user) return <Login user={user} setUser={setUser} />
           <MyRoutines />
         </Route>
         <Route exact path='/mywishlist'>
-          <MyWishlist/>
+          <MyWishlist url={url} setUrl={setUrl} myWishlist={myWishlist} setMyWishlist={setMyWishlist} wishlistId={wishlistId} setWishlistId={setWishlistId} user={user}/>
         </Route>
       </Switch>
     </div>

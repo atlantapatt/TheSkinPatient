@@ -13,6 +13,11 @@ function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
 
     function onHover() {
         setUrl(item.id)
+        console.log(item.id)
+    }
+
+    function leaveHover() {
+        setUrl(null)
     }
 
 
@@ -21,7 +26,7 @@ function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
 
 
     return ( 
-        <div className="item-card" onMouseEnter={onHover} onClick={productPageRoute}>
+        <div className="item-card" onMouseLeave={leaveHover} onMouseEnter={onHover} onClick={productPageRoute}>
             <div className="image">
                 <img src={item.image}></img>
             </div>
