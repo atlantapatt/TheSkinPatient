@@ -20,6 +20,7 @@ function App() {
   const [currentProduct, setCurrentProduct] = useState([])
   const [reviews, setReviews] = useState([])
   const [homeReviews, setHomeReviews] = useState([])
+  const [wishlist, setWishlist] = useState([])
   const {user, setUser} = useContext(UserContext)
 
 
@@ -28,12 +29,12 @@ useEffect(() => {
     if (response.ok) {
       response.json().then((user) => setUser(user))
     } else {
-      return <Login setUser={setUser} />
+      return <Login user={user} setUser={setUser} />
     }
   })
 },[])
 
-// console.log(homeReviews)
+console.log(wishlist)
 
 useEffect(() => {
   fetch('/products').then((response) => {
@@ -51,15 +52,27 @@ useEffect(() => {
   })
 },[])
 
+useEffect(() => {
+  fetch('/wishlists').then((response) => {
+      if (response.ok) {
+          response.json().then((wishlist) => setWishlist(wishlist))
+      }
+  })
+},[])
 
-if (!user) return <Login setUser={setUser} />
+function addToWishlist(item) {
+  setWishlist([...wishlist, item])
+}
+
+
+if (!user) return <Login user={user} setUser={setUser} />
 
   return (
     <div className='app'>
       <Navbar setUser={setUser}/>
       <Switch>
         <Route exact path='/'>
-          <Home homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
+          <Home user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
         <Route exact path='/account'>
           <Account />
@@ -68,7 +81,7 @@ if (!user) return <Login setUser={setUser} />
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts />

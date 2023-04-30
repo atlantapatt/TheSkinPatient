@@ -4,7 +4,7 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
 
-function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+function ProductPage({addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
 
     const history = useHistory()
@@ -41,7 +41,15 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
     }
 
     function addToWishlist() {
-        console.log('add to wishlist')
+        // fetch('/wishlist', {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+                
+        //     })
+        // })
     }
 
 
@@ -50,16 +58,6 @@ function ProductPage({reviews, setReviews, url, currentProduct, setCurrentProduc
         console.log('added Review!')
     }
 
-    // useEffect(() => {
-    //     mappedReviews = reviews.map((review) =>{
-    //         return <ReviewCard review={review} />
-    //     })
-    // },[currentProduct])
-    
-    // mappedReviews = reviews.map((review) =>{
-    //                 return <ReviewCard review={review} />
-    //             })
-    //             console.log(mappedReviews)
 
     let mappedReviews = reviews.map((review) =>{
                         return <ReviewCard review={review} />

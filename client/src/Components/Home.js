@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import './CSS/Home.css'
 import ReviewCard from "./ReviewCard";
-function Home({homeReviews, setHomeReviews}) {
+function Home({homeReviews, setHomeReviews, user}) {
  const history = useHistory()
  let iconLoad = <i class="fa-solid fa-spinner fa-spin-pulse"></i>
  
@@ -30,6 +30,7 @@ function Home({homeReviews, setHomeReviews}) {
  }
 
 
+ console.log(user)
 
 //  console.log(mappedHomeReviews.length == 0)
 //  console.log(homeReviews)

@@ -10,8 +10,6 @@ class WishlistsController < ApplicationController
         wishlist = Wishlist.where(user_id: user)
         if wishlist
             render json: wishlist, status: :ok
-        else
-            render json: {error: "No Items on Wislist"}
         end
     end
 end
