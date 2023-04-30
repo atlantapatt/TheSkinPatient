@@ -4,7 +4,7 @@ function ProductsAccount({item}) {
     return ( 
         <div className="item-card">
             <div className="image">
-                <img src={item.image}></img>
+                {/* <img src={item.image}></img> */}
             </div>
             <br></br>
             <div className="item-text">
