@@ -6,7 +6,7 @@ function SignupBox({setUser, user}) {
     const [errors, setErrors] = useState([])
 
     function signup() {
-        fetch('signup', {
+        fetch('/signup', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
     has_many :products, through: :my_products
 
+    has_one_attached :image, dependent: :destroy
+
     has_secure_password
     validates :username, presence: true, uniqueness: true
     validates :password, presence: true 

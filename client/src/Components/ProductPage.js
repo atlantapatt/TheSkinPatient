@@ -4,13 +4,15 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
 
-function ProductPage({user ,addToMyProducts ,wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
+    const [rating, setRating] = useState()
+    const [info, setInfo] = useState('')
 
     const history = useHistory()
 
    
-    console.log(`current wishlist: ${wishlistId}`)
+    // console.log(`current wishlist: ${wishlistId}`)
     
     
 
@@ -28,7 +30,7 @@ function ProductPage({user ,addToMyProducts ,wishlistId, addToWishlist, reviews,
                 response.json().then((product) => setReviews(product.reviews))
             } 
         })
-    },[url])
+    },[])
 
 
     function onClick() {
@@ -74,8 +76,23 @@ function ProductPage({user ,addToMyProducts ,wishlistId, addToWishlist, reviews,
 
 
 
-    function addReview() {
-        console.log('added Review!')
+    function addToReview() {
+        fetch(`/products/${url}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+               user_id: user.id,
+               product_id: currentProduct.id,
+               rating,
+               info
+            }),
+        }).then((r) => {
+            if (r.ok) {
+                r.json().then((wishlist) => addToWishlist(wishlist))
+            } 
+        })
     }
 
 
@@ -111,7 +128,7 @@ function ProductPage({user ,addToMyProducts ,wishlistId, addToWishlist, reviews,
             <div className="product-reviews">
                 <button onClick={(() => setWriteReview(!writeReview))}>Write Review</button>
                 <br></br>
-                {writeReview ? <WriteReview /> : null}
+                {writeReview ? <WriteReview setRating={setRating} setInfo={setInfo} addToReview={addToReview} /> : null}
                 {reviews.length == 0 ? "Be the first to review!" : mappedReviews} 
             </div>
         </div>

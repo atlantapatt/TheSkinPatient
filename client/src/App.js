@@ -53,6 +53,8 @@ useEffect(() => {
   })
 },[])
 
+console.log(homeReviews)
+
 useEffect(() => {
   fetch('/my_products').then((response) => {
       if (response.ok) {
@@ -82,6 +84,10 @@ useEffect(() => {
   })
 },[])
 
+function addReviews(review) {
+  setReviews([...reviews, review])
+}
+
 function addToWishlist(item) {
   setMyWishlist([...myWishlist, item])
 }
@@ -105,13 +111,13 @@ if (!user) return <Login user={user} setUser={setUser} />
           <Home user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
         <Route exact path='/account'>
-          <Account />
+          <Account setUser={setUser} user={user}/>
         </Route>
         <Route exact path='/products'>
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts myProducts={myProducts}/>
