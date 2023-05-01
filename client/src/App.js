@@ -93,7 +93,7 @@ useEffect(() => {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[user])
+},[])
 
 // useEffect(() => {
 //   if (user == !null) {
