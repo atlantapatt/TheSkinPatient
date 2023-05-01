@@ -17,7 +17,7 @@ const mappedWishlist = myWishlist.map((item) => {
       console.log(wishlistId)
       console.log(myWishlist)
     return ( 
-        <div>
+        <div className="wishlist-div">
             MY WISHLIST
             {mappedWishlist}
         </div>

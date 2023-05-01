@@ -4,7 +4,7 @@ class MyProductsController < ApplicationController
         user = User.find_by(id: session[:user_id])
         myProducts = MyProduct.find_by(id: user)
         products = Product.where(id: myProducts)
-        render json: products, include: :product
+        render json: products
     end
 
     def create

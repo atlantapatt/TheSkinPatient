@@ -4,7 +4,7 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
 
-function ProductPage({wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+function ProductPage({user ,addToMyProducts ,wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
 
     const history = useHistory()
@@ -37,10 +37,23 @@ function ProductPage({wishlistId, addToWishlist, reviews, setReviews, url, curre
     }
 
     function addToProducts() {
-        console.log('add to products')
-    }
+        fetch('/product_wishlists', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user: user.id,
+                product_id: currentProduct.id
+            }),
+        }).then((r) => {
+            if (r.ok) {
+                r.json().then((product) => addToMyProducts(product))
+            } 
+        })
+        console.log("added to my products")    }
 
-    function addClick() {
+    function addWishClick() {
         fetch('/product_wishlists', {
             method: "POST",
             headers: {
@@ -55,7 +68,7 @@ function ProductPage({wishlistId, addToWishlist, reviews, setReviews, url, curre
                 r.json().then((wishlist) => addToWishlist(wishlist))
             } 
         })
-        console.log("added")
+        console.log("added to wishlist")
     }
 
 
@@ -91,7 +104,7 @@ function ProductPage({wishlistId, addToWishlist, reviews, setReviews, url, curre
                 </div>
                 <div className="product-buttons">
                     <button onClick={addToProducts}>Add To My Products</button>
-                    <button onClick={addClick}>Add to Wishlist</button>
+                    <button onClick={addWishClick}>Add to Wishlist</button>
                 </div>
             </div>
             

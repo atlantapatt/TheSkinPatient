@@ -21,7 +21,7 @@ function App() {
   const [reviews, setReviews] = useState([])
   const [homeReviews, setHomeReviews] = useState([])
   const [myWishlist, setMyWishlist] = useState([])
-  // const [wishlist, setWishlist] = useState([])
+  const [myProducts, setMyProducts] = useState([])
   const [wishlistId, setWishlistId] = useState([])
   const {user, setUser} = useContext(UserContext)
 
@@ -54,6 +54,14 @@ useEffect(() => {
 },[])
 
 useEffect(() => {
+  fetch('/my_products').then((response) => {
+      if (response.ok) {
+          response.json().then((product) => setMyProducts(product))
+      }
+  })
+},[])
+
+useEffect(() => {
   if (user == !null) {
     fetch(`/wishlists/${user.id}`).then((response) => {
       if (response.ok) {
@@ -77,6 +85,11 @@ useEffect(() => {
 function addToWishlist(item) {
   setMyWishlist([...myWishlist, item])
 }
+
+function addToMyProducts(item) {
+  setMyProducts([...myProducts, item])
+}
+console.log(myProducts)
 console.log(myWishlist)
   console.log(wishlistId.id)
 
@@ -98,10 +111,10 @@ if (!user) return <Login user={user} setUser={setUser} />
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
-          <MyProducts />
+          <MyProducts myProducts={myProducts}/>
         </Route>
         <Route exact path='/myroutines'>
           <MyRoutines />

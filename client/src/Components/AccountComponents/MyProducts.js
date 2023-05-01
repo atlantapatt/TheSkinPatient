@@ -1,7 +1,16 @@
-function MyProducts() {
+import ProductsAccount from "./ProductsAccount";
+
+function MyProducts({myProducts}) {
+
+    console.log(myProducts)
+    const mappedMyProducts = myProducts.map((item) => {
+        return <ProductsAccount item={item.product} />
+    })
+
     return ( 
-        <div>
+        <div className="my-products">
             MY PRODUCTS
+            {mappedMyProducts}
         </div>
      );
 }
