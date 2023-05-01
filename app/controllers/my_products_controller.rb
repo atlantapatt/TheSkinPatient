@@ -1,14 +1,14 @@
 class MyProductsController < ApplicationController
 
-    def index
-        user = User.find_by(id: session[:user_id])
-        myProducts = MyProduct.find_by(id: user)
-        products = Product.where(id: myProducts)
-        render json: products
+    def show
+        user = User.find_by(id: params[:id])
+        myProducts = MyProduct.find_by(user_id: user)
+        products = Product.where(id: myProducts.product_id)
+        render json: products, only: :product
     end
 
     def create
-        my_products = MyProducts.create(my_products_params)
+        my_products = MyProduct.create(my_products_params)
         render json: my_products, status: :created
     end
 

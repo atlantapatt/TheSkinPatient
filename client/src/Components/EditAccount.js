@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function EditAccount({setBio, bio, newPhoto, user, setNewPhoto, setUser}) {
+function EditAccount({editing, setEditing,setBio, bio, newPhoto, user, setNewPhoto, setUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
@@ -28,8 +28,9 @@ function EditAccount({setBio, bio, newPhoto, user, setNewPhoto, setUser}) {
                     setUser(updateProfile)
                 })
             } else
-            r.json().then((err) => console.log(err.errors))
+            r.json().then((err) => console.log(err))
         })
+        setEditing(false)
     }
   
 console.log(user.image)

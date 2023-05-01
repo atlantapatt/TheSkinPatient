@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { set } from "react-hook-form";
+import './CSS/Account.css'
 import EditAccount from "./EditAccount";
 
 function Account({user, setUser}) {
@@ -13,32 +13,45 @@ function Account({user, setUser}) {
 console.log(user)
 
     useEffect(() => {
-        if (user.bio.length == 0){
+        if (user.bio == ''){
             setBio("No Bio Written")
         }
     },[])
 
     console.log(user.image)
     return ( 
-        <div>
-            ACCOUNT
+        <div className="account">
+            {/* ACCOUNT */}
             <br></br>
             <div className="user-profile">
-                <p>{user.image}</p>
-                <img src={user.image}></img>
+                <div className="user-image">
+                    {user.image == null ? <i id="icon" class="fa-solid fa-user"></i> : <img src={user.image}></img>}
+                </div>
               {/* {hasPhoto ? <img src={user?.image}></img> : <i class="fa-solid fa-user"></i>} */}
-              <p>Username: {user.username}</p>
-                <div onClick={(() => setEditing(!editing))} className="edit-profile">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <p>Edit Profile</p>
+              <p>{user.username}</p>
+              <div className="account-interact">
+                    <div onClick={(() => setEditing(!editing))} id="edit" className="edit-profile">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <p>Edit Profile</p>
+                    </div>
+                    <div className="edit-profile">
+                        <i class="fa-solid fa-trash"></i>
+                        <p>Delete Profile</p>
+                    </div>
                 </div>
-                <div className="delete-profile">
-                    <i class="fa-solid fa-trash"></i>
-                    <p>Delete Profile</p>
-                </div>
+                <p>{user.username}'s Bio:</p>
                 <p>{user.bio}</p>  
+                {editing ? <EditAccount editing={editing} setEditing={setEditing} setUser={setUser} setBio={setBio} setNewPhoto={setNewPhoto} newPhoto={newPhoto} bio={bio} user={user} /> : null}
+
             </div>
-            {editing ? <EditAccount setUser={setUser} setBio={setBio} setNewPhoto={setNewPhoto} newPhoto={newPhoto} bio={bio} user={user} /> : null}
+            <div className="user-reviews">
+                <p>Reviews</p>
+            </div>
+           <div className="account-links">
+                <h3>My Products</h3>
+                <h3>My Wishlist</h3>
+                <p>Wishlist Top 3</p>
+           </div>
            
             
         </div>

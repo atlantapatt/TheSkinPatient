@@ -38,14 +38,16 @@ function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlis
         history.push('/products')
     }
 
+    console.log(user.id)
+
     function addToProducts() {
-        fetch('/product_wishlists', {
+        fetch('/my_products', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user: user.id,
+                user_id: user.id,
                 product_id: currentProduct.id
             }),
         }).then((r) => {
@@ -56,7 +58,7 @@ function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlis
         console.log("added to my products")    }
 
     function addWishClick() {
-        fetch('/product_wishlists', {
+        fetch(`/product_wishlists`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -67,7 +69,9 @@ function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlis
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((wishlist) => addToWishlist(wishlist))
+                console.log(wishlistId.id)
+                console.log(currentProduct.id)
+                // r.json().then((wishlist) => addToWishlist(wishlist))
             } 
         })
         console.log("added to wishlist")
@@ -136,5 +140,3 @@ function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlis
 }
 
 export default ProductPage;
-// {reviews == [] ? "be the first to review!" : 'reviews!'}
-// reviews == [] ? "Be the first to review!" : mappedReviews

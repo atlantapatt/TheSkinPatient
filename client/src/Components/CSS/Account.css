@@ -1,0 +1,34 @@
+.account{
+    display: inline-flex;
+}
+
+.user-profile{
+    width: 300px;
+    text-align: center;
+    margin-left: 25px;
+}
+
+#icon{
+   font-size: 150px;
+   background-color: grey;
+   padding: 50px;
+   border-radius: 50%;
+}
+
+.account-interact{
+    display: inline-flex;
+}
+
+.edit-profile{
+    display: inline-flex;
+    
+}
+
+.edit-profile i{
+    margin-top: 23px;
+}
+
+#edit{
+    margin-right: 15px;
+}
+

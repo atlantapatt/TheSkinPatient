@@ -23,8 +23,20 @@ function App() {
   const [myWishlist, setMyWishlist] = useState([])
   const [myProducts, setMyProducts] = useState([])
   const [wishlistId, setWishlistId] = useState([])
+  const [topThree, setTopThree] = useState([])
   const {user, setUser} = useContext(UserContext)
 
+
+  let userId
+
+  if (user !== null) {
+    userId = user.id
+  }
+  console.log(topThree)
+
+  useEffect(() => {
+    setTopThree(myWishlist.slice(-3))
+  },[])
 
 useEffect(() => {
   fetch('/me').then((response) => {
@@ -56,33 +68,43 @@ useEffect(() => {
 console.log(homeReviews)
 
 useEffect(() => {
-  fetch('/my_products').then((response) => {
+  fetch(`/my_products/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((product) => setMyProducts(product))
       }
   })
 },[])
-
+console.log(myProducts)
 useEffect(() => {
-  if (user == !null) {
-    fetch(`/wishlists/${user.id}`).then((response) => {
+  if (user !== null) 
+    fetch(`/wishlists/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((wishlist) => setWishlistId(wishlist))
       }
   })
-  }
-},[])
+},[user])
 
-//necessary
-// console.log(wishlistId.id)
+
+console.log(myWishlist)
 
 useEffect(() => {
-  fetch('/product_wishlists').then((response) => {
+    fetch(`/product_wishlists/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[])
+},[user])
+
+// useEffect(() => {
+//   if (user == !null) {
+//     fetch('/recentWishlist').then((response) => {
+//       if (response.ok) {
+//           response.json().then((products) => console.log(products))
+//       }
+//   }) 
+//   }
+// },[])
+
 
 function addReviews(review) {
   setReviews([...reviews, review])
@@ -95,9 +117,9 @@ function addToWishlist(item) {
 function addToMyProducts(item) {
   setMyProducts([...myProducts, item])
 }
-console.log(myProducts)
-console.log(myWishlist)
-  console.log(wishlistId.id)
+// console.log(myProducts)
+// console.log(myWishlist)
+//   console.log(wishlistId.id)
 
 
 
