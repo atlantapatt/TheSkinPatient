@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 function EditAccount({editing, setEditing,setBio, bio, newPhoto, user, setNewPhoto, setUser}) {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState(user.username)
+    const [password, setPassword] = useState(user.password)
     const [errors, setErrors] = useState([])
 
     function handleImageChange(e) {
@@ -13,7 +13,9 @@ function EditAccount({editing, setEditing,setBio, bio, newPhoto, user, setNewPho
     function updateProfile(e) {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('image', newPhoto)
+        if (newPhoto){
+            formData.append('image', newPhoto)
+        }
         formData.append('username', username)
         formData.append('password', password)
         formData.append('bio', bio)
@@ -40,9 +42,9 @@ console.log(user.image)
                 <lable>Username: </lable>
                 <input onChange={((e) => setUsername(e.target.value))} type="text" value={user.username}></input>
                 <br></br>
-                <lable>Password: </lable>
+                {/* <lable>Password: </lable>
                 <input onChange={((e) => setPassword(e.target.value))} type="text" value={user.password}></input>
-                <br></br>
+                <br></br> */}
                 <label>Bio: </label>
                 <textarea onChange={((e) => setBio(e.target.value))} placeholder={bio}></textarea>
                 <br></br>

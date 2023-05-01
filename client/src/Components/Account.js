@@ -6,7 +6,7 @@ function Account({user, setUser}) {
     const [hasPhoto, setHasPhoto] = useState()
     const [newPhoto, setNewPhoto] = useState()
    
-    const [bio, setBio] = useState('')
+    const [bio, setBio] = useState(user.bio)
     const [editing, setEditing] = useState(false)
     
 
