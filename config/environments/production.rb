@@ -58,7 +58,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
 
-  confit.action_mailer.default_url_options = { host: "https://project5-f9q5.onrender.com/" }
+  config.action_mailer.default_url_options = { host: "https://project5-f9q5.onrender.com/" }
 
   Rails.application.routes.default_url_options[:host] = "https://project5-f9q5.onrender.com/"
 
