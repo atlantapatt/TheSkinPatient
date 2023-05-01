@@ -82,7 +82,7 @@ useEffect(() => {
           response.json().then((wishlist) => setWishlistId(wishlist))
       }
   })
-},[user])
+},[])
 
 
 console.log(myWishlist)

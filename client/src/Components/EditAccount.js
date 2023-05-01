@@ -38,13 +38,13 @@ console.log(user.image)
         <div className="editing">
             <form onSubmit={updateProfile}>
                 <lable>Username: </lable>
-                <input onChange={((e) => setUsername(e.target.value))} type="text"></input>
+                <input onChange={((e) => setUsername(e.target.value))} type="text" value={user.username}></input>
                 <br></br>
                 <lable>Password: </lable>
-                <input onChange={((e) => setPassword(e.target.value))} type="text"></input>
+                <input onChange={((e) => setPassword(e.target.value))} type="text" value={user.password}></input>
                 <br></br>
                 <label>Bio: </label>
-                <textarea onChange={((e) => setBio(e.target.value))}></textarea>
+                <textarea onChange={((e) => setBio(e.target.value))} placeholder={bio}></textarea>
                 <br></br>
                 <input type="file" accept="image/*" onChange={handleImageChange}></input>
                 <br></br>
