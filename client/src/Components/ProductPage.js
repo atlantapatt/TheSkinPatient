@@ -69,9 +69,8 @@ function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlis
             }),
         }).then((r) => {
             if (r.ok) {
-                console.log(wishlistId.id)
-                console.log(currentProduct.id)
-                // r.json().then((wishlist) => addToWishlist(wishlist))
+                
+                r.json().then((wishlist) => addToWishlist(wishlist))
             } 
         })
         console.log("added to wishlist")
