@@ -2,7 +2,7 @@ function ProductsAccount({item}) {
     console.log(item)
     return ( 
         <div className="item-card">
-            {/* <div className="image">
+            <div className="image">
                 <img src={item.image}></img>
             </div>
             <br></br>
@@ -10,8 +10,7 @@ function ProductsAccount({item}) {
                 <h4>{item.name}</h4>
                 <h5>{item.brand}</h5>
                 <p>{item.category}</p>
-            </div> */}
-            HELLO
+            </div>
         </div>
      );
 }
