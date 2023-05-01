@@ -10,7 +10,7 @@ function MyWishlist({setUrl, wishlistId, myWishlist}) {
 // })
 
 const mappedWishlist = myWishlist.map((item) => {
-    console.log(item.product)
+    console.log(item)
     // return <ProductsAccount item={item.product} />
 })
 
