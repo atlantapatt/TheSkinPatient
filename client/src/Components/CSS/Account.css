@@ -15,6 +15,12 @@
    border-radius: 50%;
 }
 
+#image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
 .account-interact{
     display: inline-flex;
 }

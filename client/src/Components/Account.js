@@ -25,7 +25,7 @@ console.log(user)
             <br></br>
             <div className="user-profile">
                 <div className="user-image">
-                    {user.image == null ? <i id="icon" class="fa-solid fa-user"></i> : <img src={user.image}></img>}
+                    {user.image == null ? <i id="icon" class="fa-solid fa-user"></i> : <img id="image" src={user.image}></img>}
                 </div>
               {/* {hasPhoto ? <img src={user?.image}></img> : <i class="fa-solid fa-user"></i>} */}
               <p>{user.username}</p>
