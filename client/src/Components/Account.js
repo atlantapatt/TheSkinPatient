@@ -15,10 +15,10 @@ console.log(user)
 useEffect(() => {
     fetch('/userReviews').then((response) => {
         if (response.ok) {
-            response.json().then((reviews) => setAccountReviews(reviews))
+            response.json().then((reviews) => console.log(reviews))
         }
     })
-})
+},[])
 
     useEffect(() => {
         if (user.bio == ''){

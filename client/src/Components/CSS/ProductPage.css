@@ -21,7 +21,7 @@
     position: absolute;
     background-color: #cccccc;
     padding: 25px;
-    margin-left: 600px;
+    margin-left: 800px;
     margin-top: 400px;
     -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
@@ -32,8 +32,8 @@ top: 0;
     z-index: 999;
 }
 
-.confirmed{
-}
+/* .confirmed{
+} */
 
 .confirm.active{
     opacity: 1;
