@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/me', to: 'users#show'
   get '/recentWishlist/:id', to: 'product_wishlists#topThree'
+  get '/myreviews/:id', to: 'users#userReviews'
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

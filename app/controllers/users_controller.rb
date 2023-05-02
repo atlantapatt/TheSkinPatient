@@ -22,6 +22,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def userReviews
+        user = User.find_by(id: session[:user_id])
+        reviews = Review.where(user_id: user)
+        if reviews
+            render json: reviews, status: :ok
+        end
+    end
+
     def update
         user = User.find_by(id: session[:user_id])
         if user
