@@ -58,7 +58,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         console.log("added to my products")    }
 
     function addWishClick() {
-        fetch(`/product_wishlists/${userId}`, {
+        fetch(`/product_wishlists`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 
     def show
         product = Product.find_by(id: params[:id])
-        reviews = Review.where(product_id: product)
+        reviews = Review.where(product_id: product).order(:created_at)
         if reviews
             render json: reviews, status: :ok
         else

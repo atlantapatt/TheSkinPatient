@@ -24,7 +24,7 @@ function App() {
   const [myProducts, setMyProducts] = useState([])
   const [wishlistId, setWishlistId] = useState([])
   const [topThree, setTopThree] = useState([])
-  const [userId, setUserId] = useState()
+  const [userId, setUserId] = useState(1)
   const {user, setUser} = useContext(UserContext)
 
 
@@ -49,7 +49,12 @@ let history = useHistory()
       if (response.ok) {
         response.json().then((user) => setUserId(user.id))
       }
+      console.log(userId)
+      fetchProdWish()
+      fetchWishlist()
+      recentWishlist()
     })
+    
   },[])
  
   console.log(topThree)
@@ -61,15 +66,15 @@ let history = useHistory()
 
 
 
-function fetchUser() {
-  fetch('/me').then((response) => {
-    if (response.ok) {
-      response.json().then((user) => setUser(user))
-    } else {
-      return <Login user={user} setUser={setUser} />
-    }
-  })
-}
+// function fetchUser() {
+//   fetch('/me').then((response) => {
+//     if (response.ok) {
+//       response.json().then((user) => setUser(user))
+//     } else {
+//       return <Login user={user} setUser={setUser} />
+//     }
+//   })
+// }
 
 
 useEffect(() => {
@@ -98,36 +103,57 @@ useEffect(() => {
   })
 },[userId])
 console.log(myProducts)
-useEffect(() => {
-    fetch(`/wishlists/${userId}`).then((response) => {
-      if (response.ok) {
-          response.json().then((wishlist) => setWishlistId(wishlist))
-      } else {
-        console.log('error')
-        fetchUser()
-      }
+// useEffect(() => {
+//     fetch(`/wishlists/${userId}`).then((response) => {
+//       if (response.ok) {
+//           response.json().then((wishlist) => setWishlistId(wishlist))
+//       }
+//   })
+// },[setUser])
+
+function fetchWishlist() {
+  fetch(`/wishlists/${userId}`).then((response) => {
+    if (response.ok) {
+        response.json().then((wishlist) => setWishlistId(wishlist))
+    }
   })
-},[userId])
+}
 
 
 console.log(myWishlist)
 
-useEffect(() => {
-    fetch(`/product_wishlists/${userId}`).then((response) => {
-      if (response.ok) {
-          response.json().then((products) => setMyWishlist(products))
-      }
-  })
-},[userId])
+// useEffect(() => {
+//     fetch(`/product_wishlists/${userId}`).then((response) => {
+//       if (response.ok) {
+//           response.json().then((products) => setMyWishlist(products))
+//       }
+//   })
+// },[setUser])
+
+function fetchProdWish() {
+  fetch(`/product_wishlists/${userId}`).then((response) => {
+    if (response.ok) {
+        response.json().then((products) => setMyWishlist(products))
+    }
+})
+}
 
 
-useEffect(() => {
-    fetch(`/recentWishlist/${userId}`).then((response) => {
-      if (response.ok) {
-          response.json().then((products) => setTopThree(products))
-      }
-  }) 
-},[userId])
+// useEffect(() => {
+//     fetch(`/recentWishlist/${userId}`).then((response) => {
+//       if (response.ok) {
+//           response.json().then((products) => setTopThree(products))
+//       }
+//   }) 
+// },[userId])
+
+function recentWishlist() {
+  fetch(`/recentWishlist/${userId}`).then((response) => {
+    if (response.ok) {
+        response.json().then((products) => setTopThree(products))
+    }
+}) 
+}
 
 console.log(topThree)
 
