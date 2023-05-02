@@ -5,7 +5,6 @@ function LoginBox({setUser}) {
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
 
-console.log(setUser)
     function onSubmit(e) {
         e.preventDefault()
         fetch('login', {

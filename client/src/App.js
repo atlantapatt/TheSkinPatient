@@ -30,7 +30,7 @@ function App() {
 let history = useHistory()
 
   let userId
-  console.log(userId)
+  console.log(user)
 
   useEffect(() => {
     if (user !== null) {
