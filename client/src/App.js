@@ -48,11 +48,12 @@ let history = useHistory()
     fetch('/me').then((response) => {
       if (response.ok) {
         response.json().then((user) => setUserId(user.id))
+        console.log(userId)
+        fetchProdWish()
+        fetchWishlist()
+        recentWishlist()
       }
-      console.log(userId)
-      fetchProdWish()
-      fetchWishlist()
-      recentWishlist()
+      
     })
     
   },[])
