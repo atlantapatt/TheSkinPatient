@@ -89,6 +89,8 @@ useEffect(() => {
     fetch(`/wishlists/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((wishlist) => setWishlistId(wishlist))
+      } else {
+        console.log('error')
       }
   })
 },[user])
