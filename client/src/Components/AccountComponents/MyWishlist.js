@@ -12,7 +12,7 @@ function MyWishlist({deleteMyItems, wishlistId, myWishlist, goHome}) {
 
 const mappedWishlist = myWishlist.map((item) => {
     console.log(item)
-    return <ProductsAccount deleteMyItems={deleteMyItems} item={item.product} />
+    return <ProductsAccount deleteMyItems={deleteMyItems} item={item} />
             //render needs item.product
 
 })
