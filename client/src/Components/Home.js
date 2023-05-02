@@ -30,7 +30,7 @@ function Home({homeReviews, topThree, user}) {
  let myTopThree = topThree.map((item) => {
     console.log(item)
     return  <div className="wishlist-div">
-        {/* <TopThree item={item.products} /> */}
+        <TopThree item={item} />
     </div>
     
  })
