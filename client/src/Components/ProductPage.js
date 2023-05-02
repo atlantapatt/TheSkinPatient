@@ -83,7 +83,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
 console.log(currentProduct.id)
 console.log(userId)
 console.log(user.id)
-console.log(wishlistId)
+console.log(confirmed)
 
 
     function addToReview(e) {
@@ -121,7 +121,7 @@ console.log(wishlistId)
     return ( 
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
-            <div className={`confermed ${confirmed ? 'active' : 'inactive'}`}>
+            <div className={`confrim ${confirmed ? 'active' : 'inactive'}`}>
                 <ConfirmPopUp setConfirmed={setConfirmed} />
             </div>
             <br></br>

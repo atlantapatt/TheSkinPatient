@@ -15,3 +15,23 @@
     padding-top: 20px;
     width: 60%;
 }
+
+.confirm {
+    background-color: #cccccc;
+}
+
+.confrim.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed) ease;
+    z-index: 1;
+    border-radius: 10%;
+}
+
+.confirm.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--speed) ease;
+}
