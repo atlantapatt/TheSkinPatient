@@ -53,7 +53,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((product) => console.log(product))
+                r.json().then((product) => addToMyProducts(product.product))
             } 
         })
         console.log("added to my products")    }
@@ -70,7 +70,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((wishlist) => console.log(wishlist.product))
+                r.json().then((wishlist) => addToWishlist(wishlist.product))
             } 
         })
         console.log("added to wishlist")
