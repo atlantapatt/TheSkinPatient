@@ -117,11 +117,10 @@ console.log(confirmed)
 
     // // console.log(reviews.length == 0)
     // console.log(currentProduct.reviews)
-    // {`confirm ${confirmed ? 'active' : 'inactive'}`}
     return ( 
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
-            <div className='confirm'>
+            <div className={`confirm ${confirmed ? 'active' : 'inactive'}`}>
                 <ConfirmPopUp setConfirmed={setConfirmed} />
             </div>
             <br></br>
