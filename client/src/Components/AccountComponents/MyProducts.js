@@ -5,7 +5,7 @@ function MyProducts({myProducts}) {
     console.log(myProducts)
     const mappedMyProducts = myProducts.map((item) => {
         console.log(item)
-        return <ProductsAccount item={item} />
+        return <ProductsAccount item={item.product} />
     })
 
     return ( 

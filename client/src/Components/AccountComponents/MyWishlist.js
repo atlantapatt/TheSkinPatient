@@ -13,6 +13,8 @@ function MyWishlist({userId, wishlistId, myWishlist}) {
 const mappedWishlist = myWishlist.map((item) => {
     console.log(item)
     return <ProductsAccount item={item.product} />
+            //render needs item.product
+
 })
 
       
