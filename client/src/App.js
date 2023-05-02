@@ -35,6 +35,16 @@ let history = useHistory()
   console.log(myWishlist)
 
   useEffect(() => {
+    fetch('/me').then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user))
+      } else {
+        return <Login user={user} setUser={setUser} />
+      }
+    })
+  },[])
+
+  useEffect(() => {
     if (user !== null) {
       setUserId(user.id)
       console.log(userId)
@@ -48,7 +58,9 @@ let history = useHistory()
     console.log(topThree)
   },[myWishlist])
 
-useEffect(() => {
+
+
+function fetchUser() {
   fetch('/me').then((response) => {
     if (response.ok) {
       response.json().then((user) => setUser(user))
@@ -56,7 +68,7 @@ useEffect(() => {
       return <Login user={user} setUser={setUser} />
     }
   })
-},[])
+}
 
 
 useEffect(() => {
@@ -91,6 +103,7 @@ useEffect(() => {
           response.json().then((wishlist) => setWishlistId(wishlist))
       } else {
         console.log('error')
+        fetchUser()
       }
   })
 },[user])
