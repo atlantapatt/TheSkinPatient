@@ -82,35 +82,35 @@ useEffect(() => {
           response.json().then((product) => setMyProducts(product))
       }
   })
-},[])
+},[user])
 console.log(myProducts)
 useEffect(() => {
-    fetch(`/wishlists/${userId}`).then((response) => {
+    fetch(`/wishlists/${user.id}`).then((response) => {
       if (response.ok) {
           response.json().then((wishlist) => setWishlistId(wishlist))
       }
   })
-},[])
+},[user])
 
 
 console.log(myWishlist)
 
 useEffect(() => {
-    fetch(`/product_wishlists/${userId}`).then((response) => {
+    fetch(`/product_wishlists/${user.id}`).then((response) => {
       if (response.ok) {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[])
+},[user])
 
 
 useEffect(() => {
-    fetch(`/recentWishlist/${userId}`).then((response) => {
+    fetch(`/recentWishlist/${user.id}`).then((response) => {
       if (response.ok) {
           response.json().then((products) => setTopThree(products))
       }
   }) 
-},[])
+},[user])
 
 console.log(topThree)
 
