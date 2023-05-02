@@ -1,6 +1,6 @@
 import ProductsAccount from "./ProductsAccount";
 
-function MyProducts({myProducts, deleteMyItems}) {
+function MyProducts({myProducts, deleteMyItems, homeRoute}) {
 
     console.log(myProducts)
     const mappedMyProducts = myProducts.map((item) => {
@@ -11,6 +11,7 @@ function MyProducts({myProducts, deleteMyItems}) {
 
     return ( 
         <div className="my">
+            <button onClick={homeRoute}>Back</button>
             <p>MY PRODUCTS</p>
             {mappedMyProducts}
         </div>

@@ -122,6 +122,19 @@ function addToWishlist(item) {
 function addToMyProducts(item) {
   setMyProducts([...myProducts, item])
 }
+
+
+function deleteMyItems() {
+  console.log('deleted item')
+}
+
+function homeRoute() {
+  let path = '/'
+  history.push(path)
+  console.log('home')
+  setOpen(false)
+}
+
 // console.log(myProducts)
 // console.log(myWishlist)
 //   console.log(wishlistId.id)
@@ -132,7 +145,7 @@ if (!user) return <Login user={user} setUser={setUser} />
 
   return (
     <div className='app'>
-      <Navbar setUser={setUser}/>
+      <Navbar homeRoute={homeRoute} setUser={setUser}/>
       <Switch>
         <Route exact path='/'>
           <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
@@ -147,10 +160,10 @@ if (!user) return <Login user={user} setUser={setUser} />
           <ProductPage userId={userId} addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
-          <MyProducts myProducts={myProducts}/>
+          <MyProducts homeRoute={homeRoute} deleteMyItems={deleteMyItems} myProducts={myProducts}/>
         </Route>
         <Route exact path='/mywishlist'>
-          <MyWishlist  url={url} setUrl={setUrl} myWishlist={myWishlist} setMyWishlist={setMyWishlist} wishlistId={wishlistId} setWishlistId={setWishlistId} user={user}/>
+          <MyWishlist homeRoute={homeRoute} deleteMyItems={deleteMyItems} url={url} setUrl={setUrl} myWishlist={myWishlist} setMyWishlist={setMyWishlist} wishlistId={wishlistId} setWishlistId={setWishlistId} user={user}/>
         </Route>
       </Switch>
     </div>

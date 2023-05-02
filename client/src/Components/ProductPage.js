@@ -47,7 +47,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: userId,
+                user_id: user.id,
                 product_id: currentProduct.id
             }),
         }).then((r) => {
@@ -64,7 +64,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                wishlist_id: userId,
+                wishlist_id: user.id,
                 product_id: currentProduct.id
             }),
         }).then((r) => {
@@ -76,7 +76,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
     }
 
 console.log(wishlistId.id)
-console.log(userId)
+console.log(user.id)
 console.log(wishlistId)
 
 
@@ -87,7 +87,7 @@ console.log(wishlistId)
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-               user_id: userId,
+               user_id: user.id,
                product_id: currentProduct.id,
                rating,
                info
