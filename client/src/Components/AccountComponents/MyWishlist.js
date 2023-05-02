@@ -20,7 +20,7 @@ const mappedWishlist = myWishlist.map((item) => {
       console.log(myWishlist)
     return ( 
         <div className="my">
-            MY WISHLIST
+            <p>MY WISHLIST</p>
             {mappedWishlist}
         </div>
      );

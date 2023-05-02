@@ -2,6 +2,9 @@ function ProductsAccount({item}) {
     console.log(item)
     return ( 
         <div className="item-card">
+            <div className="delete">
+                <i class="fa-solid fa-x"></i>
+            </div>
             <div className="image">
                 <img src={item.image}></img>
             </div>

@@ -16,8 +16,17 @@
     -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 border-radius: 8px;
+cursor: pointer;
 }
 
 .item-text h4{
     height: 80px;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.delete i{
+    margin-left: 180px;
 }

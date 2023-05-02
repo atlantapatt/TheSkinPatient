@@ -28,15 +28,21 @@ function App() {
 
 
   let userId
+  console.log(myProducts)
 
-  if (user !== null) {
-    userId = user.id
-  }
+  useEffect(() => {
+    if (user !== null) {
+      userId = user.id
+      console.log(userId)
+    }
+  },[user])
+ 
   console.log(topThree)
 
   useEffect(() => {
     setTopThree(myWishlist.slice(-3))
-  },[])
+    console.log(topThree)
+  },[myWishlist])
 
 useEffect(() => {
   fetch('/me').then((response) => {
@@ -103,6 +109,7 @@ useEffect(() => {
   }) 
 },[])
 
+console.log(topThree)
 
 function addReviews(review) {
   setReviews([...reviews, review])
