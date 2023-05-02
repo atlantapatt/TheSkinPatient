@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
 import ProductsAccount from "./ProductsAccount";
+// import './MyItems.css'
 
 function MyWishlist({userId, wishlistId, myWishlist}) {
     
@@ -18,7 +19,7 @@ const mappedWishlist = myWishlist.map((item) => {
       console.log(wishlistId)
       console.log(myWishlist)
     return ( 
-        <div className="wishlist-div">
+        <div className="my">
             MY WISHLIST
             {mappedWishlist}
         </div>

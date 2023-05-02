@@ -39,6 +39,6 @@
 
 .app{
   background-image: linear-gradient(to bottom right, pink, grey);
-
+  min-height: 937px;
   font-size: larger;
 }

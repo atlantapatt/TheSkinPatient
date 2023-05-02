@@ -9,7 +9,7 @@ function MyProducts({myProducts}) {
     })
 
     return ( 
-        <div className="my-products">
+        <div className="my">
             MY PRODUCTS
             {mappedMyProducts}
         </div>

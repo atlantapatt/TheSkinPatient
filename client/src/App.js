@@ -10,7 +10,6 @@ import Products from './Components/Products';
 import ProductCard from './Components/ProductCard';
 import ProductPage from './Components/ProductPage';
 import MyProducts from './Components/AccountComponents/MyProducts';
-import MyRoutines from './Components/AccountComponents/MyRoutines';
 import MyWishlist from './Components/AccountComponents/MyWishlist';
 
 function App() {
@@ -102,7 +101,7 @@ useEffect(() => {
           response.json().then((products) => setTopThree(products))
       }
   }) 
-},[myWishlist])
+},[])
 
 
 function addReviews(review) {
@@ -142,9 +141,6 @@ if (!user) return <Login user={user} setUser={setUser} />
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts myProducts={myProducts}/>
-        </Route>
-        <Route exact path='/myroutines'>
-          <MyRoutines />
         </Route>
         <Route exact path='/mywishlist'>
           <MyWishlist  url={url} setUrl={setUrl} myWishlist={myWishlist} setMyWishlist={setMyWishlist} wishlistId={wishlistId} setWishlistId={setWishlistId} user={user}/>
