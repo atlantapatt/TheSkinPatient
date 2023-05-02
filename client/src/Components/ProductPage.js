@@ -76,6 +76,7 @@ function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlis
     }
 
 console.log(wishlistId.id)
+console.log(wishlistId)
 
 
     function addToReview() {
