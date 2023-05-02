@@ -3,11 +3,13 @@ import { useHistory } from "react-router-dom";
 import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
+import ConfirmPopUp from "./ConfrimPopUp";
 
 function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
     const [rating, setRating] = useState()
     const [info, setInfo] = useState('')
+    const [confirmed, setConfirmed] = usest(false)
 
     const history = useHistory()
 
@@ -54,6 +56,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         }).then((r) => {
             if (r.ok) {
                 r.json().then((product) => addToMyProducts(product.product))
+                setConfirmed(true)
             } 
         })
         console.log("added to my products")    }
@@ -71,6 +74,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         }).then((r) => {
             if (r.ok) {
                 r.json().then((wishlist) => addToWishlist(wishlist.product))
+                setConfirmed(true)
             } 
         })
         console.log("added to wishlist")
@@ -117,6 +121,9 @@ console.log(wishlistId)
     return ( 
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
+            <div className={`confermed ${confirmed ? 'active' : 'inactive'}`}>
+                <ConfirmPopUp setConfirmed={setConfirmed} />
+            </div>
             <br></br>
             <div className="product-info">
                 <div className="product-image">
