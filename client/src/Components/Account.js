@@ -11,11 +11,12 @@ function Account({user, setUser}) {
     
 
 console.log(user)
+console.log(accountReviews)
 
 useEffect(() => {
     fetch(`/myreviews/${user.id}`).then((response) => {
         if (response.ok) {
-            response.json().then((reviews) => console.log(reviews))
+            response.json().then((reviews) => setAccountReviews(reviews))
         }
     })
 },[])
