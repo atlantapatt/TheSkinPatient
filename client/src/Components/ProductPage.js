@@ -9,7 +9,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     const [writeReview, setWriteReview] = useState(false)
     const [rating, setRating] = useState()
     const [info, setInfo] = useState('')
-    const [confirmed, setConfirmed] = usest(false)
+    const [confirmed, setConfirmed] = useState(false)
 
     const history = useHistory()
 
