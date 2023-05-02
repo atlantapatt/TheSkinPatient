@@ -76,7 +76,6 @@ useEffect(() => {
 },[])
 console.log(myProducts)
 useEffect(() => {
-  if (user !== null) 
     fetch(`/wishlists/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((wishlist) => setWishlistId(wishlist))
