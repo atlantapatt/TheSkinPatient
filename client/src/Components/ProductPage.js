@@ -4,7 +4,7 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
 
-function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
     const [rating, setRating] = useState()
     const [info, setInfo] = useState('')
