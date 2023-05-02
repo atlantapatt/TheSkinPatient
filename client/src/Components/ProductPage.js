@@ -56,9 +56,10 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         }).then((r) => {
             if (r.ok) {
                 r.json().then((product) => addToMyProducts(product.product))
-                setConfirmed(true)
+                
             } 
         })
+        setConfirmed(true)
         console.log("added to my products")    }
 //not saving
     function addWishClick() {
@@ -74,9 +75,10 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         }).then((r) => {
             if (r.ok) {
                 r.json().then((wishlist) => addToWishlist(wishlist.product))
-                setConfirmed(true)
+                
             } 
         })
+        setConfirmed(true)
         console.log("added to wishlist")
     }
 
