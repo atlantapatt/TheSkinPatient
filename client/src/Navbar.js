@@ -17,7 +17,7 @@ function Navbar({setUser}) {
         history.push(path)
         console.log('home')
         setOpen(false)
-    }
+      }
 
     function myAccountRoute() {
         let account = '/account'

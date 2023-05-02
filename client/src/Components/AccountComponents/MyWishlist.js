@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard";
 import ProductsAccount from "./ProductsAccount";
 // import './MyItems.css'
 
-function MyWishlist({deleteMyItems, wishlistId, myWishlist, homeRoute}) {
+function MyWishlist({deleteMyItems, wishlistId, myWishlist, goHome}) {
     
 
 // let mappedWishlist = myWishlist.map((item) => {
@@ -22,7 +22,7 @@ const mappedWishlist = myWishlist.map((item) => {
       console.log(myWishlist)
     return ( 
         <div className="my">
-            <button onClick={homeRoute}>Back</button>
+            <button onClick={goHome}>Back</button>
             <p>MY WISHLIST</p>
             {mappedWishlist}
         </div>
