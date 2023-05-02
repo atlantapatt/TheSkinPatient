@@ -54,12 +54,11 @@ let history = useHistory()
   },[])
 
   useEffect(() => {
-    if (user !== null) {
       console.log(userId)
       fetchProdWish()
       fetchWishlist()
       recentWishlist()
-    }
+
   },[user])
  
   console.log(topThree)
