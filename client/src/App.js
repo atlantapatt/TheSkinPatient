@@ -45,10 +45,11 @@ let history = useHistory()
   },[])
 
   useEffect(() => {
-    if (user !== null) {
-      setUserId(user.id)
-      console.log(userId)
-    }
+    fetch('/me').then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUserId(user.id))
+      }
+    })
   },[])
  
   console.log(topThree)
@@ -90,12 +91,12 @@ useEffect(() => {
 console.log(homeReviews)
 
 useEffect(() => {
-  fetch(`/my_products/1`).then((response) => {
+  fetch(`/my_products/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((product) => setMyProducts(product))
       }
   })
-},[user])
+},[setUser])
 console.log(myProducts)
 useEffect(() => {
     fetch(`/wishlists/${userId}`).then((response) => {
