@@ -75,13 +75,14 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         console.log("added to wishlist")
     }
 
-console.log(wishlistId.id)
+console.log(currentProduct.id)
 console.log(userId)
+console.log(user.id)
 console.log(wishlistId)
 
 
     function addToReview(e) {
-        e.preventDefualt()
+        e.preventDefault() 
         fetch(`/reviews`, {
             method: "POST",
             headers: {
@@ -95,7 +96,7 @@ console.log(wishlistId)
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((review) => addReviews(review))
+                r.json().then((review) => console.log(review))
             } 
         })
     }
