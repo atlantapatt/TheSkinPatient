@@ -50,15 +50,17 @@ let history = useHistory()
         response.json().then((user) => setUserId(user.id))
         
       }
-      
-    })
       console.log(userId)
         fetchProdWish()
         fetchWishlist()
         recentWishlist()
+    })
+      
   },[])
  
   console.log(topThree)
+  console.log(userId)
+
 
   useEffect(() => {
     setTopThree(myWishlist.slice(-3))
