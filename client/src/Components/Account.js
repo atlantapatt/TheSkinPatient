@@ -13,7 +13,7 @@ function Account({user, setUser}) {
 console.log(user)
 
 useEffect(() => {
-    fetch(`/myreviews${user.id}`).then((response) => {
+    fetch(`/myreviews/${user.id}`).then((response) => {
         if (response.ok) {
             response.json().then((reviews) => console.log(reviews))
         }
