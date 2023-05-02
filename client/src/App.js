@@ -135,7 +135,7 @@ useEffect(() => {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[userId])
+},[user])
 
 // function fetchProdWish() {
 //   fetch(`/product_wishlists/${userId}`).then((response) => {
