@@ -20,8 +20,6 @@
 .confirm {
     background-color: #cccccc;
     padding: 25px;
-    width: 100px;
-    height: 100px;
     margin-left: 600px;
     margin-top: 400px;
     -webkit-border-radius: 8px;
@@ -33,6 +31,8 @@ border-radius: 8px;
 .confirmed{
     background-color: #cccccc;
     z-index: 1;
+    width: 100px;
+    height: 100px;
 }
 
 .confirm.active{
