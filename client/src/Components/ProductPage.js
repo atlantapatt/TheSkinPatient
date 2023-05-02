@@ -4,7 +4,7 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
 
-function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
     const [rating, setRating] = useState()
     const [info, setInfo] = useState('')
@@ -47,7 +47,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: user.id,
+                user_id: userId,
                 product_id: currentProduct.id
             }),
         }).then((r) => {
@@ -76,12 +76,13 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
     }
 
 console.log(wishlistId.id)
-console.log(user.id)
+console.log(userId)
 console.log(wishlistId)
 
 
-    function addToReview() {
-        fetch(`/products/${url}`, {
+    function addToReview(e) {
+        e.preventDefualt()
+        fetch(`/reviews`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -94,7 +95,7 @@ console.log(wishlistId)
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((wishlist) => addToWishlist(wishlist))
+                r.json().then((review) => addReviews(review))
             } 
         })
     }
