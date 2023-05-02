@@ -20,7 +20,7 @@
     background-color: #cccccc;
 }
 
-.confrim.active{
+.confirm.active{
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
