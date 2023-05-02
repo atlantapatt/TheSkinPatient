@@ -25,14 +25,12 @@
     -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 border-radius: 8px;
+    width: 50px;
+    height: 100px;
     z-index: 1;
 }
 
 .confirmed{
-    background-color: #cccccc;
-    z-index: 1;
-    width: 50px;
-    height: 100px;
 }
 
 .confirm.active{
