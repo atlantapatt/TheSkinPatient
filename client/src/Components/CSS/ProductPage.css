@@ -19,7 +19,6 @@
 
 .confirm {
     background-color: #cccccc;
-    z-index: 1;
     padding: 25px;
     width: 100px;
     height: 100px;
@@ -42,7 +41,6 @@ border-radius: 8px;
     transform: translateY(0);
     transition: var(--speed) ease;
     z-index: 1;
-    border-radius: 10%;
 }
 
 .confirm.inactive{
