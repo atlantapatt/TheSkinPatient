@@ -18,6 +18,7 @@
 }
 
 .confirm {
+    position: absolute;
     background-color: #cccccc;
     padding: 25px;
     margin-left: 600px;
@@ -25,9 +26,10 @@
     -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 border-radius: 8px;
+top: 0;
     width: 50px;
     height: 100px;
-    z-index: 1;
+    z-index: 999;
 }
 
 .confirmed{
