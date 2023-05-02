@@ -60,7 +60,7 @@ let history = useHistory()
       fetchWishlist()
       recentWishlist()
     }
-  },[])
+  },[user])
  
   console.log(topThree)
   console.log(userId)
