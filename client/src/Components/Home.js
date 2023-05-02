@@ -20,9 +20,8 @@ function Home({homeReviews, topThree, user}) {
     console.log('go to my products')
  }
 
- function routeMyRoutines() {
-    history.push('/myroutines')
-    console.log('go to my routines')
+ function deleteMyItems() {
+    console.log('deleted item')
  }
 
  function routeMyWishlist() {

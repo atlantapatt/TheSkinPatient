@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard";
 import ProductsAccount from "./ProductsAccount";
 // import './MyItems.css'
 
-function MyWishlist({userId, wishlistId, myWishlist}) {
+function MyWishlist({deleteMyItems, wishlistId, myWishlist}) {
     
 
 // let mappedWishlist = myWishlist.map((item) => {
@@ -12,7 +12,7 @@ function MyWishlist({userId, wishlistId, myWishlist}) {
 
 const mappedWishlist = myWishlist.map((item) => {
     console.log(item)
-    return <ProductsAccount item={item.product} />
+    return <ProductsAccount deleteMyItems={deleteMyItems} item={item.product} />
             //render needs item.product
 
 })

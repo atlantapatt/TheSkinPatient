@@ -13,7 +13,7 @@ class MyProductsController < ApplicationController
     end
 
     def delete
-        product = Product.find_by(:id params[:id])
+        product = Product.find_by(id: params[:id])
         my_product = MyProduct.find_by(product_id: product)
         if my_product
             my_product.destory

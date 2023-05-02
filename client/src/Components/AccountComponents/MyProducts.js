@@ -1,11 +1,12 @@
 import ProductsAccount from "./ProductsAccount";
 
-function MyProducts({myProducts}) {
+function MyProducts({myProducts, deleteMyItems}) {
 
     console.log(myProducts)
     const mappedMyProducts = myProducts.map((item) => {
         console.log(item)
-        return <ProductsAccount item={item.product} />
+        return <ProductsAccount deleteMyItems={deleteMyItems} item={item.product} />
+        //render needs item.product
     })
 
     return ( 
