@@ -76,6 +76,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
     }
 
 console.log(wishlistId.id)
+console.log(userId)
 console.log(wishlistId)
 
 
@@ -86,7 +87,7 @@ console.log(wishlistId)
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-               user_id: user.id,
+               user_id: userId,
                product_id: currentProduct.id,
                rating,
                info
