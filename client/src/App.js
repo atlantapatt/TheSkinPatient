@@ -96,7 +96,7 @@ useEffect(() => {
           response.json().then((product) => setMyProducts(product))
       }
   })
-},[setUser])
+},[userId])
 console.log(myProducts)
 useEffect(() => {
     fetch(`/wishlists/${userId}`).then((response) => {
@@ -107,7 +107,7 @@ useEffect(() => {
         fetchUser()
       }
   })
-},[user])
+},[userId])
 
 
 console.log(myWishlist)
@@ -118,7 +118,7 @@ useEffect(() => {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[user])
+},[userId])
 
 
 useEffect(() => {
@@ -127,7 +127,7 @@ useEffect(() => {
           response.json().then((products) => setTopThree(products))
       }
   }) 
-},[user])
+},[userId])
 
 console.log(topThree)
 
