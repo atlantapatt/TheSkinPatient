@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import './CSS/Account.css'
 import EditAccount from "./EditAccount";
+import ReviewCard from "./ReviewCard";
 
 function Account({user, setUser}) {
     const [accountReviews, setAccountReviews] = useState([])
