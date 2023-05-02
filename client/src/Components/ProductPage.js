@@ -64,7 +64,7 @@ function ProductPage({addReview, user ,addToMyProducts ,wishlistId, addToWishlis
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                wishlist_id: wishlistId.id,
+                wishlist_id: userId,
                 product_id: currentProduct.id
             }),
         }).then((r) => {

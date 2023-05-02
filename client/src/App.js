@@ -27,6 +27,7 @@ function App() {
   const {user, setUser} = useContext(UserContext)
 
 
+
   let userId
 
   if (user !== null) {
@@ -94,6 +95,7 @@ useEffect(() => {
   })
 },[])
 
+
 // useEffect(() => {
 //   if (user == !null) {
 //     fetch('/recentWishlist').then((response) => {
@@ -138,7 +140,7 @@ if (!user) return <Login user={user} setUser={setUser} />
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage userId={userId} addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts myProducts={myProducts}/>
@@ -147,7 +149,7 @@ if (!user) return <Login user={user} setUser={setUser} />
           <MyRoutines />
         </Route>
         <Route exact path='/mywishlist'>
-          <MyWishlist url={url} setUrl={setUrl} myWishlist={myWishlist} setMyWishlist={setMyWishlist} wishlistId={wishlistId} setWishlistId={setWishlistId} user={user}/>
+          <MyWishlist  url={url} setUrl={setUrl} myWishlist={myWishlist} setMyWishlist={setMyWishlist} wishlistId={wishlistId} setWishlistId={setWishlistId} user={user}/>
         </Route>
       </Switch>
     </div>
