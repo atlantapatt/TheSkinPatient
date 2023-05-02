@@ -32,6 +32,15 @@ class ProductWishlistsController < ApplicationController
         pwish = ProductWishlist.create(prodwish_params)
         render json: pwish, status: :ok
     end
+
+    def delete
+        product = Product.find_by(id: params[:id])
+        pwish = ProductWishlist.find_by(product_id: product)
+        if pwish
+            pwish.destroy
+            head :no_content
+        end
+    end
     
 
     private

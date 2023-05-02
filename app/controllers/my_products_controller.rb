@@ -12,6 +12,16 @@ class MyProductsController < ApplicationController
         render json: my_products, status: :created
     end
 
+    def delete
+        product = Product.find_by(:id params[:id])
+        my_product = MyProduct.find_by(product_id: product)
+        if my_product
+            my_product.destory
+            head :no_content
+        end
+
+    end
+
 
     private
 

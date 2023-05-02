@@ -28,14 +28,14 @@ function App() {
 
 
   let userId
-  console.log(myProducts)
+  console.log(userId)
 
   useEffect(() => {
     if (user !== null) {
       userId = user.id
       console.log(userId)
     }
-  },[user])
+  },[])
  
   console.log(topThree)
 
