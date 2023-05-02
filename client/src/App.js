@@ -24,18 +24,19 @@ function App() {
   const [myProducts, setMyProducts] = useState([])
   const [wishlistId, setWishlistId] = useState([])
   const [topThree, setTopThree] = useState([])
+  const [userId, setUserId] = useState()
   const {user, setUser} = useContext(UserContext)
 
 
 let history = useHistory()
 
-  let userId
+
   console.log(user)
   console.log(myWishlist)
 
   useEffect(() => {
     if (user !== null) {
-      userId = user.id
+      setUserId(user.id)
       console.log(userId)
     }
   },[])
