@@ -1,5 +1,6 @@
 .product-div{
     padding-left: 15px;
+    z-index: 0;
 }
 .product-image img{
     height: 400px;
