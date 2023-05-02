@@ -18,6 +18,7 @@
 
 .confirm {
     background-color: #cccccc;
+    z-index: 1;
 }
 
 .confirm.active{

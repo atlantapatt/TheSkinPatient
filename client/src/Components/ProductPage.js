@@ -113,7 +113,7 @@ console.log(confirmed)
                     })
 
 
-    // console.log(mappedReviews)
+    console.log(confirmed)
 
     // // console.log(reviews.length == 0)
     // console.log(currentProduct.reviews)
@@ -121,7 +121,7 @@ console.log(confirmed)
     return ( 
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
-            <div className={`confrim ${confirmed ? 'active' : 'inactive'}`}>
+            <div className={`confirm ${confirmed ? 'active' : 'inactive'}`}>
                 <ConfirmPopUp setConfirmed={setConfirmed} />
             </div>
             <br></br>
