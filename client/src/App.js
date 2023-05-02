@@ -31,6 +31,7 @@ let history = useHistory()
 
   let userId
   console.log(user)
+  console.log(myWishlist)
 
   useEffect(() => {
     if (user !== null) {

@@ -41,7 +41,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
     console.log(user.id)
 
     function addToProducts() {
-        fetch('/my_products', {
+        fetch(`/my_products/${user.id}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -58,7 +58,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addToWishlist, 
         console.log("added to my products")    }
 
     function addWishClick() {
-        fetch(`/product_wishlists`, {
+        fetch(`/product_wishlists/${userId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
