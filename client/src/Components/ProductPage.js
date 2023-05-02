@@ -96,9 +96,10 @@ console.log(wishlistId)
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((review) => console.log(review))
+                r.json().then((review) => addReviews(review))
             } 
         })
+        setWriteReview(false)
     }
 
 

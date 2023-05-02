@@ -86,7 +86,7 @@ useEffect(() => {
           response.json().then((reviews) => setHomeReviews(reviews))
       }
   })
-},[])
+},[reviews])
 
 console.log(homeReviews)
 
@@ -148,9 +148,7 @@ function deleteMyItems() {
   console.log('deleted item')
 }
 
-function addToReviews(item) {
-  setReviews([...reviews, item])
-}
+
 
 function goHome() {
   let path = '/'
@@ -180,7 +178,7 @@ if (!user) return <Login user={user} setUser={setUser} />
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage addToReviews={addToReviews} userId={userId} addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage userId={userId} addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts goHome={goHome} deleteMyItems={deleteMyItems} myProducts={myProducts}/>
