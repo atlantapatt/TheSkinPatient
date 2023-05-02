@@ -40,7 +40,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
 
     console.log(user.id)
 //not saving
-
+//needs .product
     function addToProducts() {
         fetch(`/my_products/`, {
             method: "POST",
@@ -53,7 +53,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((product) => console.log(product.product))
+                r.json().then((product) => console.log(product))
             } 
         })
         console.log("added to my products")    }
@@ -117,6 +117,7 @@ console.log(wishlistId)
     return ( 
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
+            <br></br>
             <div className="product-info">
                 <div className="product-image">
                     <img src={currentProduct.image}></img>
