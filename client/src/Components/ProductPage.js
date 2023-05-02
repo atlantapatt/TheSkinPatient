@@ -60,7 +60,8 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
             } 
         })
         setConfirmed(true)
-        console.log("added to my products")    }
+        console.log("added to my products")    
+    }
 //not saving
     function addWishClick() {
         fetch(`/product_wishlists`, {
@@ -122,7 +123,7 @@ console.log(confirmed)
     return ( 
         <div className="product-div">
             <button onClick={onClick}>BACK</button>
-            <div className={`confirm ${confirmed ? 'inactive' : 'active'}`}>
+            <div className={`confirm ${confirmed ? 'active' : 'inactive'}`}>
                 <ConfirmPopUp setConfirmed={setConfirmed} />
             </div>
             <br></br>

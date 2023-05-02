@@ -3,7 +3,7 @@ import './CSS/Account.css'
 import EditAccount from "./EditAccount";
 
 function Account({user, setUser}) {
-    const [hasPhoto, setHasPhoto] = useState()
+    const [accountReviews, setAccountReviews] = useState([])
     const [newPhoto, setNewPhoto] = useState()
    
     const [bio, setBio] = useState(user.bio)
@@ -11,6 +11,14 @@ function Account({user, setUser}) {
     
 
 console.log(user)
+
+useEffect(() => {
+    fetch('/userReviews').then((response) => {
+        if (response.ok) {
+            response.json().then((reviews) => setAccountReviews(reviews))
+        }
+    })
+})
 
     useEffect(() => {
         if (user.bio == ''){
