@@ -55,9 +55,9 @@ let history = useHistory()
 
   useEffect(() => {
       console.log(userId)
-      fetchProdWish()
-      fetchWishlist()
-      recentWishlist()
+      // fetchProdWish()
+      // fetchWishlist()
+      // recentWishlist()
 
   },[user])
  
@@ -109,57 +109,58 @@ useEffect(() => {
   })
 },[userId])
 console.log(myProducts)
-// useEffect(() => {
-//     fetch(`/wishlists/${userId}`).then((response) => {
-//       if (response.ok) {
-//           response.json().then((wishlist) => setWishlistId(wishlist))
-//       }
-//   })
-// },[setUser])
 
-function fetchWishlist() {
-  fetch(`/wishlists/${userId}`).then((response) => {
-    if (response.ok) {
-        response.json().then((wishlist) => setWishlistId(wishlist))
-    }
+useEffect(() => {
+    fetch(`/wishlists/${userId}`).then((response) => {
+      if (response.ok) {
+          response.json().then((wishlist) => setWishlistId(wishlist))
+      }
   })
-}
+},[userId])
+
+// function fetchWishlist() {
+//   fetch(`/wishlists/${userId}`).then((response) => {
+//     if (response.ok) {
+//         response.json().then((wishlist) => setWishlistId(wishlist))
+//     }
+//   })
+// }
 
 
 console.log(myWishlist)
 
-// useEffect(() => {
-//     fetch(`/product_wishlists/${userId}`).then((response) => {
-//       if (response.ok) {
-//           response.json().then((products) => setMyWishlist(products))
-//       }
-//   })
-// },[setUser])
+useEffect(() => {
+    fetch(`/product_wishlists/${userId}`).then((response) => {
+      if (response.ok) {
+          response.json().then((products) => setMyWishlist(products))
+      }
+  })
+},[userId])
 
-function fetchProdWish() {
-  fetch(`/product_wishlists/${userId}`).then((response) => {
-    if (response.ok) {
-        response.json().then((products) => setMyWishlist(products))
-    }
-})
-}
+// function fetchProdWish() {
+//   fetch(`/product_wishlists/${userId}`).then((response) => {
+//     if (response.ok) {
+//         response.json().then((products) => setMyWishlist(products))
+//     }
+// })
+// }
 
 
-// useEffect(() => {
-//     fetch(`/recentWishlist/${userId}`).then((response) => {
-//       if (response.ok) {
-//           response.json().then((products) => setTopThree(products))
-//       }
-//   }) 
-// },[userId])
+useEffect(() => {
+    fetch(`/recentWishlist/${userId}`).then((response) => {
+      if (response.ok) {
+          response.json().then((products) => setTopThree(products))
+      }
+  }) 
+},[userId])
 
-function recentWishlist() {
-  fetch(`/recentWishlist/${userId}`).then((response) => {
-    if (response.ok) {
-        response.json().then((products) => setTopThree(products))
-    }
-}) 
-}
+// function recentWishlist() {
+//   fetch(`/recentWishlist/${userId}`).then((response) => {
+//     if (response.ok) {
+//         response.json().then((products) => setTopThree(products))
+//     }
+// }) 
+// }
 
 console.log(topThree)
 
