@@ -21,6 +21,11 @@
     z-index: 1;
 }
 
+.confirmed{
+    background-color: #cccccc;
+    z-index: 1;
+}
+
 .confirm.active{
     opacity: 1;
     visibility: visible;
