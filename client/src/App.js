@@ -11,6 +11,7 @@ import ProductCard from './Components/ProductCard';
 import ProductPage from './Components/ProductPage';
 import MyProducts from './Components/AccountComponents/MyProducts';
 import MyWishlist from './Components/AccountComponents/MyWishlist';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -26,6 +27,7 @@ function App() {
   const {user, setUser} = useContext(UserContext)
 
 
+let history = useHistory()
 
   let userId
   console.log(userId)
