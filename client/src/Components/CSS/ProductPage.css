@@ -32,7 +32,7 @@ border-radius: 8px;
 
 .confirmed{
     background-color: #cccccc;
-    
+    z-index: 1;
 }
 
 .confirm.active{
