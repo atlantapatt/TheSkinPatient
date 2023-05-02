@@ -27,6 +27,15 @@ useEffect(() => {
         }
     },[])
 
+    let mappedAccountReviews = accountReviews.map((review) => {
+        return <div className="account-reviews">
+        <div className="account-review-image">
+            <img id="product-image" src={review.product.image}></img>
+        </div>
+        <ReviewCard review={review} />
+        </div>
+    })
+
     return ( 
         <div className="account">
             {/* ACCOUNT */}
@@ -35,7 +44,6 @@ useEffect(() => {
                 <div className="user-image">
                     {user.image == null ? <i id="icon" class="fa-solid fa-user"></i> : <img id="image" src={user.image}></img>}
                 </div>
-              {/* {hasPhoto ? <img src={user?.image}></img> : <i class="fa-solid fa-user"></i>} */}
               <p>{user.username}</p>
               <div className="account-interact">
                     <div onClick={(() => setEditing(!editing))} id="edit" className="edit-profile">
@@ -54,6 +62,7 @@ useEffect(() => {
             </div>
             <div className="user-reviews">
                 <p>Reviews</p>
+                {mappedAccountReviews}
             </div>
            <div className="account-links">
                 <h3>My Products</h3>
