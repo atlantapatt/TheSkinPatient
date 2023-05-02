@@ -1,8 +1,8 @@
-function ProductsAccount({item, deleteMyItems}) {
+function ProductsAccount({item, onDelete}) {
     console.log(item)
     return ( 
         <div className="item-card">
-            <div className="delete" onClick={deleteMyItems}>
+            <div className="delete" onClick={onDelete}>
                 <i class="fa-solid fa-x"></i>
             </div>
             <div className="image">

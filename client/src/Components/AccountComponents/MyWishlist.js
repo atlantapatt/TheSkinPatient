@@ -3,8 +3,12 @@ import ProductCard from "../ProductCard";
 import ProductsAccount from "./ProductsAccount";
 // import './MyItems.css'
 
-function MyWishlist({deleteMyItems, wishlistId, myWishlist, goHome}) {
+function MyWishlist({ wishlistId, myWishlist, goHome}) {
     
+
+    function deleteMyWishlist() {
+        console.log('delete my wishlist')
+    }
 
 // let mappedWishlist = myWishlist.map((item) => {
 //     return <ProductsAccount item={item} />
@@ -12,7 +16,7 @@ function MyWishlist({deleteMyItems, wishlistId, myWishlist, goHome}) {
 
 const mappedWishlist = myWishlist.map((item) => {
     console.log(item)
-    return <ProductsAccount deleteMyItems={deleteMyItems} item={item} />
+    return <ProductsAccount onDelete={deleteMyWishlist} item={item} />
             //render needs item.product
 
 })
