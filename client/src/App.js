@@ -90,7 +90,7 @@ useEffect(() => {
 console.log(homeReviews)
 
 useEffect(() => {
-  fetch(`/my_products/${userId}`).then((response) => {
+  fetch(`/my_products/1`).then((response) => {
       if (response.ok) {
           response.json().then((product) => setMyProducts(product))
       }
