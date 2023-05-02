@@ -31,9 +31,13 @@ function Home({homeReviews, topThree, user}) {
  }
 
  let myTopThree = topThree.map((item) => {
-    return <TopThree item={item} />
+    return  <div className="wishlist-div">
+        <TopThree item={item} />
+    </div>
+    
  })
 
+ console.log(topThree.length == 0)
  console.log(topThree)
 
 //  console.log(mappedHomeReviews.length == 0)
@@ -50,11 +54,10 @@ function Home({homeReviews, topThree, user}) {
             <div className="left-div">
                 <div className="left-text">
                     <h5 className="link" onClick={routeMyProducts}>My Products</h5>
-                    <h5 className="link" onClick={routeMyRoutines}>My Routines</h5>
                     <h5 className="link" onClick={routeMyWishlist}>My Wishlist</h5>
                 </div>
                 <div className="wishlist">
-                    {myTopThree}
+                    {topThree.length == 0 ? <p>Nothing in Wishlist Yet</p> : myTopThree}
                 </div>
             </div>
         </div>

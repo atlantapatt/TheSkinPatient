@@ -102,7 +102,7 @@ useEffect(() => {
           response.json().then((products) => setTopThree(products))
       }
   }) 
-},[])
+},[myWishlist])
 
 
 function addReviews(review) {

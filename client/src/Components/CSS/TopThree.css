@@ -3,7 +3,14 @@
     width: 150px;
 }
 
-.item-name {
-    /* align-items: center; */
+.top-three {
+    display: inline;
     text-align: center;
+    background-color: white;
+}
+
+
+
+.item-name {
+padding-right: 20px;
 }

@@ -8,6 +8,11 @@
 .home-reviews{
     display: inline-flex;
     margin-bottom: 10px;
+    background-color: white;
+    padding: 15px;
+    -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
 }
 
 .home-reviews p {
@@ -23,19 +28,21 @@
 .right-div{
     width: 120%;
     padding-left: 5%;
-    background-color: red;
+    /* background-color: red; */
 }
 
-/* .right-div p {
-
-} */
 
 .left-div{
     text-align: center;
     position: flex;
     width: 600px;
     /* overflow: visible; */
-    background-color: royalblue;
+    background-color: #a27c82;
+    margin-right: 100px;
+    -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+    
 }
 
 .left-div h5{
@@ -46,4 +53,12 @@
 .link:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.user-reviews{
+padding-right: 200px;
+}
+
+.user-links{
+
 }

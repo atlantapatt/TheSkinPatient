@@ -1,8 +1,8 @@
+import './CSS/ReviewCard.css'
 function ReviewCard({review}) {
 
     return (
         <div className="review-div">
-            {/* user avatar?? */}
             <div className="review-text">
                 <p>{review.user.username}</p>
                 <p>{review.info}</p>

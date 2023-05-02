@@ -38,5 +38,7 @@
 }
 
 .app{
+  background-image: linear-gradient(to bottom right, pink, grey);
+
   font-size: larger;
 }
