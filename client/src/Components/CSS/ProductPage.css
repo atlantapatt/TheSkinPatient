@@ -1,6 +1,6 @@
 .product-div{
     padding-left: 15px;
-    z-index: 0;
+    z-index: -1;
 }
 .product-image img{
     height: 400px;
@@ -31,7 +31,7 @@ border-radius: 8px;
 .confirmed{
     background-color: #cccccc;
     z-index: 1;
-    width: 100px;
+    width: 50px;
     height: 100px;
 }
 
