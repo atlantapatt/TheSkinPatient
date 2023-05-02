@@ -5,7 +5,7 @@ function MyProducts({myProducts, deleteMyItems, goHome}) {
     console.log(myProducts)
     const mappedMyProducts = myProducts.map((item) => {
         console.log(item)
-        return <ProductsAccount deleteMyItems={deleteMyItems} item={item.product} />
+        return <ProductsAccount deleteMyItems={deleteMyItems} item={item} />
         //render needs item.product
     })
 
