@@ -63,7 +63,7 @@ useEffect(() => {
             </div>
             <div className="user-reviews">
                 <p>Reviews</p>
-                {mappedAccountReviews}
+                {accountReviews.length == 0 ? <p>No Reviews Yet! Write Some!</p> : mappedAccountReviews}
             </div>
            <div className="account-links">
                 <h3>My Products</h3>
