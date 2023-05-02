@@ -39,6 +39,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     }
 
     console.log(user.id)
+//not saving
 
     function addToProducts() {
         fetch(`/my_products/`, {
@@ -47,16 +48,16 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: userId,
+                user_id: user.id,
                 product_id: currentProduct.id
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((product) => addToMyProducts(product.product))
+                r.json().then((product) => console.log(product.product))
             } 
         })
         console.log("added to my products")    }
-
+//not saving
     function addWishClick() {
         fetch(`/product_wishlists`, {
             method: "POST",
@@ -69,7 +70,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((wishlist) => addToWishlist(wishlist.product))
+                r.json().then((wishlist) => console.log(wishlist.product))
             } 
         })
         console.log("added to wishlist")
