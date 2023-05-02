@@ -78,7 +78,7 @@ useEffect(() => {
 console.log(homeReviews)
 
 useEffect(() => {
-  fetch(`/my_products/${user.id}`).then((response) => {
+  fetch(`/my_products/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((product) => setMyProducts(product))
       }
@@ -86,7 +86,7 @@ useEffect(() => {
 },[user])
 console.log(myProducts)
 useEffect(() => {
-    fetch(`/wishlists/${user.id}`).then((response) => {
+    fetch(`/wishlists/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((wishlist) => setWishlistId(wishlist))
       }
@@ -97,7 +97,7 @@ useEffect(() => {
 console.log(myWishlist)
 
 useEffect(() => {
-    fetch(`/product_wishlists/${user.id}`).then((response) => {
+    fetch(`/product_wishlists/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((products) => setMyWishlist(products))
       }
@@ -106,7 +106,7 @@ useEffect(() => {
 
 
 useEffect(() => {
-    fetch(`/recentWishlist/${user.id}`).then((response) => {
+    fetch(`/recentWishlist/${userId}`).then((response) => {
       if (response.ok) {
           response.json().then((products) => setTopThree(products))
       }
