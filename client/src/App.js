@@ -96,15 +96,13 @@ useEffect(() => {
 },[])
 
 
-// useEffect(() => {
-//   if (user == !null) {
-//     fetch('/recentWishlist').then((response) => {
-//       if (response.ok) {
-//           response.json().then((products) => console.log(products))
-//       }
-//   }) 
-//   }
-// },[])
+useEffect(() => {
+    fetch(`/recentWishlist/${userId}`).then((response) => {
+      if (response.ok) {
+          response.json().then((products) => setTopThree(products))
+      }
+  }) 
+},[])
 
 
 function addReviews(review) {
@@ -131,10 +129,10 @@ if (!user) return <Login user={user} setUser={setUser} />
       <Navbar setUser={setUser}/>
       <Switch>
         <Route exact path='/'>
-          <Home user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
+          <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
         <Route exact path='/account'>
-          <Account setUser={setUser} user={user}/>
+          <Account topThree={topThree} setUser={setUser} user={user}/>
         </Route>
         <Route exact path='/products'>
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>

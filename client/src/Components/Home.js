@@ -1,7 +1,8 @@
 import { useHistory } from "react-router-dom";
 import './CSS/Home.css'
 import ReviewCard from "./ReviewCard";
-function Home({homeReviews, setHomeReviews, user}) {
+import TopThree from "./TopThree";
+function Home({homeReviews, topThree, user}) {
  const history = useHistory()
  let iconLoad = <i class="fa-solid fa-spinner fa-spin-pulse"></i>
  
@@ -29,8 +30,11 @@ function Home({homeReviews, setHomeReviews, user}) {
     console.log('go to my wishlist')
  }
 
+ let myTopThree = topThree.map((item) => {
+    return <TopThree item={item} />
+ })
 
- console.log(user)
+ console.log(topThree)
 
 //  console.log(mappedHomeReviews.length == 0)
 //  console.log(homeReviews)
@@ -50,7 +54,7 @@ function Home({homeReviews, setHomeReviews, user}) {
                     <h5 className="link" onClick={routeMyWishlist}>My Wishlist</h5>
                 </div>
                 <div className="wishlist">
-                    WishList Pics
+                    {myTopThree}
                 </div>
             </div>
         </div>
