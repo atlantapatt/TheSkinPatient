@@ -101,7 +101,7 @@ useEffect(() => {
           response.json().then((product) => setMyProducts(product))
       }
   })
-},[userId])
+},[])
 console.log(myProducts)
 
 useEffect(() => {
@@ -110,7 +110,7 @@ useEffect(() => {
           response.json().then((wishlist) => setWishlistId(wishlist))
       }
   })
-},[userId])
+},[])
 
 // function fetchWishlist() {
 //   fetch(`/wishlists/${userId}`).then((response) => {
@@ -129,7 +129,7 @@ useEffect(() => {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[userId])
+},[])
 
 // function fetchProdWish() {
 //   fetch(`/product_wishlists/${userId}`).then((response) => {
@@ -146,7 +146,7 @@ useEffect(() => {
           response.json().then((products) => setTopThree(products))
       }
   }) 
-},[userId])
+},[])
 
 // function recentWishlist() {
 //   fetch(`/recentWishlist/${userId}`).then((response) => {
