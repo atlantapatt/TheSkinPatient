@@ -38,6 +38,7 @@ let history = useHistory()
     fetch('/me').then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user))
+        history.push('/account')
       } else {
         return <Login user={user} setUser={setUser} />
       }
@@ -172,17 +173,17 @@ function goHome() {
 
 
 
-if (!user) return <Login user={user} setUser={setUser} />
+// if (!user) return <Login user={user} setUser={setUser} />
 
   return (
     <div className='app'>
       <Navbar user={user} setUserId={setUserId} setUser={setUser}/>
       <Switch>
-        <Route exact path='/'>
-          <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
-        </Route>
         <Route exact path='/account'>
           <Account userId={userId} topThree={topThree} setUser={setUser} user={user}/>
+        </Route>
+        <Route exact path='/'>
+          <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
         <Route exact path='/allproducts'>
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
