@@ -52,7 +52,7 @@ useEffect(() => {
 
     function onDelete() {
         console.log('delete')
-        fetch('/users/1', {
+        fetch(`/users/${user.id}`, {
             method: "DELETE"
         }).then((r) => {
             if (r.ok) {
