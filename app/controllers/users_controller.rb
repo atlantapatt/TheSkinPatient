@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     def destroy
         user = User.find_by(id: params[:id])
         if user
-            user.destory
+            user.destroy
             head :no_content
         end
     end
