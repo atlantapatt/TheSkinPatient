@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     end
 
 
-    def destory
+    def destroy
         user = User.find_by(id: params[:id])
         if user
             user.destory
