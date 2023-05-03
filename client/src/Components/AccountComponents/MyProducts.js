@@ -6,16 +6,14 @@ function MyProducts({myProducts, goHome}) {
 
 
     function deleteMyProducts() {
-        console.log('delete my products')
         fetch(`/my_products/${productID}`, {
             method: "DELETE"
         })
-        // .then((r) => {
-        //     if (r.ok) {
-        //         (null)
-        //         setUserId(null)
-        //     }
-        // })
+        .then((r) => {
+            if (r.ok) {
+                console.log('deleted!')
+            }
+        })
     }
 
     console.log(myProducts)

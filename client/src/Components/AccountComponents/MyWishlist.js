@@ -11,6 +11,10 @@ function MyWishlist({ wishlistId, myWishlist, goHome}) {
         console.log('delete my wishlist')
         fetch(`/product_wishlists/${productID}`, {
             method: "DELETE"
+        }).then((r) => {
+            if (r.ok) {
+                console.log('deleted!')
+            }
         })
     }
 
