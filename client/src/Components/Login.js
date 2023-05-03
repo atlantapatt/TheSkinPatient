@@ -5,8 +5,8 @@ import SignupBox from "./SignupBox";
 
 function Login({setUser, user}) {
     const [login, setLogin] = useState(true)
-    const loginp = <p onClick={(() => setLogin(false))}>Not a User? Signup Here!</p>
-    const signup = <p onClick={(() => setLogin(true))}>Already a User? Login Here</p>
+    const loginp = <p className="isuser" onClick={(() => setLogin(false))}>Not a User? Signup Here!</p>
+    const signup = <p className="isuser" onClick={(() => setLogin(true))}>Already a User? Login Here</p>
     
     console.log(user)
     return ( 

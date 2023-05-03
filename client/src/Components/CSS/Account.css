@@ -37,6 +37,14 @@ margin-right: 25px;
     
 }
 
+#edit:hover{
+    text-decoration: underline;
+}
+
+#delete:hover{
+    text-decoration: underline;
+}
+
 .edit-profile i{
     margin-top: 23px;
 }
@@ -64,6 +72,10 @@ top: 0;
     width: 300px;
     height: 300px;
     z-index: 999;
+}
+
+.click:hover{
+    text-decoration: underline;
 }
 
 #product-image{

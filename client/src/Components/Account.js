@@ -3,15 +3,16 @@ import './CSS/Account.css'
 import EditAccount from "./EditAccount";
 import ReviewCard from "./ReviewCard";
 import DeleteAccount from "./DeleteAccount";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function Account({user, setUser}) {
+function Account({user, setUser, topThree}) {
     const [accountReviews, setAccountReviews] = useState([])
     const [newPhoto, setNewPhoto] = useState()
    const [deleteAccount, setDeleteAccount] = useState(false)
     const [bio, setBio] = useState(user.bio)
     const [editing, setEditing] = useState(false)
     
-
+const history = useHistory()
 console.log(user)
 console.log(accountReviews)
 
@@ -28,6 +29,16 @@ useEffect(() => {
             setBio("No Bio Written")
         }
     },[])
+
+    function routeMyProducts() {
+        history.push('/myproducts')
+        console.log('go to my products')
+     }
+    
+     function routeMyWishlist() {
+        history.push('/mywishlist')
+        console.log('go to my wishlist')
+     }
 
     let mappedAccountReviews = accountReviews.map((review) => {
         return <div className="account-reviews">
@@ -50,6 +61,14 @@ useEffect(() => {
         // })
     }
 
+    let myTopThree = topThree.map((item) => {
+        console.log(item)
+        return  <div className="wishlist-div">
+            <TopThree item={item} />
+        </div>
+        
+     })
+
     return ( 
         <div className="account">
             <div className={`delete-div ${deleteAccount ? 'active' : 'inactive'}`}>
@@ -66,7 +85,7 @@ useEffect(() => {
                         <i class="fa-solid fa-pen-to-square"></i>
                         <p>Edit Profile</p>
                     </div>
-                    <div className="edit-profile" onClick={(() => setDeleteAccount(true))}>
+                    <div id="delete" className="edit-profile" onClick={(() => setDeleteAccount(true))}>
                         <i class="fa-solid fa-trash"></i>
                         <p>Delete Profile</p>
                     </div>
@@ -81,9 +100,10 @@ useEffect(() => {
                 {accountReviews.length == 0 ? <p>No Reviews Yet! Write Some!</p> : mappedAccountReviews}
             </div>
            <div className="account-links">
-                <h3>My Products</h3>
-                <h3>My Wishlist</h3>
+                <h3 className="click" onClick={routeMyProducts}>My Products</h3>
+                <h3 className="click" onClick={routeMyWishlist}>My Wishlist</h3>
                 <p>Wishlist Top 3</p>
+                {topThree.length == 0 ? <p>Nothing in Wishlist Yet</p> : myTopThree}
            </div>
            
             

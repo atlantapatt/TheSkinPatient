@@ -17,3 +17,7 @@
 -moz-border-radius: 8px;
 border-radius: 8px;
 }
+
+.isuser:hover{
+    text-decoration: underline;
+}
