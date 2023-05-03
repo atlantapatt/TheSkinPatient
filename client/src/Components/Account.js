@@ -52,14 +52,14 @@ useEffect(() => {
 
     function onDelete() {
         console.log('delete')
-        // fetch('/users/1', {
-        //     method: "DELETE"
-        // }).then((r) => {
-        //     if (r.ok) {
-        //         setUser(null)
-        //         setUserId(null)
-        //     }
-        // })
+        fetch('/users/1', {
+            method: "DELETE"
+        }).then((r) => {
+            if (r.ok) {
+                setUser(null)
+                setUserId(null)
+            }
+        })
     }
 
     let myTopThree = topThree.map((item) => {
