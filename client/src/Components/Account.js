@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './CSS/Account.css'
 import EditAccount from "./EditAccount";
 import ReviewCard from "./ReviewCard";
+import DeleteAccount from "./DeleteAccount";
 
 function Account({user, setUser}) {
     const [accountReviews, setAccountReviews] = useState([])
@@ -43,8 +44,8 @@ useEffect(() => {
 
     return ( 
         <div className="account">
-            <div>
-                
+            <div className={`delete-div ${deleteAccount ? 'active' : 'inactive'}`}>
+                <DeleteAccount setDeleteAccount={setDeleteAccount} onDelete={onDelete}/>
             </div>
             <br></br>
             <div className="user-profile">
