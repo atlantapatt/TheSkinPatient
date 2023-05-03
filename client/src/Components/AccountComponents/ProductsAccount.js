@@ -2,6 +2,8 @@ function ProductsAccount({item, onDelete, setProductID}) {
 
     function onHover() {
         setProductID(item.id)
+        console.log(item.id)
+        console.log(productID)
     }
     console.log(item)
     return ( 
