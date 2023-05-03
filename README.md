@@ -1,10 +1,10 @@
 # Phase 5 Project
 
 ## Project Basis
-
+For my last Flatiron School Project, I've built a skincare social media app using Postgres, Ruby, Ruby On Rails, and React. In the application, you log in to an account to see reviews. As a user you can review products or add them to your products list or your wishlist. 
 
 ## Project Use
-
+The main idea behind this project was to create a skin care application to allow people to share their opinions on the various skin care products out there as well as track what they have in their posession and what products they want to get. Often times we can forget how may skin care products we actually have because we store them away and leave out the few we are currently using. This app can help recognize how many products we have and remind us to swap in our 'old goodies' over our trendy not as effective items. 
 
 ## How to Use
 1. Log In or Sign Up
