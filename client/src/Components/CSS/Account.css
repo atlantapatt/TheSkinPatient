@@ -33,6 +33,7 @@ margin-right: 25px;
 }
 
 .account-links{
+    align-items: center;
     background-color: #a27c82;
     -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
