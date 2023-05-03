@@ -39,9 +39,10 @@ let history = useHistory()
       if (response.ok) {
         response.json().then((user) => setUser(user))
         // history.push('/account')
-      } else {
-        return <Login user={user} setUser={setUser} />
       }
+      //  else {
+      //   return <Login user={user} setUser={setUser} />
+      // }
     })
   },[])
 
@@ -173,7 +174,7 @@ function goHome() {
 
 
 
-// if (!user) return <Login user={user} setUser={setUser} />
+if (!user) return <Login user={user} setUser={setUser} />
 
   return (
     <div className='app'>
