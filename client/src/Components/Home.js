@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import './CSS/Home.css'
 import ReviewCard from "./ReviewCard";
 import TopThree from "./TopThree";
+import { useEffect } from "react";
 function Home({homeReviews, topThree, user}) {
  const history = useHistory()
  let iconLoad = <i class="fa-solid fa-spinner fa-spin-pulse"></i>
