@@ -23,21 +23,7 @@ function SignupBox({setUser, user}) {
                 r.json().then((err) => setErrors(err.exception.slice(-49,-1)))
             }
         })
-        if (!user == null) {
-        fetch('/wishlists', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                user_id: user.id 
-            }),
-        }).then((r) => {
-            if (r.ok) {
-                r.json().then((wishlist) => console.log(wishlist))
-            } 
-        })
-    }
+       
     }
 console.log(user)
     // function createWishlist() {
@@ -48,7 +34,21 @@ console.log(user)
         e.preventDefault()
         signup()
         console.log(user)
-        // createWishlist()
+        if (!user == null) {
+            fetch('/wishlists', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    user_id: user.id 
+                }),
+            }).then((r) => {
+                if (r.ok) {
+                    r.json().then((wishlist) => console.log(wishlist))
+                } 
+            })
+        }
     }
 
 

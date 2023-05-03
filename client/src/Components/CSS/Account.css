@@ -34,10 +34,15 @@ margin-right: 25px;
 
 .account-links{
     align-items: center;
+    text-align: center;
     background-color: #a27c82;
     -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 border-radius: 8px;
+}
+
+.wishlist-div{
+    align-items: center;
 }
 
 .edit-profile{
@@ -86,6 +91,10 @@ top: 0;
 
 .click:hover{
     text-decoration: underline;
+}
+
+.click{
+    text-align: center;
 }
 
 #product-image{
