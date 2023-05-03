@@ -4,10 +4,14 @@ import ProductsAccount from "./ProductsAccount";
 // import './MyItems.css'
 
 function MyWishlist({ wishlistId, myWishlist, goHome}) {
-    
+    const [productID, setProductID] = useState()
+
 
     function deleteMyWishlist() {
         console.log('delete my wishlist')
+        fetch(`/product_wishlists/${productID}`, {
+            method: "DELETE"
+        })
     }
 
 // let mappedWishlist = myWishlist.map((item) => {
@@ -16,7 +20,7 @@ function MyWishlist({ wishlistId, myWishlist, goHome}) {
 
 const mappedWishlist = myWishlist.map((item) => {
     console.log(item)
-    return <ProductsAccount onDelete={deleteMyWishlist} item={item} />
+    return <ProductsAccount setProductID={setProductID} onDelete={deleteMyWishlist} item={item} />
             //render needs item.product
 
 })

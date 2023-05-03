@@ -1,7 +1,11 @@
-function ProductsAccount({item, onDelete}) {
+function ProductsAccount({item, onDelete, setProductID}) {
+
+    function onHover() {
+        setProductID(item.id)
+    }
     console.log(item)
     return ( 
-        <div className="item-card">
+        <div className="item-card" onHover={onHover}>
             <div className="delete" onClick={onDelete}>
                 <i class="fa-solid fa-x"></i>
             </div>

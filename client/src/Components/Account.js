@@ -39,7 +39,15 @@ useEffect(() => {
     })
 
     function onDelete() {
-        console.log("delete")
+        console.log('delete')
+        // fetch('/users/1', {
+        //     method: "DELETE"
+        // }).then((r) => {
+        //     if (r.ok) {
+        //         setUser(null)
+        //         setUserId(null)
+        //     }
+        // })
     }
 
     return ( 
