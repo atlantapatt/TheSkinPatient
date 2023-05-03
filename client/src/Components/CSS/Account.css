@@ -32,6 +32,13 @@ margin-right: 25px;
     display: inline-flex;
 }
 
+.account-links{
+    background-color: #a27c82;
+    -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+}
+
 .edit-profile{
     display: inline-flex;
     
@@ -39,10 +46,12 @@ margin-right: 25px;
 
 #edit:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 #delete:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .edit-profile i{
@@ -56,7 +65,7 @@ margin-right: 25px;
 .user-reviews{
     width: 800px;
     margin-right: 200px;
-    background-color: aqua;
+
 }
     
 .delete-div {
