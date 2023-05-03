@@ -5,21 +5,12 @@ function MyProducts({myProducts, goHome}) {
     const [productID, setProductID] = useState()
 
 
-    function deleteMyProducts() {
-        fetch(`/my_products/${productID}`, {
-            method: "DELETE"
-        })
-        .then((r) => {
-            if (r.ok) {
-                console.log('deleted!')
-            }
-        })
-    }
+   
 
     console.log(myProducts)
     const mappedMyProducts = myProducts.map((item) => {
         console.log(item)
-        return <ProductsAccount setProductID={setProductID} onDelete={deleteMyProducts} item={item} />
+        return <ProductsAccount setProductID={setProductID} item={item} />
         //render needs item.product
     })
 

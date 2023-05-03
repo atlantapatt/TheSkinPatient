@@ -50,7 +50,7 @@ function Navbar({setUser, setUserId, user}) {
                     <p>Welcome {user.username}!</p>
                 </div>
                 <div className="img" onClick={homeRoute}>
-                    <img src="/client/public/Photos/skinlogo.png"></img>
+                    <img id="skin-logo" src="./skinlogo.png"></img>
                 </div>
                 <div className="dropdown-trigger" onClick={() => {setOpen(!open)}}>
                     <i class={open ? "fa-solid fa-bars fa-rotate-90" : "fa-solid fa-bars"}></i>
@@ -69,4 +69,3 @@ function Navbar({setUser, setUserId, user}) {
 }
 
 export default Navbar;
-<i class="fa-solid fa-bars fa-rotate-180"></i>

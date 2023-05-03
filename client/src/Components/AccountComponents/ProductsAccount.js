@@ -1,16 +1,9 @@
 function ProductsAccount({item, onDelete, setProductID}) {
 
-    function onHover() {
-        setProductID(item.id)
-        console.log(item.id)
-        
-    }
+
     console.log(item)
     return ( 
-        <div className="item-card" onMouseEnter={onHover}>
-            <div className="delete" onClick={onDelete}>
-                <i class="fa-solid fa-x"></i>
-            </div>
+        <div className="item-card" >
             <div className="image">
                 <img src={item.image}></img>
             </div>
