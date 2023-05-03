@@ -101,7 +101,7 @@ useEffect(() => {
           response.json().then((product) => setMyProducts(product))
       }
   })
-},[])
+},[userId])
 console.log(myProducts)
 
 useEffect(() => {
