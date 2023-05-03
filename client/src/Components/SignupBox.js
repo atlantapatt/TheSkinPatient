@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 function SignupBox({setUser, user}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -20,7 +21,7 @@ function SignupBox({setUser, user}) {
                 r.json().then((user) => setUser(user)) 
             } else {
                 //find out how to get full messages
-                r.json().then((err) => setErrors(err.exception.slice(-49,-1)))
+                r.json().then((err) => console.log(err.errors))
             }
         })
        

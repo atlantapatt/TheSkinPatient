@@ -184,7 +184,7 @@ if (!user) return <Login user={user} setUser={setUser} />
         <Route exact path='/account'>
           <Account userId={userId} topThree={topThree} setUser={setUser} user={user}/>
         </Route>
-        <Route exact path='/products'>
+        <Route exact path='/allproducts'>
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
