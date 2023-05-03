@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 function SignupBox({setUser, user}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState([])
+
+    const history = useHistory()
 
     function signup() {
         fetch('/signup', {
@@ -19,6 +22,7 @@ function SignupBox({setUser, user}) {
         }).then((r) => {
             if (r.ok) {
                 r.json().then((user) => setUser(user)) 
+                history.push('/account')
             } else {
                 //find out how to get full messages
                 r.json().then((err) => console.log(err.errors))

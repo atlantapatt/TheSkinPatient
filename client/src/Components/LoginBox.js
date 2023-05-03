@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function LoginBox({setUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
+
+    const history = useHistory()
 
     function onSubmit(e) {
         e.preventDefault()
@@ -19,6 +22,7 @@ function LoginBox({setUser}) {
         }).then((r) => {
             if (r.ok) {
                 r.json().then((user) => setUser(user))
+                history.push('/account')
             } else {
                 r.json().then((err) => setErrors(err.errors))
             }
