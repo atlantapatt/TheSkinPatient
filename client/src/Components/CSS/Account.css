@@ -51,7 +51,34 @@ margin-right: 25px;
     background-color: aqua;
 }
     
-.user-links{
+.delete-div {
+    position: absolute;
+    background-color: #cccccc;
+    padding: 25px;
+    margin-left: 800px;
+    margin-top: 400px;
+    -webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+top: 0;
+    width: 150px;
+    height: 100px;
+    z-index: 999;
+}
 
-    
+
+
+.delete-div.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed) ease;
+    z-index: 1;
+}
+
+.delete-div.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--speed) ease;
 }

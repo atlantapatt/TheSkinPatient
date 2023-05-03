@@ -23,6 +23,7 @@ function LoginBox({setUser}) {
                 r.json().then((err) => setErrors(err.errors))
             }
         })
+        window.location.reload(false);
     }
 
     // let myErrors = errors.map((err) => {
