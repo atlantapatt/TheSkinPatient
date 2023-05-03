@@ -40,7 +40,7 @@ function LoginBox({setUser}) {
                     <br></br>
                     <label>Password: </label>
                     <br></br>
-                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    <input className="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 </div>
                 <button >Submit</button>
                 <form className="error-form">

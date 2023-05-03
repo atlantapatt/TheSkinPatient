@@ -67,10 +67,10 @@ console.log(user)
                 <br></br>
                 <label>Password: </label>
                 <br></br>
-                <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input className="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <br></br>
                 <lable>Confirm Password</lable>
-                <input type="text"></input>
+                <input className="password" type="password"></input>
                 <br></br>
                 <button>Submit</button>
                 <form className="error-form">
