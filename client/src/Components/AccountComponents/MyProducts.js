@@ -7,7 +7,7 @@ function MyProducts({myProducts, goHome}) {
 
     function deleteMyProducts() {
         console.log('delete my products')
-        fetch(`/my_product/${productID}`, {
+        fetch(`/my_products/${productID}`, {
             method: "DELETE"
         })
         // .then((r) => {
