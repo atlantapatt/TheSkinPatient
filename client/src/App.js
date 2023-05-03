@@ -38,7 +38,7 @@ let history = useHistory()
     fetch('/me').then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user))
-        history.push('/account')
+        // history.push('/account')
       } else {
         return <Login user={user} setUser={setUser} />
       }
