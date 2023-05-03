@@ -2,7 +2,6 @@ import { useHistory } from "react-router-dom";
 import './Components/CSS/Navbar.css'
 import { useState } from "react";
 import DropdownMenu from "./Components/DropdownMenu";
-import '../public/Photos/skinlogo.png'
 
 function Navbar({setUser, setUserId, user}) {
     const [open, setOpen] = useState(false)
