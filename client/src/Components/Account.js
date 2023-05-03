@@ -37,13 +37,15 @@ useEffect(() => {
         </div>
     })
 
-    function deleteAccount() {
-
+    function onDelete() {
+        console.log("delete")
     }
 
     return ( 
         <div className="account">
-            {/* ACCOUNT */}
+            <div>
+                
+            </div>
             <br></br>
             <div className="user-profile">
                 <div className="user-image">
@@ -55,7 +57,7 @@ useEffect(() => {
                         <i class="fa-solid fa-pen-to-square"></i>
                         <p>Edit Profile</p>
                     </div>
-                    <div className="edit-profile">
+                    <div className="edit-profile" onClick={(() => setDeleteAccount(true))}>
                         <i class="fa-solid fa-trash"></i>
                         <p>Delete Profile</p>
                     </div>
