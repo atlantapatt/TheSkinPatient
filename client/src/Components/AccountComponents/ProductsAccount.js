@@ -7,7 +7,7 @@ function ProductsAccount({item, onDelete, setProductID}) {
     }
     console.log(item)
     return ( 
-        <div className="item-card" onHover={onHover}>
+        <div className="item-card" onMouseEnter={onHover}>
             <div className="delete" onClick={onDelete}>
                 <i class="fa-solid fa-x"></i>
             </div>
