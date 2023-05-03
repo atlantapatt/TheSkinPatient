@@ -53,9 +53,7 @@ let history = useHistory()
       
   },[])
 
-  // useEffect(() => {
-  //   window.location.reload(false);
-  // },[user])
+
  
   console.log(topThree)
   console.log(userId)

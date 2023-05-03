@@ -21,9 +21,7 @@ function Home({homeReviews, topThree, user}) {
     console.log('go to my products')
  }
 
-//    useEffect(() => {
-//     window.location.reload(false);
-//   },[user])
+
 
  function routeMyWishlist() {
     history.push('/mywishlist')
