@@ -28,7 +28,7 @@ function Navbar({setUser, setUserId, user}) {
     }
 
     function productsRoute() {
-        let path = '/products'
+        let path = '/allproducts'
         history.push(path)
         console.log('products')
         setOpen(false)
@@ -48,7 +48,7 @@ function Navbar({setUser, setUserId, user}) {
         <div className="nav">
             <div className="nav-items">
                 <div className="welcome-div">
-                    <p>Welcome {user.username}!</p>
+                    <p>Welcome!</p>
                 </div>
                 <div className="img" onClick={homeRoute}>
                     <img id="skin-logo" src={logo}></img>
