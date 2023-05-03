@@ -6,7 +6,7 @@ import ReviewCard from "./ReviewCard";
 function Account({user, setUser}) {
     const [accountReviews, setAccountReviews] = useState([])
     const [newPhoto, setNewPhoto] = useState()
-   
+   const [deleteAccount, setDeleteAccount] = useState(false)
     const [bio, setBio] = useState(user.bio)
     const [editing, setEditing] = useState(false)
     
@@ -36,6 +36,10 @@ useEffect(() => {
         <ReviewCard review={review} />
         </div>
     })
+
+    function deleteAccount() {
+
+    }
 
     return ( 
         <div className="account">

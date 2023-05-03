@@ -6,7 +6,9 @@ class ProductWishlistsController < ApplicationController
         wishlist = Wishlist.find_by(user_id: user)
         pwish = ProductWishlist.where(wishlist_id: wishlist)
         products = Product.where(id: pwish)
-        render json: products, include: :product
+        if wishlist
+            render json: products, include: :product
+        end
     end
 
 

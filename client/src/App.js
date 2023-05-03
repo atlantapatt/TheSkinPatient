@@ -130,12 +130,12 @@ useEffect(() => {
 console.log(myWishlist)
 
 useEffect(() => {
-    fetch(`/product_wishlists/${userId}`).then((response) => {
+    fetch(`/product_wishlists/3`).then((response) => {
       if (response.ok) {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[])
+},[userId])
 
 // function fetchProdWish() {
 //   fetch(`/product_wishlists/${userId}`).then((response) => {
