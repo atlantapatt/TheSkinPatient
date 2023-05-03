@@ -39,6 +39,9 @@
     cursor: pointer;
 }
 
+#skin-logo{
+    border-radius: 50%;
+}
 .dropdown-menu::before{
     content: '';
     position: absolute;

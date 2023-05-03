@@ -66,17 +66,6 @@ let history = useHistory()
 
 
 
-// function fetchUser() {
-//   fetch('/me').then((response) => {
-//     if (response.ok) {
-//       response.json().then((user) => setUser(user))
-//     } else {
-//       return <Login user={user} setUser={setUser} />
-//     }
-//   })
-// }
-
-
 useEffect(() => {
   fetch('/products').then((response) => {
       if (response.ok) {
@@ -148,13 +137,7 @@ useEffect(() => {
   }) 
 },[userId])
 
-// function recentWishlist() {
-//   fetch(`/recentWishlist/${userId}`).then((response) => {
-//     if (response.ok) {
-//         response.json().then((products) => setTopThree(products))
-//     }
-// }) 
-// }
+
 
 console.log(topThree)
 
@@ -199,7 +182,7 @@ if (!user) return <Login user={user} setUser={setUser} />
           <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
         <Route exact path='/account'>
-          <Account topThree={topThree} setUser={setUser} user={user}/>
+          <Account userId={userId} topThree={topThree} setUser={setUser} user={user}/>
         </Route>
         <Route exact path='/products'>
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>

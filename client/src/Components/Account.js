@@ -6,7 +6,7 @@ import DeleteAccount from "./DeleteAccount";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import TopThree from "./TopThree";
 
-function Account({user, setUser, topThree}) {
+function Account({user, setUser, topThree, userId}) {
     const [accountReviews, setAccountReviews] = useState([])
     const [newPhoto, setNewPhoto] = useState()
    const [deleteAccount, setDeleteAccount] = useState(false)
@@ -52,7 +52,7 @@ useEffect(() => {
 
     function onDelete() {
         console.log('delete')
-        fetch(`/users/${user.id}`, {
+        fetch(`/users/${userId}`, {
             method: "DELETE"
         }).then((r) => {
             if (r.ok) {
