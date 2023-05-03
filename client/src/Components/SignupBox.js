@@ -22,7 +22,6 @@ function SignupBox({setUser, user}) {
         }).then((r) => {
             if (r.ok) {
                 r.json().then((user) => setUser(user)) 
-                history.push('/account')
             } else {
                 //find out how to get full messages
                 r.json().then((err) => console.log(err.errors))
@@ -33,7 +32,9 @@ function SignupBox({setUser, user}) {
 console.log(user)
     // function createWishlist() {
      
-
+function goToAccount() {
+    history.push('/account')
+}
 
     function onSubmit(e) {
         e.preventDefault()

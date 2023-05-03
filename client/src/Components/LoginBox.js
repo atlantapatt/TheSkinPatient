@@ -22,11 +22,12 @@ function LoginBox({setUser}) {
         }).then((r) => {
             if (r.ok) {
                 r.json().then((user) => setUser(user))
-                history.push('/account')
+                
             } else {
                 r.json().then((err) => setErrors(err.errors))
             }
-        })  
+        })
+        history.push('/account')  
     }
 
     let myErrors = errors.map((err) => {
