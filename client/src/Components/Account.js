@@ -57,7 +57,6 @@ useEffect(() => {
         }).then((r) => {
             if (r.ok) {
                 setUser(null)
-                setUserId(null)
             }
         })
     }
