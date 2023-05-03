@@ -25,11 +25,11 @@ function LoginBox({setUser}) {
         })  
     }
 
-    // let myErrors = errors.map((err) => {
-    //     return (
-    //         <p className="errors">{err}</p>
-    //     )
-    // })
+    let myErrors = errors.map((err) => {
+        return (
+            <p className="errors">{err}</p>
+        )
+    })
     return ( 
         <div className="login">
             <form onSubmit={onSubmit}>
@@ -44,7 +44,7 @@ function LoginBox({setUser}) {
                 </div>
                 <button >Submit</button>
                 <form className="error-form">
-                    {/* {myErrors} */}
+                    {myErrors}
                 </form>
             </form>
         </div>
