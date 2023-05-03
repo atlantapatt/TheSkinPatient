@@ -110,7 +110,7 @@ useEffect(() => {
           response.json().then((wishlist) => setWishlistId(wishlist))
       }
   })
-},[])
+},[userId])
 
 // function fetchWishlist() {
 //   fetch(`/wishlists/${userId}`).then((response) => {
@@ -129,7 +129,7 @@ useEffect(() => {
           response.json().then((products) => setMyWishlist(products))
       }
   })
-},[])
+},[userId])
 
 // function fetchProdWish() {
 //   fetch(`/product_wishlists/${userId}`).then((response) => {
@@ -146,7 +146,7 @@ useEffect(() => {
           response.json().then((products) => setTopThree(products))
       }
   }) 
-},[])
+},[userId])
 
 // function recentWishlist() {
 //   fetch(`/recentWishlist/${userId}`).then((response) => {
@@ -193,7 +193,7 @@ if (!user) return <Login user={user} setUser={setUser} />
 
   return (
     <div className='app'>
-      <Navbar setUser={setUser}/>
+      <Navbar user={user} setUserId={setUserId} setUser={setUser}/>
       <Switch>
         <Route exact path='/'>
           <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>

@@ -3,7 +3,7 @@ import './Components/CSS/Navbar.css'
 import { useState } from "react";
 import DropdownMenu from "./Components/DropdownMenu";
 
-function Navbar({setUser}) {
+function Navbar({setUser, setUserId, user}) {
     const [open, setOpen] = useState(false)
 
     const history = useHistory()
@@ -39,6 +39,7 @@ function Navbar({setUser}) {
         }).then((r) => {
             if (r.ok) {
                 setUser(null)
+                setUserId(null)
             }
         })
     }
@@ -46,7 +47,7 @@ function Navbar({setUser}) {
         <div className="nav">
             <div className="nav-items">
                 <div className="welcome-div">
-                    <p>Welcome!</p>
+                    <p>Welcome ${user.username}!</p>
                 </div>
                 <div className="img" onClick={homeRoute}>
                     <p>LOGO</p>
