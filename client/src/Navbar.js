@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import './Components/CSS/Navbar.css'
 import { useState } from "react";
 import DropdownMenu from "./Components/DropdownMenu";
+import logo from './skinlogo.png'
 
 function Navbar({setUser, setUserId, user}) {
     const [open, setOpen] = useState(false)
@@ -50,7 +51,7 @@ function Navbar({setUser, setUserId, user}) {
                     <p>Welcome {user.username}!</p>
                 </div>
                 <div className="img" onClick={homeRoute}>
-                    <img id="skin-logo" src="/home/atlantapatt/Development/code/phase-5/project5/client/src/skinlogo.png"></img>
+                    <img id="skin-logo" src={logo}></img>
                 </div>
                 <div className="dropdown-trigger" onClick={() => {setOpen(!open)}}>
                     <i class={open ? "fa-solid fa-bars fa-rotate-90" : "fa-solid fa-bars"}></i>
