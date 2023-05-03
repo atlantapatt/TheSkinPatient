@@ -54,11 +54,7 @@ let history = useHistory()
   },[])
 
   useEffect(() => {
-      console.log(userId)
-      // fetchProdWish()
-      // fetchWishlist()
-      // recentWishlist()
-
+    window.location.reload(false);
   },[user])
  
   console.log(topThree)
