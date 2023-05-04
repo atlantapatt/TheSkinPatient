@@ -24,7 +24,7 @@ function SignupBox({setUser, user}) {
                 r.json().then((user) => setUser(user)) 
             } else {
                 //find out how to get full messages
-                r.json().then((err) => console.log(err.errors))
+                r.json().then((err) => setErrors(err.errors))
             }
         })
        
@@ -55,8 +55,10 @@ function goToAccount() {
                 } 
             })
         }
+        history.push('/account')
     }
 
+    console.log(errors)
 
     // let myErrors = errors.map((err) => {
     //     return (
