@@ -29,7 +29,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         const data = window.localStorage.getItem('Current_Product')
         if (data !== null)
         setCurrentProduct(JSON.parse(data))
-    })
+    },[])
 
 
     useEffect(() => {
