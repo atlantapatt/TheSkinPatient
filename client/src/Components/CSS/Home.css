@@ -5,6 +5,10 @@
     
 }
 
+.account-info{
+    display: inline-flex;
+}
+
 .home-reviews{
     display: inline-flex;
     margin-bottom: 10px;
@@ -55,10 +59,3 @@ border-radius: 8px;
     cursor: pointer;
 }
 
-.user-reviews{
-padding-right: 200px;
-}
-
-.user-links{
-
-}

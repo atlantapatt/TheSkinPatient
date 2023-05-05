@@ -3,6 +3,7 @@ import './CSS/Home.css'
 import ReviewCard from "./ReviewCard";
 import TopThree from "./TopThree";
 import { useEffect } from "react";
+import Loading from "./Loading";
 function Home({homeReviews, topThree, user}) {
  const history = useHistory()
  let iconLoad = <i class="fa-solid fa-spinner fa-spin-pulse"></i>
@@ -36,6 +37,7 @@ function Home({homeReviews, topThree, user}) {
     
  })
 
+ const checkWishlist = topThree.length == 0 ? <p>Nothing in Wishlist Yet</p> : myTopThree
  console.log(topThree.length == 0)
  console.log(topThree)
 
@@ -56,7 +58,7 @@ function Home({homeReviews, topThree, user}) {
                     <h5 className="link" onClick={routeMyWishlist}>My Wishlist</h5>
                 </div>
                 <div className="wishlist">
-                    {topThree.length == 0 ? <p>Nothing in Wishlist Yet</p> : myTopThree}
+                    {topThree ? checkWishlist : <Loading/>}
                 </div>
             </div>
         </div>
