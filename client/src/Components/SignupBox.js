@@ -85,8 +85,8 @@ function goToAccount() {
     //     return <p>{err}</p>
     // })
 
-    console.log(errors.username)
-    console.log(errors.password)
+    // console.log(errors.username)
+    // console.log(errors.password)
 
     return ( 
         <div className="signup">
