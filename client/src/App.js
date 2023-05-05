@@ -153,7 +153,7 @@ function goHome() {
 
 // console.log(myProducts)
 // console.log(myWishlist)
-//   console.log(wishlistId.id)
+  console.log(url)
 
 
 
