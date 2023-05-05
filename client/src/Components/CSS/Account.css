@@ -97,6 +97,8 @@ top: 0;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+    min-width: 580px;
+    padding-bottom: 15px;
 }
 
 .click:hover{
