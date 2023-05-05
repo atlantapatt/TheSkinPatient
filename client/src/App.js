@@ -44,7 +44,7 @@ let history = useHistory()
       //   return <Login user={user} setUser={setUser} />
       // }
     })
-  },[])
+  },[user])
 
   useEffect(() => {
     fetch('/me').then((response) => {
