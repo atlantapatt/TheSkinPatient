@@ -25,7 +25,7 @@ function SignupBox({setUser, user}) {
             } 
             else {
                 //find out how to get full messages
-                r.json().then((err) => setErrors(err))
+                r.json().then((err) => setErrors(err.errors))
             }
         })
        
@@ -76,7 +76,6 @@ function goToAccount() {
 //         return <p>{err.username}</p>
 //     })
     // console.log(errors.username)
-    console.log(errors)
 
     return ( 
         <div className="signup">

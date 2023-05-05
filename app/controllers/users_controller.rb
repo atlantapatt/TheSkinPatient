@@ -5,9 +5,7 @@ class UsersController < ApplicationController
     def create
         user = User.create!(user_params)
         session[:user_id] = user.id
-        if user
-            render json: user, status: :created
-        end
+        render json: user, status: :created
         
        
     end
@@ -60,6 +58,6 @@ class UsersController < ApplicationController
     end
 
     def render_unprocessible_entity(invalid)
-        render json: {errors: invalid.record.errors}, status: 422
+        render json: {errors: invalid.record.errors.full_messages}, status: 422
     end
 end
