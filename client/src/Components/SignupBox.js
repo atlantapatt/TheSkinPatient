@@ -68,13 +68,13 @@ function goToAccount() {
         
     // })
 
-    let passwordErrors = errors.map((err) => {
-        return <p>{err.password}</p>
-    })
+//     let passwordErrors = errors.map((err) => {
+//         return <p>{err}</p>
+//     })
 
- let usernameErrors = errors.map((err) => {
-        return <p>{err.username}</p>
-    })
+//  let usernameErrors = errors.map((err) => {
+//         return <p>{err.username}</p>
+//     })
     // console.log(errors.username)
     console.log(errors)
 
@@ -94,8 +94,8 @@ function goToAccount() {
                 <br></br>
                 <button>Submit</button>
                 <form className="error-form">
-                    {usernameErrors}
-                    {passwordErrors}
+                    {/* {usernameErrors}
+                    {passwordErrors} */}
                 </form>
             </form>
         </div>
