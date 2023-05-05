@@ -19,7 +19,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     const match = useRouteMatch()
    
     console.log(match)
-    console.log(match.path.split('/'))
+    console.log(match.path.splice('/'))
     
     useEffect(() => {
         setRememberUrl(url)
