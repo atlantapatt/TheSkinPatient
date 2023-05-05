@@ -91,6 +91,14 @@ top: 0;
     z-index: 999;
 }
 
+.account-reviews{
+    display: inline-flex;
+    background-color: white;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
 .click:hover{
     text-decoration: underline;
 }

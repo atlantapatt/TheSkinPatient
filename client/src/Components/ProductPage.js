@@ -4,6 +4,8 @@ import './CSS/ProductPage.css'
 import ReviewCard from "./ReviewCard";
 import WriteReview from "./WriteReview";
 import ConfirmPopUp from "./ConfrimPopUp";
+import ProductInfo from "./ProductInfo";
+import Loading from "./Loading";
 
 function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
@@ -120,34 +122,8 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     // // console.log(reviews.length == 0)
     // console.log(currentProduct.reviews)
     return ( 
-        <div className="product-div">
-            <button onClick={onClick}>BACK</button>
-            <div className={`confirm ${confirmed ? 'active' : 'inactive'}`}>
-                <ConfirmPopUp setConfirmed={setConfirmed} />
-            </div>
-            <br></br>
-            <div className="product-info">
-                <div className="product-image">
-                    <img src={currentProduct.image}></img>
-                </div>
-                <div className="product-text">
-                    <h3>{currentProduct.className}</h3>
-                    <h4>{currentProduct.brand}</h4>
-                    <h5>{currentProduct.category}</h5>
-                    <p>{currentProduct.description}</p>
-                </div>
-                <div className="product-buttons">
-                    <button onClick={addToProducts}>Add To My Products</button>
-                    <button onClick={addWishClick}>Add to Wishlist</button>
-                </div>
-            </div>
-            
-            <div className="product-reviews">
-                <button onClick={(() => setWriteReview(!writeReview))}>Write Review</button>
-                <br></br>
-                {writeReview ? <WriteReview setRating={setRating} setInfo={setInfo} addToReview={addToReview} /> : null}
-                {reviews.length == 0 ? "Be the first to review!" : mappedReviews} 
-            </div>
+        <div className="single-page">
+                {currentProduct ? <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} mappedReviews={mappedReviews} /> : <Loading />}
         </div>
      );
 }
