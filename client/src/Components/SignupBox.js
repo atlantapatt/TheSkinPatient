@@ -39,6 +39,7 @@ function goToAccount() {
 
     function onSubmit(e) {
         e.preventDefault()
+        console.log(errors)
         signup()
         console.log(user)
         if (!user == null) {
