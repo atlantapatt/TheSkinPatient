@@ -12,13 +12,17 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     const [rating, setRating] = useState()
     const [info, setInfo] = useState('')
     const [confirmed, setConfirmed] = useState(false)
+    const [rememberUrl, setRememberUrl] = useState()
 
     const history = useHistory()
 
    
     // console.log(`current wishlist: ${wishlistId}`)
     
-    
+    useEffect(() => {
+        setRememberUrl(url)
+    },[])
+    console.log(rememberUrl)
 
     useEffect(() => {
         fetch(`/products/${url}`).then((response) => {
@@ -123,9 +127,10 @@ console.log(url)
     // console.log(currentProduct.reviews)
     return ( 
         <div className="single-page">
-                {currentProduct ? <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} /> : <Loading />}
+                {currentProduct ? <p>Product Info</p> : <Loading />}
         </div>
      );
 }
 
 export default ProductPage;
+{/* <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} /> */}
