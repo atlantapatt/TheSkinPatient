@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import DeleteAccount from "./DeleteAccount";
 import EditAccount from "./EditAccount";
-import './CSS/Home.css'
+import './CSS/Account.css'
 import { useEffect, useState } from "react";
 
 function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews, bio, setBio, userId, setAccountReviews}) {

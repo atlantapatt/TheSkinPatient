@@ -1,6 +1,5 @@
 import './CSS/ReviewCard.css'
 function ReviewCard({review}) {
-console.log(review)
 //review.user.username causing errors
     return (
         <div className="review-div">
