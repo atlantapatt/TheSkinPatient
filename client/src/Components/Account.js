@@ -11,7 +11,7 @@ function Account({user, setUser, topThree, userId}) {
     const [accountReviews, setAccountReviews] = useState([])
     const [newPhoto, setNewPhoto] = useState()
    const [deleteAccount, setDeleteAccount] = useState(false)
-    const [bio, setBio] = useState(user.bio)
+    const [bio, setBio] = useState('')
     const [editing, setEditing] = useState(false)
     
 const history = useHistory()
