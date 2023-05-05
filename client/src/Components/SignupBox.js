@@ -59,8 +59,8 @@ function goToAccount() {
     }
 
     console.log(errors)
-    console.log(errors.username)
-    console.log(errors.password)
+
+   
 
     // let myErrors = errors.map((err) => {
     //     if (err.username) {
@@ -79,6 +79,9 @@ function goToAccount() {
         
     // })
 
+    console.log(errors.username)
+    console.log(errors.password)
+    
     return ( 
         <div className="signup">
             <form onSubmit={onSubmit}>
