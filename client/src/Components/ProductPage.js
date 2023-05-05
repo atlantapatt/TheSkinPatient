@@ -123,7 +123,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     // console.log(currentProduct.reviews)
     return ( 
         <div className="single-page">
-                {currentProduct ? <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} mappedReviews={mappedReviews} /> : <Loading />}
+                {currentProduct && reviews ? <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} mappedReviews={mappedReviews} /> : <Loading />}
         </div>
      );
 }
