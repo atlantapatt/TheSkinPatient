@@ -103,14 +103,6 @@ useEffect(() => {
   })
 },[userId])
 
-// function fetchWishlist() {
-//   fetch(`/wishlists/${userId}`).then((response) => {
-//     if (response.ok) {
-//         response.json().then((wishlist) => setWishlistId(wishlist))
-//     }
-//   })
-// }
-
 
 console.log(myWishlist)
 
@@ -121,14 +113,6 @@ useEffect(() => {
       }
   })
 },[userId])
-
-// function fetchProdWish() {
-//   fetch(`/product_wishlists/${userId}`).then((response) => {
-//     if (response.ok) {
-//         response.json().then((products) => setMyWishlist(products))
-//     }
-// })
-// }
 
 
 useEffect(() => {
@@ -178,9 +162,6 @@ function goHome() {
 
   return (
     <div className='app'>
-      <div id='root'>
-        <p>Loading...</p>
-      </div>
       <Navbar user={user} setUserId={setUserId} setUser={setUser}/>
       <Switch>
         <Route exact path='/home'>
