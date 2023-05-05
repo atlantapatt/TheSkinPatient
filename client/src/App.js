@@ -163,7 +163,7 @@ function deleteMyItems() {
 
 
 function goHome() {
-  let path = '/'
+  let path = '/home'
   history.push(path)
   console.log('home')
 }
@@ -183,7 +183,7 @@ function goHome() {
       </div>
       <Navbar user={user} setUserId={setUserId} setUser={setUser}/>
       <Switch>
-        <Route exact path='/'>
+        <Route exact path='/home'>
           <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
         <Route exact path='/account'>

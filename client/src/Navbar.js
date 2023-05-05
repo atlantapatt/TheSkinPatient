@@ -14,7 +14,7 @@ function Navbar({setUser, setUserId, user}) {
     }
 
     function homeRoute() {
-        let path = '/'
+        let path = '/home'
         history.push(path)
         console.log('home')
         setOpen(false)

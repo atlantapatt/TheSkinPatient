@@ -6,6 +6,7 @@ import DeleteAccount from "./DeleteAccount";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import TopThree from "./TopThree";
 import Login from "./Login";
+import Loading from "./Loading";
 
 function Account({user, setUser, topThree, userId}) {
     const [accountReviews, setAccountReviews] = useState([])
@@ -17,6 +18,14 @@ function Account({user, setUser, topThree, userId}) {
 const history = useHistory()
 console.log(user)
 console.log(accountReviews)
+
+useEffect(() => {
+    if (user == undefined) {
+        return <Loading />
+    } else {
+        return user ? <Account/> : <Login />
+    }
+},[])
 
 useEffect(() => {
     fetch('/me').then((response) => {
