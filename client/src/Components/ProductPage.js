@@ -6,6 +6,7 @@ import WriteReview from "./WriteReview";
 import ConfirmPopUp from "./ConfrimPopUp";
 import ProductInfo from "./ProductInfo";
 import Loading from "./Loading";
+import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 
 function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
@@ -15,9 +16,9 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     const [rememberUrl, setRememberUrl] = useState()
 
     const history = useHistory()
-
+    const match = useRouteMatch()
    
-    // console.log(`current wishlist: ${wishlistId}`)
+    console.log(match)
     
     useEffect(() => {
         setRememberUrl(url)
