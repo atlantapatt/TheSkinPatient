@@ -27,7 +27,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     console.log(rememberUrl)
 
     useEffect(() => {
-        fetch(`/products/${url}`).then((response) => {
+        fetch(`/products${match.path}`).then((response) => {
             if (response.ok) {
                 response.json().then((product) => setCurrentProduct(product))
             } 
