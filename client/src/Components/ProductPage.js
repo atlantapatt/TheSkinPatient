@@ -33,12 +33,12 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
 
 
     useEffect(() => {
-        fetch(`/products${match.path}`).then((response) => {
+        fetch(`/products/${url}`).then((response) => {
             if (response.ok) {
                 response.json().then((product) => setCurrentProduct(product))
             } 
         })
-    })
+    },[url])
 
     useEffect(() => {
         fetch(`/products/${url}`).then((response) => {
