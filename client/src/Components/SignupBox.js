@@ -80,6 +80,10 @@ function goToAccount() {
         
     // })
 
+    let myErrors = errors.map((err) => {
+        return <p>{err}</p>
+    })
+
     console.log(errors.username)
     console.log(errors.password)
 
@@ -99,7 +103,7 @@ function goToAccount() {
                 <br></br>
                 <button>Submit</button>
                 <form className="error-form">
-                    {/* {myErrors} */}
+                    {myErrors}
                 </form>
             </form>
         </div>
