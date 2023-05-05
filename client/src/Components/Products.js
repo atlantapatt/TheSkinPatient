@@ -5,13 +5,13 @@ function Products({products, setProducts, url, setUrl, setCurrentProduct, curren
 // console.log(products)
     
 
-    const mappedClothes = products.map((item) => {
+    const mappedProduct = products.map((item) => {
         return <ProductCard url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct}  item={item} />
     })
 
     return ( 
         <div>
-            {mappedClothes}
+            {products.length == 0 ? <Loading /> : mappedProduct}
         </div>
      );
 }

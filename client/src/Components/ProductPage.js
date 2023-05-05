@@ -37,10 +37,9 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
 
     function onClick() {
         console.log('go back')
-        history.push('/products')
+        history.push('/allproducts')
     }
 
-    console.log(user.id)
 //not saving
 //needs .product
     function addToProducts() {
