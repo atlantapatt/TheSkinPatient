@@ -8,7 +8,7 @@ import ProductInfo from "./ProductInfo";
 import Loading from "./Loading";
 import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 
-function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
+function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addReviews, addToWishlist, reviews, setReviews, url, currentProduct, setCurrentProduct}) {
     const [writeReview, setWriteReview] = useState(false)
     const [rating, setRating] = useState()
     const [info, setInfo] = useState('')
@@ -22,13 +22,13 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     console.log(match.path.slice('/'))
     
     useEffect(() => {
-        window.localStorage.setItem('Current_Product', JSON.stringify(currentProduct))
-    },[currentProduct])
+        window.localStorage.setItem('Current_URL', JSON.stringify(url))
+    },[url])
 
     useEffect(() => {
-        const data = window.localStorage.getItem('Current_Product')
+        const data = window.localStorage.getItem('Current_URL')
         if (data !== null)
-        setCurrentProduct(JSON.parse(data))
+        setUrl(JSON.parse(data))
     },[])
 
 

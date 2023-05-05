@@ -176,7 +176,7 @@ if (!user) return <Login user={user} setUser={setUser} />
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
         </Route>
         <Route exact path={`/${url}`}>
-          <ProductPage userId={userId} addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
+          <ProductPage setUrl={setUrl} userId={userId} addReviews={addReviews} user={user} addToMyProducts={addToMyProducts} wishlistId={wishlistId} setWishlistId={setWishlistId} addToWishlist={addToWishlist} reviews={reviews} setReviews={setReviews} url={url} setCurrentProduct={setCurrentProduct} currentProduct={currentProduct}/>
         </Route>
         <Route exact path='/myproducts'>
           <MyProducts goHome={goHome} deleteMyItems={deleteMyItems} myProducts={myProducts}/>
