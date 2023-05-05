@@ -19,7 +19,7 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     const match = useRouteMatch()
    
     console.log(match)
-    console.log(match.path.slice('/'))
+    console.log(match.path.slice(1))
     
     useEffect(() => {
         window.localStorage.setItem('Current_URL', JSON.stringify(url))
@@ -29,6 +29,10 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
         const data = window.localStorage.getItem('Current_URL')
         if (data !== null)
         setUrl(JSON.parse(data))
+    },[])
+
+    useEffect(() => {
+        setUrl(match.path.slice(1))
     },[])
 
 
