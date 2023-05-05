@@ -27,11 +27,11 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     console.log(match)
     console.log(match.path.slice(1))
     
-    useEffect(() => {
-        if (url == '') {
-            setUrl
-        }
-    },[])
+    // useEffect(() => {
+    //     if (url == '') {
+    //         setUrl
+    //     }
+    // },[])
 
     useEffect(() => {
         window.localStorage.setItem('Current_URL', JSON.stringify(url))
