@@ -38,19 +38,7 @@ useEffect(() => {
       })
 },[])
 
-useEffect(() => {
-    fetch(`/myreviews/${user.id}`).then((response) => {
-        if (response.ok) {
-            response.json().then((reviews) => setAccountReviews(reviews))
-        }
-    })
-},[])
 
-    useEffect(() => {
-        if (user.bio == ''){
-            setBio("No Bio Written")
-        }
-    },[])
 
     
 
@@ -77,7 +65,7 @@ useEffect(() => {
 
     return ( 
         <div className="account">
-            {user == undefined ? <Loading /> : <AccountInfo userId={userId} bio={bio} setBio={setBio} setUser={setUser} user={user} topThree={topThree}  myTopThree={myTopThree} editing={editing} setEditing={setEditing} accountReviews={accountReviews} mappedAccountReviews={mappedAccountReviews} />}
+            {user == undefined ? <Loading /> : <AccountInfo setAccountReviews={setAccountReviews} userId={userId} bio={bio} setBio={setBio} setUser={setUser} user={user} topThree={topThree}  myTopThree={myTopThree} editing={editing} setEditing={setEditing} accountReviews={accountReviews} mappedAccountReviews={mappedAccountReviews} />}
            
             
         </div>
