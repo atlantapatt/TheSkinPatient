@@ -24,7 +24,7 @@ function SignupBox({setUser, user}) {
                 r.json().then((user) => setUser(user)) 
             } else {
                 //find out how to get full messages
-                r.json().then((err) => setErrors(err.errors))
+                r.json().then((err) => setErrors(`These r the errors: ${err.errors}`))
             }
         })
        
