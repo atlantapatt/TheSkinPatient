@@ -84,8 +84,8 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
         console.log("added to wishlist")
     }
 
-// console.log(currentProduct.id)
-// console.log(userId)
+console.log(currentProduct)
+console.log(url)
 // console.log(user.id)
 // console.log(confirmed)
 
