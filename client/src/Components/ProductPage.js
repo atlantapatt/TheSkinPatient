@@ -32,7 +32,7 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
                 response.json().then((product) => setCurrentProduct(product))
             } 
         })
-    },[])
+    })
 
     useEffect(() => {
         fetch(`/products/${url}`).then((response) => {
@@ -124,7 +124,7 @@ console.log(url)
 
 
     console.log(confirmed)
-
+   
     // // console.log(reviews.length == 0)
     // console.log(currentProduct.reviews)
     return ( 
