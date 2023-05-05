@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ProductCard from "./ProductCard";
+import Loading from "./Loading";
 
 function Products({products, setProducts, url, setUrl, setCurrentProduct, currentProduct}) {
 // console.log(products)
