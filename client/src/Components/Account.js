@@ -77,7 +77,7 @@ useEffect(() => {
 
     return ( 
         <div className="account">
-            {user == undefined ? <Loading /> : <AccountInfo bio={bio} setBio={setBio} setUser={setUser} user={user} topThree={topThree}  myTopThree={myTopThree} editing={editing} setEditing={setEditing} accountReviews={accountReviews} mappedAccountReviews={mappedAccountReviews} />}
+            {user == undefined ? <Loading /> : <AccountInfo userId={userId} bio={bio} setBio={setBio} setUser={setUser} user={user} topThree={topThree}  myTopThree={myTopThree} editing={editing} setEditing={setEditing} accountReviews={accountReviews} mappedAccountReviews={mappedAccountReviews} />}
            
             
         </div>
