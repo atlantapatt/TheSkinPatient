@@ -1,9 +1,9 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import DeleteAccount from "./DeleteAccount";
 import EditAccount from "./EditAccount";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews, bio, setBio, userId}) {
+function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews, bio, setBio, userId, setAccountReviews}) {
     const [newPhoto, setNewPhoto] = useState()
     const [deleteAccount, setDeleteAccount] = useState(false)
 
