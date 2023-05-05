@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 function SignupBox({setUser, user}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState()
 
     const history = useHistory()
 
@@ -25,7 +25,6 @@ function SignupBox({setUser, user}) {
             } else {
                 //find out how to get full messages
                 r.json().then((err) => setErrors(err.errors))
-                console.log(errors)
             }
         })
        
