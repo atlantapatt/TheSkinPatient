@@ -3,7 +3,7 @@ import DeleteAccount from "./DeleteAccount";
 import EditAccount from "./EditAccount";
 import { useState } from "react";
 
-function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews}) {
+function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews, bio, setBio}) {
     const [newPhoto, setNewPhoto] = useState()
     const [deleteAccount, setDeleteAccount] = useState(false)
 
@@ -30,7 +30,7 @@ function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, 
         })
     }
 
-    
+
     return ( 
         <div className="account-info">
             <div className={`delete-div ${deleteAccount ? 'active' : 'inactive'}`}>
