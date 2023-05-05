@@ -18,6 +18,18 @@ console.log(user)
 console.log(accountReviews)
 
 useEffect(() => {
+    fetch('/me').then((response) => {
+        if (response.ok) {
+          response.json().then((user) => setUser(user))
+          // history.push('/account')
+        }
+         else {
+          return <Login user={user} setUser={setUser} />
+        }
+      })
+},[])
+
+useEffect(() => {
     fetch(`/myreviews/${user.id}`).then((response) => {
         if (response.ok) {
             response.json().then((reviews) => setAccountReviews(reviews))
@@ -30,6 +42,8 @@ useEffect(() => {
             setBio("No Bio Written")
         }
     },[])
+
+    
 
     function routeMyProducts() {
         history.push('/myproducts')
