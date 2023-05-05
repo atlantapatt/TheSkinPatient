@@ -22,9 +22,15 @@ function ProductPage({userId, user ,addToMyProducts ,wishlistId, addReviews, add
     console.log(match.path.slice('/'))
     
     useEffect(() => {
-        setRememberUrl(url)
-    },[])
-    console.log(rememberUrl)
+        window.localStorage.setItem('Current_Product', JSON.stringify(currentProduct))
+    },[currentProduct])
+
+    useEffect(() => {
+        const data = window.localStorage.getItem('Current_Product')
+        if (data !== null)
+        setCurrentProduct(JSON.parse(data))
+    })
+
 
     useEffect(() => {
         fetch(`/products${match.path}`).then((response) => {
