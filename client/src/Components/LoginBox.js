@@ -26,8 +26,7 @@ function LoginBox({setUser}) {
             } else {
                 r.json().then((err) => setErrors(err.errors))
             }
-        })
-        history.push('/account')  
+        }) 
     }
 
     let myErrors = errors.map((err) => {

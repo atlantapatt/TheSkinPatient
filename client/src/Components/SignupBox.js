@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 function SignupBox({setUser, user}) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [errors, setErrors] = useState()
+    const [errors, setErrors] = useState([])
 
     const history = useHistory()
 

@@ -43,6 +43,7 @@ function Navbar({setUser, setUserId, user}) {
                 setUserId(null)
             }
         })
+        console.log('logout')
     }
     return ( 
         <div className="nav">
