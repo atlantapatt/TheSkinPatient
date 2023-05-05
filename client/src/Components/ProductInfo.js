@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import ConfirmPopUp from "./ConfrimPopUp";
 import WriteReview from "./WriteReview";
+import ReviewCard from "./ReviewCard";
 
-function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews, mappedReviews}) {
+function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews}) {
     
     
     useEffect(() => {
@@ -12,6 +13,10 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
             } 
         })
     },[url])
+
+    let mappedReviews = reviews.map((review) =>{
+        return <ReviewCard review={review} />
+    })
 
     return ( 
         <div className="product-div">

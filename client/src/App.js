@@ -58,7 +58,7 @@ let history = useHistory()
 
  
   console.log(topThree)
-  console.log(userId)
+  // console.log(userId)
 
 
   useEffect(() => {
@@ -93,7 +93,6 @@ useEffect(() => {
       }
   })
 },[userId])
-console.log(myProducts)
 
 useEffect(() => {
     fetch(`/wishlists/${userId}`).then((response) => {
