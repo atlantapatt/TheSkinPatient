@@ -57,17 +57,16 @@ function goToAccount() {
                 } 
             })
         }
-        history.push('/account')
     }
 
     console.log(errors)
 
    
 
-    let myErrors = errors.map((err) => {
-      return <p>{err}</p>
+    // let myErrors = errors.map((err) => {
+    //   return <p>{err}</p>
         
-    })
+    // })
 
     // let myErrors = errors.map((err) => {
     //     return <p>{err}</p>
@@ -92,7 +91,7 @@ function goToAccount() {
                 <br></br>
                 <button>Submit</button>
                 <form className="error-form">
-                    {myErrors}
+                    {/* {myErrors} */}
                 </form>
             </form>
         </div>
