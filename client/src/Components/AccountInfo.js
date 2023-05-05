@@ -7,7 +7,21 @@ function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, 
     const [newPhoto, setNewPhoto] = useState()
     const [deleteAccount, setDeleteAccount] = useState(false)
 
-    const history = useHistory({})
+    const history = useHistory()
+
+    useEffect(() => {
+        fetch(`/myreviews/${user.id}`).then((response) => {
+            if (response.ok) {
+                response.json().then((reviews) => setAccountReviews(reviews))
+            }
+        })
+    },[])
+    
+        useEffect(() => {
+            if (user.bio == ''){
+                setBio("No Bio Written")
+            }
+        },[])
 
     function routeMyProducts() {
         history.push('/myproducts')
