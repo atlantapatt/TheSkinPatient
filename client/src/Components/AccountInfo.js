@@ -3,7 +3,7 @@ import DeleteAccount from "./DeleteAccount";
 import EditAccount from "./EditAccount";
 import { useState } from "react";
 
-function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews, bio, setBio}) {
+function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews, bio, setBio, userId}) {
     const [newPhoto, setNewPhoto] = useState()
     const [deleteAccount, setDeleteAccount] = useState(false)
 
