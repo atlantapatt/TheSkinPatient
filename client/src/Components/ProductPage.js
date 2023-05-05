@@ -18,22 +18,37 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     const history = useHistory()
     const match = useRouteMatch()
    
+    console.log(url == null)
+    console.log(url == '')
+    console.log(url == undefined)
+
+
+
     console.log(match)
     console.log(match.path.slice(1))
     
+    useEffect(() => {
+        if (url == '') {
+            setUrl
+        }
+    },[])
+
     useEffect(() => {
         window.localStorage.setItem('Current_URL', JSON.stringify(url))
     },[])
 
     useEffect(() => {
         const data = window.localStorage.getItem('Current_URL')
-        if (data !== null)
-        setUrl(JSON.parse(data))
+        if (data !== null) {
+            setUrl(JSON.parse(data))
+        }
+        console.log(data)
+
     },[])
 
     useEffect(() => {
         setUrl(match.path.slice(1))
-    },[])
+    },[url])
 
 
     useEffect(() => {
