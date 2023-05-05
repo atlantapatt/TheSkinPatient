@@ -178,6 +178,9 @@ function goHome() {
 
   return (
     <div className='app'>
+      <div id='root'>
+        <p>Loading...</p>
+      </div>
       <Navbar user={user} setUserId={setUserId} setUser={setUser}/>
       <Switch>
         <Route exact path='/'>
