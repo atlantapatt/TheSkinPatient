@@ -23,7 +23,7 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     
     useEffect(() => {
         window.localStorage.setItem('Current_URL', JSON.stringify(url))
-    },[url])
+    },[])
 
     useEffect(() => {
         const data = window.localStorage.getItem('Current_URL')
