@@ -12,7 +12,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
                 response.json().then((product) => setCurrentProduct(product))
             } 
         })
-    },[url])
+    },[])
 
     let mappedReviews = reviews.map((review) =>{
         return <ReviewCard review={review} />
