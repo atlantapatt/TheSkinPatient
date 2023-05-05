@@ -166,8 +166,11 @@ function goHome() {
         <Route exact path='/home'>
           <Home topThree={topThree} user={user} homeReviews={homeReviews} setHomeReviews={setHomeReviews}/>
         </Route>
-        <Route exact path='/account'>
+        <Route exact path='/'>
           <Account userId={userId} topThree={topThree} setUser={setUser} user={user}/>
+        </Route>
+        <Route exact path='/account'>
+          <Account />
         </Route>
         <Route exact path='/allproducts'>
           <Products url={url} setUrl={setUrl} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} productName={productName} setProductName={setProductName} products={products} setProducts={setProducts}/>
