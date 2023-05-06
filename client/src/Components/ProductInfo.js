@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import ConfirmPopUp from "./ConfrimPopUp";
 import WriteReview from "./WriteReview";
 import ReviewCard from "./ReviewCard";
+import Loading from "./Loading";
 
 function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews}) {
     
@@ -17,6 +18,12 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     console.log(currentProduct)
 
     let image = currentProduct.image
+
+    console.log(image)
+
+
+    let checkReviews = reviews.length == 0 ? "Be the first to review!" : mappedReviews
+
 
     let mappedReviews = reviews.map((review) =>{
         return <ReviewCard review={review} />
@@ -49,7 +56,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
                 <button onClick={(() => setWriteReview(!writeReview))}>Write Review</button>
                 <br></br>
                 {writeReview ? <WriteReview setRating={setRating} setInfo={setInfo} addToReview={addToReview} /> : null}
-                {reviews.length == 0 ? "Be the first to review!" : mappedReviews} 
+                {reviews == undefined ? <Loading /> : checkReviews} 
             </div>
         </div>
      );
