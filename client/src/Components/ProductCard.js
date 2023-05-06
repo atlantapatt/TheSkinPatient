@@ -2,13 +2,15 @@ import { useHistory } from "react-router-dom";
 import "./CSS/ProductCard.css"
 import { useEffect, useState } from "react";
 import { set } from "react-hook-form";
+import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 function ProductCard({item, url, setUrl, setCurrentProduct , currentProduct}) {
     
+
 
     const history = useHistory()
     function productPageRoute() {
         setUrl(item.id)
-        history.push(`/${url}`)
+        history.push(`/product/${url}`)
     }
 
     function onHover() {
