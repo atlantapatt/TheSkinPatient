@@ -11,7 +11,7 @@ import ProductCard from './Components/ProductCard';
 import ProductPage from './Components/ProductPage';
 import MyProducts from './Components/AccountComponents/MyProducts';
 import MyWishlist from './Components/AccountComponents/MyWishlist';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useRouteMatch } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -27,6 +27,7 @@ function App() {
   const [userId, setUserId] = useState(1)
   const {user, setUser} = useContext(UserContext)
 
+  const match = useRouteMatch()
 
 let history = useHistory()
 

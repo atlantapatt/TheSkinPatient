@@ -18,37 +18,33 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     const history = useHistory()
     const match = useRouteMatch()
    
-    console.log(url == null)
-    console.log(url == '')
-    console.log(url == undefined)
 
 
 
-    console.log(match)
-    console.log(match.path.slice(1))
-    
+
+
     // useEffect(() => {
     //     if (url == '') {
     //         setUrl
     //     }
     // },[])
 
-    useEffect(() => {
-        window.localStorage.setItem('CURRENT_PRODUCT', JSON.stringify(currentProduct))
-    },[currentProduct])
+    // useEffect(() => {
+    //     window.localStorage.setItem('CURRENT_PRODUCT', JSON.stringify(currentProduct))
+    // },[currentProduct])
 
-    useEffect(() => {
-        history.push(`/${url}`)
-    },[])
+    // useEffect(() => {
+    //     history.push(`/${url}`)
+    // },[url])
 
-    useEffect(() => {
-        const data = window.localStorage.getItem('CURRENT_PRODUCT')
-        if (data) {
-            setCurrentProduct(JSON.parse(data))
-        }
-        console.log(data)
+    // useEffect(() => {
+    //     const data = window.localStorage.getItem('CURRENT_PRODUCT')
+    //     if (data) {
+    //         setCurrentProduct(JSON.parse(data))
+    //     }
+    //     console.log(data)
 
-    },[currentProduct])
+    // },[currentProduct])
 
     // useEffect(() => {
     //     setUrl(match.path.slice(1))
@@ -158,7 +154,7 @@ console.log(url)
     // console.log(currentProduct.reviews)
     return ( 
         <div className="single-page">
-                {currentProduct == [] ? <p>Product Info</p> : <Loading />}
+                {currentProduct == undefined ? <Loading /> : <p>Product Info</p>}
         </div>
      );
 }
