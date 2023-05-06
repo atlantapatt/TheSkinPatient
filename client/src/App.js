@@ -32,7 +32,7 @@ function App() {
 let history = useHistory()
 
 
-  console.log(user)
+  console.log(match)
   console.log(currentProduct)
 
   useEffect(() => {
