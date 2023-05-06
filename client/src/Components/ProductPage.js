@@ -43,12 +43,12 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
 
     useEffect(() => {
         const data = window.localStorage.getItem('URL')
-        if (data !== null) {
+        if (data) {
             setUrl(JSON.parse(data))
         }
         console.log(data)
 
-    },[])
+    },[url])
 
     // useEffect(() => {
     //     setUrl(match.path.slice(1))
