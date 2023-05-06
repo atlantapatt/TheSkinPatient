@@ -19,7 +19,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
 
     let image = currentProduct.image
 
-    console.log(image)
+    console.log(image.slice(1))
 
 
     let checkReviews = reviews.length == 0 ? "Be the first to review!" : mappedReviews
