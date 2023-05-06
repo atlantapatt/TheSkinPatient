@@ -155,10 +155,9 @@ console.log(url)
     // console.log(currentProduct.reviews)
     return ( 
         <div className="single-page">
-                {currentProduct == undefined ? <Loading /> : <p>Product Info</p>}
+                {currentProduct == undefined ? <Loading /> : <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} />}
         </div>
      );
 }
 
 export default ProductPage;
-{/* <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} /> */}
