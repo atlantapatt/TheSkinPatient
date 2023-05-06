@@ -157,7 +157,7 @@ function goHome() {
 
 
 
-if (!user) return <Login user={user} setUser={setUser} />
+// if (!user) return <Login user={user} setUser={setUser} />
 
   return (
     <div className='app'>
