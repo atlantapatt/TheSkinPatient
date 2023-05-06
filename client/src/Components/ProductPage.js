@@ -35,7 +35,11 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
 
     useEffect(() => {
         window.localStorage.setItem('URL', JSON.stringify(url))
-    },[currentProduct])
+    },[url])
+
+    useEffect(() => {
+        history.push(`/${url}`)
+    },[])
 
     useEffect(() => {
         const data = window.localStorage.getItem('URL')
