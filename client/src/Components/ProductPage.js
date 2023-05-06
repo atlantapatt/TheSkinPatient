@@ -53,12 +53,12 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
 
 
     useEffect(() => {
-        fetch(`/products/${url}`).then((response) => {
+        fetch(`/products/${params.id}`).then((response) => {
             if (response.ok) {
                 response.json().then((product) => setCurrentProduct(product))
             } 
         })
-    },[url])
+    },[params.id])
 
     useEffect(() => {
         fetch(`/products/${url}`).then((response) => {
