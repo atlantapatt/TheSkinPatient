@@ -34,21 +34,21 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     // },[])
 
     useEffect(() => {
-        window.localStorage.setItem('URL', JSON.stringify(url))
-    },[url])
+        window.localStorage.setItem('CURRENT_PRODUCT', JSON.stringify(currentProduct))
+    },[currentProduct])
 
     useEffect(() => {
         history.push(`/${url}`)
     },[])
 
     useEffect(() => {
-        const data = window.localStorage.getItem('URL')
+        const data = window.localStorage.getItem('CURRENT_PRODUCT')
         if (data) {
-            setUrl(JSON.parse(data))
+            setCurrentProduct(JSON.parse(data))
         }
         console.log(data)
 
-    },[url])
+    },[currentProduct])
 
     // useEffect(() => {
     //     setUrl(match.path.slice(1))
@@ -158,7 +158,7 @@ console.log(url)
     // console.log(currentProduct.reviews)
     return ( 
         <div className="single-page">
-                {currentProduct ? <p>Product Info</p> : <Loading />}
+                {currentProduct == [] ? <p>Product Info</p> : <Loading />}
         </div>
      );
 }
