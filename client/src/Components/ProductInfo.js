@@ -5,14 +5,16 @@ import ReviewCard from "./ReviewCard";
 
 function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews}) {
     
-    
-    useEffect(() => {
-        fetch(`/products/${url}`).then((response) => {
-            if (response.ok) {
-                response.json().then((product) => setCurrentProduct(product))
-            } 
-        })
-    },[])
+
+    // useEffect(() => {
+    //     fetch(`/products/${url}`).then((response) => {
+    //         if (response.ok) {
+    //             response.json().then((product) => setCurrentProduct(product))
+    //         } 
+    //     })
+    // },[])
+
+    console.log(currentProduct)
 
     let mappedReviews = reviews.map((review) =>{
         return <ReviewCard review={review} />

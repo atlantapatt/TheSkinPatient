@@ -1,5 +1,4 @@
 function ConfirmPopUp({setConfirmed}) {
-    console.log(setConfirmed)
     return ( 
         <div className="confirmed">
             <h4>Added!</h4>

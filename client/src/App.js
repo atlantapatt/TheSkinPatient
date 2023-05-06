@@ -85,7 +85,6 @@ useEffect(() => {
   })
 },[reviews])
 
-console.log(homeReviews)
 
 useEffect(() => {
   fetch(`/my_products/${userId}`).then((response) => {
@@ -104,7 +103,7 @@ useEffect(() => {
 },[])
 
 
-console.log(myWishlist)
+// console.log(myWishlist)
 
 useEffect(() => {
     fetch(`/product_wishlists/${userId}`).then((response) => {
@@ -125,7 +124,7 @@ useEffect(() => {
 
 
 
-console.log(topThree)
+// console.log(topThree)
 
 function addReviews(review) {
   setReviews([...reviews, review])
