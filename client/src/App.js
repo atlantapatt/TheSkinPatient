@@ -32,7 +32,7 @@ let history = useHistory()
 
 
   console.log(user)
-  console.log(myWishlist)
+  console.log(currentProduct)
 
   useEffect(() => {
     fetch('/me').then((response) => {
