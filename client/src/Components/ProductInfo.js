@@ -18,8 +18,13 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     console.log(currentProduct)
 
     let image = currentProduct.image
+    let newImage 
 
-    console.log(image.type)
+    console.log(image)
+
+    useEffect(() => {
+        newImage = image.slice(1)
+    },[currentProduct])
 
 
     let checkReviews = reviews.length == 0 ? "Be the first to review!" : mappedReviews
