@@ -34,11 +34,11 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     // },[])
 
     useEffect(() => {
-        window.localStorage.setItem('Current_URL', JSON.stringify(url))
-    },[url])
+        window.localStorage.setItem('URL', JSON.stringify(url))
+    },[currentProduct])
 
     useEffect(() => {
-        const data = window.localStorage.getItem('Current_URL')
+        const data = window.localStorage.getItem('URL')
         if (data !== null) {
             setUrl(JSON.parse(data))
         }
@@ -46,9 +46,9 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
 
     },[])
 
-    useEffect(() => {
-        setUrl(match.path.slice(1))
-    },[url])
+    // useEffect(() => {
+    //     setUrl(match.path.slice(1))
+    // },[url])
 
 
     useEffect(() => {
