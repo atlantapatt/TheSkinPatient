@@ -29,7 +29,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
             <br></br>
             <div className="product-info">
                 <div className="product-image">
-                    <img src={currentProduct.image}></img>
+                    <img src="/Photos/Paula's_Choice_BHA_liquid_exfoliant.png"></img>
                 </div>
                 <div className="product-text">
                     <h3>{currentProduct.className}</h3>
