@@ -16,7 +16,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
 
     console.log(currentProduct)
 
-    // let image = currentProduct.image.slice(0)
+    let image = currentProduct.image
 
     let mappedReviews = reviews.map((review) =>{
         return <ReviewCard review={review} />
@@ -31,7 +31,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
             <br></br>
             <div className="product-info">
                 <div className="product-image">
-                    <img src={currentProduct.image.slice(0)}></img>
+                    <img src={image}></img>
                 </div>
                 <div className="product-text">
                     <h3>{currentProduct.className}</h3>
