@@ -16,7 +16,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     // },[])
 
     console.log(currentProduct)
-    console.log(image !== undefined)
+    console.log(image == newImage)
 
 
 
