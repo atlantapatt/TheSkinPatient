@@ -18,6 +18,8 @@ function Account({user, setUser, topThree, userId}) {
 console.log(user)
 console.log(accountReviews)
 
+let myTopThree
+
 // useEffect(() => {
 //     if (user == undefined) {
 //         return <Loading />
@@ -53,9 +55,19 @@ useEffect(() => {
         </div>
     })
 
+useEffect(() => {
+    if (topThree !== undefined) {
+        myTopThree = topThree.map((item) => {
+            console.log(item)
+            return  <div className="wishlist-div">
+                <TopThree item={item} />
+            </div>
+            
+         })
+    }
+})
 
-
-    let myTopThree = topThree.map((item) => {
+    myTopThree = topThree.map((item) => {
         console.log(item)
         return  <div className="wishlist-div">
             <TopThree item={item} />
