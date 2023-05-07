@@ -16,11 +16,13 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     // },[])
 
     console.log(currentProduct)
+   
+
 
     let image = currentProduct.image
     let newImage 
 
-    console.log(image)
+    console.log(image.slice(0))
 
     useEffect(() => {
         if (image !== undefined) {
