@@ -50,7 +50,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
             <br></br>
             <div className="product-info">
                 <div className="product-image">
-                    <img src="./Photos/Glow_Recipe_Dew_Drops.png"></img>
+                    <img src={newImage}></img>
                 </div>
                 <div className="product-text">
                     <h3>{currentProduct.className}</h3>
