@@ -14,6 +14,8 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     const [info, setInfo] = useState('')
     const [confirmed, setConfirmed] = useState(false)
     const [rememberUrl, setRememberUrl] = useState()
+    const [newImage, setNewImage] = useState(null)
+
 
     const history = useHistory()
     const params = useParams()
@@ -72,6 +74,7 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     function onClick() {
         console.log('go back')
         history.push('/allproducts')
+        setNewImage(null)
     }
 
 //not saving
@@ -155,7 +158,7 @@ console.log(url)
     // console.log(currentProduct.reviews)
     return ( 
         <div className="single-page">
-                {currentProduct == undefined ? <Loading /> : <ProductInfo url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} />}
+                {currentProduct == undefined ? <Loading /> : <ProductInfo newImage={newImage} setNewImage={setNewImage} url={url} onClick={onClick} confirmed={confirmed} setConfirmed={setConfirmed} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} addToProducts={addToProducts} addWishClick={addWishClick} setWriteReview={setWriteReview} writeReview={writeReview} setRating={setRating} setInfo={setInfo} addToReview={addToReview} reviews={reviews} />}
         </div>
      );
 }

@@ -4,8 +4,7 @@ import WriteReview from "./WriteReview";
 import ReviewCard from "./ReviewCard";
 import Loading from "./Loading";
 
-function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews}) {
-    const [newImage, setNewImage] = useState(null)
+function ProductInfo({newImage, setNewImage ,url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews}) {
 
     // useEffect(() => {
     //     fetch(`/products/${url}`).then((response) => {
