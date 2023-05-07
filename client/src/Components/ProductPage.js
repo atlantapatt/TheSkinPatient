@@ -75,6 +75,7 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
         console.log('go back')
         history.push('/allproducts')
         setNewImage(null)
+        setCurrentProduct(null)
     }
 
 //not saving
