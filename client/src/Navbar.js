@@ -49,7 +49,7 @@ function Navbar({setUser, setUserId, user}) {
         <div className="nav">
             <div className="nav-items">
                 <div className="welcome-div">
-                    <p>Welcome {user.username}!</p>
+                    <p>Welcome!</p>
                 </div>
                 <div className="img" onClick={homeRoute}>
                     <img id="skin-logo" src={logo}></img>
