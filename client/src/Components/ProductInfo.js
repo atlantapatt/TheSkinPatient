@@ -34,8 +34,6 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     console.log(newImage)
 
 
-    let checkReviews = reviews.length == 0 ? "Be the first to review!" : mappedReviews
-
 
     let mappedReviews = reviews.map((review) =>{
         return <ReviewCard review={review} />
@@ -68,7 +66,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
                 <button onClick={(() => setWriteReview(!writeReview))}>Write Review</button>
                 <br></br>
                 {writeReview ? <WriteReview setRating={setRating} setInfo={setInfo} addToReview={addToReview} /> : null}
-                {reviews == undefined ? <Loading /> : checkReviews} 
+                {reviews.length == 0 ? "Be the first to review!" : mappedReviews} 
             </div>
         </div>
      );

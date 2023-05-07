@@ -61,12 +61,12 @@ function ProductPage({userId, setUrl, user ,addToMyProducts ,wishlistId, addRevi
     },[params.id])
 
     useEffect(() => {
-        fetch(`/products/${url}`).then((response) => {
+        fetch(`/products/${params.id}`).then((response) => {
             if (response.ok) {
                 response.json().then((product) => setReviews(product.reviews))
             } 
         })
-    },[])
+    },[params.id])
 
 
     function onClick() {
