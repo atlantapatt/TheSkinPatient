@@ -5,7 +5,7 @@ import ReviewCard from "./ReviewCard";
 import Loading from "./Loading";
 
 function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews}) {
-    const [newImage, setNewImage] = useState()
+    const [newImage, setNewImage] = useState(null)
 
     // useEffect(() => {
     //     fetch(`/products/${url}`).then((response) => {
@@ -48,7 +48,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
             <br></br>
             <div className="product-info">
                 <div className="product-image">
-                    {image.slice(1) == newImage ? <img src={newImage}></img> : <Loading />}
+                    {newImage ? <img src={newImage}></img> : <Loading />}
                 </div>
                 <div className="product-text">
                     <h3>{currentProduct.className}</h3>
