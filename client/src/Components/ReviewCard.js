@@ -1,6 +1,6 @@
 import './CSS/ReviewCard.css'
 function ReviewCard({review}) {
-    console.log(review.user)
+    console.log(review.user.username)
 //review.user.username causing errors
     return (
         <div className="review-div">
