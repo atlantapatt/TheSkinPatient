@@ -16,7 +16,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     // },[])
 
     console.log(currentProduct)
-    console.log(image == newImage)
+    console.log(image.slice(1) == newImage)
 
 
 
