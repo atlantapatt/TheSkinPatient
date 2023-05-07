@@ -30,7 +30,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
            setNewImage(image.slice(1))
         }
         
-    },[])
+    },[currentProduct])
     console.log(newImage)
 
 
