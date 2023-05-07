@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ConfirmPopUp from "./ConfrimPopUp";
 import WriteReview from "./WriteReview";
 import ReviewCard from "./ReviewCard";
 import Loading from "./Loading";
 
 function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, currentProduct, addToProducts, addWishClick, setWriteReview, writeReview, setRating, setInfo, addToReview, reviews}) {
-    
+    const [newImage, setNewImage] = useState()
 
     // useEffect(() => {
     //     fetch(`/products/${url}`).then((response) => {
@@ -16,17 +16,18 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     // },[])
 
     console.log(currentProduct)
-   
+    console.log(image !== undefined)
+
 
 
     let image = currentProduct.image
-    let newImage 
+
 
     // console.log(image.slice(0))
 
     useEffect(() => {
         if (image !== undefined) {
-           newImage = image.slice(1) 
+           setNewImage(image.slice(1))
         }
         
     },[])
