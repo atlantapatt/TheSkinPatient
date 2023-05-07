@@ -23,7 +23,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     console.log(image)
 
     useEffect(() => {
-        if (currentProduct !== undefined) {
+        if (image !== undefined) {
            newImage = image.slice(1) 
         }
         
