@@ -16,7 +16,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
     // },[])
 
     console.log(currentProduct)
-    console.log(image.slice(1) == newImage)
+    // console.log(image.slice(1) == newImage)
 
 
 
@@ -48,7 +48,7 @@ function ProductInfo({url, onClick, confirmed, setConfirmed, setCurrentProduct, 
             <br></br>
             <div className="product-info">
                 <div className="product-image">
-                    <img src={newImage}></img>
+                    {image.slice(1) == newImage ? <img src={newImage}></img> : <Loading />}
                 </div>
                 <div className="product-text">
                     <h3>{currentProduct.className}</h3>
