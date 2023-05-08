@@ -3,6 +3,7 @@ import DeleteAccount from "./DeleteAccount";
 import EditAccount from "./EditAccount";
 import './CSS/Account.css'
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
 
 function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, accountReviews, mappedAccountReviews, bio, setBio, userId, setAccountReviews}) {
     const [newPhoto, setNewPhoto] = useState()
