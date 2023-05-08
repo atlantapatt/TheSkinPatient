@@ -74,7 +74,7 @@ function AccountInfo({myTopThree, topThree, editing, setEditing, setUser, user, 
             </div>
             <div className="user-reviews">
                 <p>Reviews</p>
-                {accountReviews.length == 0 ? <p>No Reviews Yet! Write Some!</p> : mappedAccountReviews}
+                {accountReviews.length == 0 ? <Loading/> : mappedAccountReviews}
             </div>
            <div className="account-links">
                 <h3 className="click" onClick={routeMyProducts}>My Products</h3>

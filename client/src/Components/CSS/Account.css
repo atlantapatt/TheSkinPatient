@@ -41,6 +41,7 @@ margin-right: 25px;
     -webkit-border-radius: 8px;
 -moz-border-radius: 8px;
 border-radius: 8px;
+min-width: 300px;
 }
 
 .wishlist-div{
