@@ -65,15 +65,9 @@ useEffect(() => {
             
          })
     }
-})
+},[])
 
-    myTopThree = topThree.map((item) => {
-        console.log(item)
-        return  <div className="wishlist-div">
-            <TopThree item={item} />
-        </div>
-        
-     })
+
 
     return ( 
         <div className="account">
