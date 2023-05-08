@@ -80,6 +80,7 @@ function goToAccount() {
                 <input className="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <br></br>
                 <lable>Confirm Password</lable>
+                <br></br>
                 <input className="password" type="password"></input>
                 <br></br>
                 <button>Submit</button>
