@@ -6,8 +6,8 @@ import DeleteAccount from "./DeleteAccount";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import TopThree from "./TopThree";
 import Login from "./Login";
-import Loading from "./Loading";
 import AccountInfo from "./AccountInfo";
+import Loading from "./Loading";
 
 function Account({user, setUser, topThree, userId}) {
     const [accountReviews, setAccountReviews] = useState([])
