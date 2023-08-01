@@ -1,4 +1,4 @@
-# Phase 5 Project
+# The Skin Patient
 
 ## Project Basis
 For my last Flatiron School Project, I've built a skincare social media app using Postgres, Ruby, Ruby On Rails, and React. In the application, you log in to an account to see reviews. As a user you can review products or add them to your products list or your wishlist. 
